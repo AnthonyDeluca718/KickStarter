@@ -1,27 +1,41 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, hashHistory } from 'react-router';
 
-// STAR
-const sessionLinks = () => (
-  <nav className="login-signup">
-    <Link to="/login" activeClassName="current">Login</Link>
-    &nbsp;or&nbsp;
-    <Link to="/signup" activeClassName="current">Sign up!</Link>
-  </nav>
-);
+class Greeting extends React.Component {
 
-const personalGreeting = (currentUser, logout) => (
-	<hgroup className="header-group">
-		<h2 className="header-name">Hi, {currentUser.name}!</h2>
-		<button className="header-button" onClick={logout}>Log Out</button>
-	</hgroup>
-);
+  constructor(props) {
+    super(props);
+    this.state = {};
+    this.sessionLinks = this.sessionLinks.bind(this);
+    this.personalGreeting = this.personalGreeting.bind(this);
+  }
 
-const Greeting = ({ currentUser, logout }) => {
-  if (currentUser) {
-    return personalGreeting(currentUser, logout);
-  } else {
-    return sessionLinks();
+  sessionLinks() {
+    return (
+      <nav className="login-signup">
+        <Link to="/login" activeClassName="current">Login</Link>
+        &nbsp;or&nbsp;
+        <Link to="/signup" activeClassName="current">Sign up!</Link>
+      </nav>
+    );
+  }
+
+  personalGreeting(currentUser, logout) {
+    return (
+    	<hgroup className="header-group">
+    		<h2 className="header-name">Hi, {currentUser.name}!</h2>
+    		<button className="header-button" onClick={logout}>Log Out</button>
+    	</hgroup>
+    );
+  }
+
+  render() {
+    console.log(this.props.oProps);
+    if (this.props.currentUser) {
+      return this.personalGreeting(this.props.currentUser, this.props.logout);
+    } else {
+      return this.sessionLinks();
+    }
   }
 }
 
