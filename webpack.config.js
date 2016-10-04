@@ -22,14 +22,5 @@ module.exports = {
   devtool: 'source-maps',
   resolve: {
     extensions: ["", ".js", ".jsx" ]
-  },
-  "engines": {
-    // Your versions of node and npm should go here
-    // Check this by running the `node -v` and `npm -v` commands in the root of your project
-    "node": "6.3.0",
-    "npm": "3.3.12"
-  },
-  "scripts": {
-    "postinstall": "./node_modules/.bin/webpack"
   }
 };
