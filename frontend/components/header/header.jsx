@@ -22,7 +22,7 @@ class Header extends React.Component {
   personalGreeting(currentUser, logout) {
     return (
     	<hgroup className="header-group">
-    		<h2 className="header-name">Hi, {currentUser.name}!</h2>
+    		<img className="profile_picture" src="./images/blank_profile.png" />
     		<button className="header-button" onClick={logout}>Log Out</button>
     	</hgroup>
     );
