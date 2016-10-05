@@ -5,7 +5,6 @@ class Greeting extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {};
     this.sessionLinks = this.sessionLinks.bind(this);
     this.personalGreeting = this.personalGreeting.bind(this);
   }
@@ -30,7 +29,6 @@ class Greeting extends React.Component {
   }
 
   render() {
-    console.log(this.props.oProps);
     if (this.props.currentUser) {
       return this.personalGreeting(this.props.currentUser, this.props.logout);
     } else {
