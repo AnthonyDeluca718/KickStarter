@@ -1,5 +1,7 @@
 == MyKickStarter:
 
+git-url: https://git.heroku.com/adeluca-kickstarter.git
+
 https://adeluca-kickstarter.herokuapp.com
 
 == Minimum Viable Product:
