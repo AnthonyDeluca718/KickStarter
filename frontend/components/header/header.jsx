@@ -20,10 +20,17 @@ class Header extends React.Component {
   }
 
   personalGreeting(currentUser, logout) {
+
+    let source;
+    if (currentUser.photo_url) {
+      source = currentUser.photo_url;
+    } else {
+      source = 'images/default_profile.png';
+    }
     return (
     	<hgroup className="header-group">
-    		<img className="profile-picture" src="./images/blank_profile.png" />
-    		<button className="header-button" onClick={logout}>Log Out</button>
+        <button className="header-button" onClick={logout}>Log Out</button>
+    		<img className="profile-picture" src={source}/>
     	</hgroup>
     );
   }
@@ -38,14 +45,17 @@ class Header extends React.Component {
 
     return(
       <header>
-        <div className="left group">
-          left
-        </div>
+        <ul className="left group">
+          <li>Discover</li>
+          <li>Start a Project</li>
+          <li>About Us</li>
+        </ul>
         <div className="right">
           {rightCorner}
         </div>
         <div className="mid">
-          right
+          <text className="profile-cloned">CLONED</text>
+          <text className="profile-starter">STARTER</text>
         </div>
 
       </header>
