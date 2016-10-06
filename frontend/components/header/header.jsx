@@ -54,7 +54,8 @@ class Header extends React.Component {
           {rightCorner}
         </div>
         <div className="mid">
-          KICKSTARTER
+          <text className="profile-cloned">CLONED</text>
+          <text className="profile-starter">STARTER</text>
         </div>
 
       </header>
@@ -63,6 +64,3 @@ class Header extends React.Component {
 }
 
 export default Header;
-
-// <text className="profile-cloned">CLONED</text>
-// <text className="profile-starter">STARTER</text>
