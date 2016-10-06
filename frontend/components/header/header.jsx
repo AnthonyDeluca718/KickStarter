@@ -11,7 +11,7 @@ class Header extends React.Component {
 
   sessionLinks() {
     return (
-      <nav className="login-signup">
+      <nav className="login-signup rightCorner">
         <Link to="/login" activeClassName="current">Login</Link>
         &nbsp;or&nbsp;
         <Link to="/signup" activeClassName="current">Sign up!</Link>
@@ -28,7 +28,7 @@ class Header extends React.Component {
       source = 'images/default_profile.png';
     }
     return (
-    	<hgroup className="header-group">
+    	<hgroup className="header-group rightCorner">
         <button className="header-button" onClick={logout}>Log Out</button>
     		<img className="profile-picture" src={source}/>
     	</hgroup>
@@ -54,8 +54,7 @@ class Header extends React.Component {
           {rightCorner}
         </div>
         <div className="mid">
-          <text className="profile-cloned">CLONED</text>
-          <text className="profile-starter">STARTER</text>
+          KICKSTARTER
         </div>
 
       </header>
@@ -64,3 +63,6 @@ class Header extends React.Component {
 }
 
 export default Header;
+
+// <text className="profile-cloned">CLONED</text>
+// <text className="profile-starter">STARTER</text>

@@ -47,6 +47,11 @@ img {
 
 /*Header Bar*/
 
+.rightCorner {
+  display: inline-block;
+  float: right;
+}
+
 .profile-cloned {
   color: red;
 }
@@ -56,14 +61,15 @@ img {
 }
 
 .profile-picture {
-  height: 100px;
-  width: 100px;
+  height: 60px;
+  width: 60px;
 }
 
 .left
 {
   float: left;
-  border: solid 1px red;
+  width: 40%;
+
 }
 
 .left li {
@@ -74,14 +80,12 @@ img {
 {
   margin-left: auto;
   margin-right: auto;
-  border: solid 1px red;
-  text-align: center
+  text-align: center;
 }
 
-.right
-{
+.right{
+  width: 40%;
   float: right;
-  border: solid 1px red;
 }
 
 .group {
