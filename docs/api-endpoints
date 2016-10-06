@@ -1,0 +1,39 @@
+Users:
+- `POST /api/users`
+- `PATCH /api/users`
+
+Session:
+- `POST /api/session`
+- `DELETE /api/session`
+- `GET /api/session`
+
+Comments:
+- `GET /api/comments/:id`
+- `POST /api/comments`
+- `PATCH /api/comments/:id`
+- `DELETE /api/comments/:id`
+
+Projects:
+- `GET /api/projects` (index)
+- `POST /api/project`
+- `PATCH /api/comments/:id`
+- `GET /api/project/:id`
+- `DELETE /api/project/:id`
+- `GET /api/project/:id/comments`
+  - index of all notes for a project
+
+Tags:
+- A project's tags will be included in the project show template
+- `GET /api/tags`
+- `POST /api/notes/:note_id/tags`: add tag to project by name
+- `DELETE /api/notes/:note_id/tags/:tag_name`: remove tag
+
+Likes:
+- A project's number of likes will be included in the project show template
+- `POST /api/notes/:note_id/likes`: add like to project by name
+- `DELETE /api/notes/:note_id/likes/:tag_name`: remove like
+
+Likes:
+- A project's number of followers will be included in the project show template
+- `POST /api/notes/:note_id/followers`: add follow to project by name
+- `DELETE /api/notes/:note_id/followers/:tag_name`: remove follow

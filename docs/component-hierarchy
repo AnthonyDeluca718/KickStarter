@@ -1,0 +1,46 @@
+AuthFormContainer:
+ - AuthForm
+ - Sidebar
+
+SearchResultsContainer
+- Search
+- ProjectIndex
+
+ProjectContainer
+ - ProjectHeader
+ - ProjectDisplay
+ -Tags
+  - NewTag
+ - NewLike
+ - NewFollow
+ - Sidebar
+ - commentsIndex
+  -EditCommentForm
+
+Comments
+-EditCommentForm
+-ShowComment
+
+Home
+-ProjectIndex
+-Sidebar
+-HomeHeader
+-Discover
+
+const AppRouter = () => (
+ <Router history={ hashHistory }>
+   <Route path="/" component={ App }>
+     <IndexRoute component= { ProjectIndexContainer }/>
+     <Route path="/projects/:projectId" component = { ProjectContainer }>
+      <Route path="/comments" component = { CommentsIndexContainer }
+     <Route>
+     <Route path="/search" component = { SearchContainer }/>
+     <Route path="/edit/:projectId" component = { EditProjectContainer }/>
+     <Route path="/users/:id" component = { ProfileContainer }/>
+     <Route path="/users/:id/edit" component = { EditProfileContainer }/>
+     <Route path="/category/:type" component = { CategoryContainer }/>
+     <Route path="/comments/:id" component = { CommentContainer }/>
+     <Route path="/comments/:id/edit" component = { EditCommentContainer }/>
+   </Route>
+ </Router>
+)

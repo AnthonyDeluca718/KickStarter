@@ -1,0 +1,51 @@
+{
+  user: {
+    id: 1,
+    username: "sen"
+  },
+  forms: {
+    signUp: {errors: []},
+    logIn: {errors: []},
+    createProject: {errors: ["title can't be blank"]}
+    createComment: {errors: ["comment cannot be blank"]}
+  },
+  projects: {
+    1: {
+      title: "Sample State",
+      body: "is useful to plan",
+      creator_id: 1,
+      project_id: 1,
+      head_photo_url: "some url",
+      display: "bunch of text", *** need to think on this more monday ***
+      end_date: "2/7/2017",
+      goal: 42,
+      amount_raised: 10,
+      tags: {
+        1: {
+          id: 1
+          name: "Coding"
+        }
+      }
+      comments: {
+        1: {
+          user_id: 1,
+          content: "Please back my project!"
+        }
+      },
+      likes_count: 5,
+      follower_count: 2
+    }
+      rewards: {
+        1: {
+          title: "big reward",
+          description: "Great reward",
+          cost: 50,
+          sold: 1,
+          limit, 10
+        }
+      },
+      likes_count: 5,
+      follower_count: 2
+    }
+  }
+}

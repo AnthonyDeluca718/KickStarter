@@ -1,0 +1,77 @@
+== MyKickStarter:
+
+https://adeluca-kickstarter.herokuapp.com
+
+== Minimum Viable Product:
+1) User Accounts. Securely handle account creation and login. Users can edit their profile picture and bibliography
+2) Projects: User can create projects. Project Display page works.
+3) Search: Kickstarter's project search implemented as on KS (by title and creator). My search bar should mimic Kickstarter's.
+4) Discover: The categories are displayed to the user. Clicking on the links takes the user to a page displaying the chosen category.
+  three discovery categories appear on the first page.
+5) Rewards: User can back projects.
+Bonus-1) Comments: Comment display page exists. Users and creators can post comments.
+Bonus-2) Tags: Users can tag posts. Users can search by posts.
+
+Required Views/Displays:
+-Error Page
+-Header
+-Project Creation
+-Profile Info
+-Project Show
+-Display by Category added to main
+-Search Bar results (and search bar “flip”)
+-Category Show
+-Discover page
+
+=== Implementation Timeline (total = 6 days)
+
+Phase0: Basic user auth (already done)
+-User model/migration
+-Secure Backend login with BCrypt
+-StaticPage view and controller
+-apiUtil to interact with the api
+-Sign-up/Sign-in react components/view
+-Create seed users and guest account
+-Style forms and put something on the page that renders after login
+
+Phase 1: Basic Styling and user interactions: (1 day)
+-Header bar
+-User profile editing
+-Set up router so that error page redirect works correctly
+-Style Error page
+
+Phase2: Project Creation and Display (2 days)
+-Add projects to database. (projects belong to a user)
+-Create Project display with the same elements as kickstarter
+-Create Project Creation form.
+-Style Project display
+-Style Project form
+-Create 1-3 fleshed out example projects.
+
+Phase3: Project Search (1 days)
+-Add the search bar to the landing page. The search bar should look/behave like kickstarter's.
+-Add seed projects to test.
+-Implement search (on input) by title/creator.
+-Create the project index view that displays in the search view.
+-Style the project-index.
+
+Phase4: Discover-part-1 (1 Day)
+-Create the discover view. ITs a grid of categories each with a picture.
+-Style the discover page.
+-Add more project test-seeds and check the search works.
+
+Phase5: User interaction: (1 day)
+-Create a database of tags. Seed the tag DB.
+-Add joins tables so that users can like/back/follow/tag projects projects.
+-Create the basic forms to handle user interaction
+-Make tags auto-complete if a user starts adding a pre-existing tag
+-add comments
+
+Phase6: (Friday morning)
+-Make sure guess account is working well
+-Make final checks to the website
+-Create Logo if desired
+
+Bonus Phase:
+Bonus-1) Comments: Comment display page exists. Users and creators can post comments.
+Bonus-2) Tags: Users can tag posts. Users can search by posts.
