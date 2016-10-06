@@ -32,6 +32,7 @@ class Header extends React.Component {
         <div className="rightCorner">
       		<img className="profile-picture" src={source}/>
           <button className="header-button" onClick={logout}>Log Out</button>
+          <button className="search"><img className="mag-glass" src="images/mag_glass.png"/></button>
         </div>
     );
   }
