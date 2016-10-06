@@ -45,13 +45,34 @@ ul {
 
 body {
   font-family: sans-serif;
+  background: #eee;
 }
 
 img {
   display: block;
 }
 
+.group {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.content {
+  background: #eee;
+}
+
 /*Header Bar*/
+
+header {
+  background: #fff;
+}
+
+header:after {
+  content: "";
+  display: block;
+  clear: both;
+}
 
 .rightCorner {
   display: inline-block;
@@ -83,8 +104,8 @@ img {
 }
 
 .profile-picture {
-  height: 60px;
-  width: 60px;
+  height: 58px;
+  width: 58px;
   float: right;
   margin-left: 25px;
 }
@@ -97,13 +118,13 @@ img {
   float: right;
   display: block;
   margin: 0 25px;
-  padding: 25px 0px;
+  padding: 20px 0px;
 }
 
 .search {
   display: block;
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   padding: 20px 0px;
   float: right;
   margin: 0px 25px;
@@ -116,7 +137,7 @@ img {
   margin-right: 50px;
 }
 
-.left
+header .left
 {
   float: left;
   width: 40%;
@@ -127,7 +148,7 @@ img {
   float: left;
 }
 
-.mid
+header .mid
 {
   display: block;
   margin-left: auto;
@@ -146,16 +167,10 @@ img {
   margin: 0;
 }
 
-.right{
+header .right{
   width: 40%;
   float: right;
   display: inline-block;
-}
-
-.group {
-  content: "";
-  clear: both;
-  display: block;
 }
 
 header button {
@@ -189,4 +204,4 @@ header button:hover {
   margin-right: 50px;
 }
 
-/*Error Page*/
+/*AuthForm*/

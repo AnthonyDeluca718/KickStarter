@@ -4,10 +4,10 @@ import HeaderContainer from './header/header_container';
 
 const App = ({children}) => (
   <div>
-    <header>
-      <HeaderContainer />
-    </header>
-    {children}
+    <HeaderContainer />
+    <section className="content">
+      {children}
+    </section>
   </div>
 );
 
