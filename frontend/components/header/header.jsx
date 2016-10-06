@@ -31,7 +31,7 @@ class Header extends React.Component {
     return (
       <ul className="rightCorner">
     		<li><img className="profile-picture" src={source}/></li>
-        <li><button className="logout" onClick={logout}>Log Out</button></li>
+        <li><button className="logout Link" onClick={logout}>Log Out<nav className="hover-bar"></nav></button></li>
         <li><button className="search"><img className="mag-glass" src="images/mag_glass.png"/></button></li>
       </ul>
     );
