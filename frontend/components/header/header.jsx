@@ -15,6 +15,7 @@ class Header extends React.Component {
         <Link to="/login" activeClassName="current" className="Link">Login<nav className="hover-bar"></nav></Link>
         <Link to="/signup" activeClassName="current" className="Link">Sign up!<nav className="hover-bar"></nav></Link>
         <button className="Link guest" >Guest<nav className="hover-bar"></nav></button>
+        <button className="search"><img className="mag-glass" src="images/mag_glass.png"/></button>
       </nav>
     );
   }
@@ -28,7 +29,10 @@ class Header extends React.Component {
       source = 'images/default_profile.png';
     }
     return (
-    		<img className="profile-picture" src={source}/>
+        <div className="rightCorner">
+      		<img className="profile-picture" src={source}/>
+          <button className="header-button" onClick={logout}>Log Out</button>
+        </div>
     );
   }
 
@@ -61,5 +65,3 @@ class Header extends React.Component {
 }
 
 export default Header;
-
-// <button className="header-button" onClick={logout}>Log Out</button>

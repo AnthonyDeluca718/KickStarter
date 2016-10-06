@@ -45,7 +45,6 @@ ul {
 
 body {
   font-family: sans-serif;
-  // font-family: RNS-B;
 }
 
 img {
@@ -117,6 +116,7 @@ img {
 .right{
   width: 40%;
   float: right;
+  display: inline-block;
 }
 
 .group {
@@ -148,8 +148,18 @@ header .Link:hover .hover-bar {
   opacity: 1;
 }
 
-.guest:hover {
+header button:hover {
   cursor: pointer;
+}
+
+.search {
+  display: block;
+  width: 25px;
+  height: 25px;
+}
+
+.mag-glass {
+
 }
 
 /*Error Page*/
