@@ -13,3 +13,38 @@
  *= require_tree .
  *= require_self
  */
+
+ .profile-picture {
+  height: 100px;
+  width: 100px;
+ }
+ .left
+ {
+   float: left;
+   border: solid 1px red;
+ }
+
+ .mid
+ {
+  margin-left: auto;
+  margin-right: auto;
+  border: solid 1px red;
+  text-align: center
+ }
+
+ .right
+ {
+  float: right;
+  border: solid 1px red;
+ }
+
+ .group {
+  content: "";
+  clear: both;
+  display: block;
+ }
+
+ li {
+  margin-left: 20px;
+  float: left;
+ }

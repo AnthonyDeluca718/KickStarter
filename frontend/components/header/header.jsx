@@ -22,18 +22,34 @@ class Header extends React.Component {
   personalGreeting(currentUser, logout) {
     return (
     	<hgroup className="header-group">
-    		<img className="profile_picture" src="./images/blank_profile.png" />
+    		<img className="profile-picture" src="./images/blank_profile.png" />
     		<button className="header-button" onClick={logout}>Log Out</button>
     	</hgroup>
     );
   }
 
   render() {
+    let rightCorner;
     if (this.props.currentUser) {
-      return this.personalGreeting(this.props.currentUser, this.props.logout);
+      rightCorner = this.personalGreeting(this.props.currentUser, this.props.logout);
     } else {
-      return this.sessionLinks();
+      rightCorner = this.sessionLinks();
     }
+
+    return(
+      <header>
+        <div className="left group">
+          left
+        </div>
+        <div className="right">
+          {rightCorner}
+        </div>
+        <div className="mid">
+          right
+        </div>
+
+      </header>
+    );
   }
 }
 
