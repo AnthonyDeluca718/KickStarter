@@ -29,11 +29,11 @@ class Header extends React.Component {
       source = 'images/default_profile.png';
     }
     return (
-        <div className="rightCorner">
-      		<img className="profile-picture" src={source}/>
-          <button className="header-button" onClick={logout}>Log Out</button>
-          <button className="search"><img className="mag-glass" src="images/mag_glass.png"/></button>
-        </div>
+      <ul className="rightCorner">
+    		<li><img className="profile-picture" src={source}/></li>
+        <li><button className="logout" onClick={logout}>Log Out</button></li>
+        <li><button className="search"><img className="mag-glass" src="images/mag_glass.png"/></button></li>
+      </ul>
     );
   }
 
@@ -59,7 +59,6 @@ class Header extends React.Component {
           <Link to="/" className="profile-cloned">CLONED</Link>
           <Link to="/" className="profile-starter">STARTER</Link>
         </div>
-
       </header>
     );
   }

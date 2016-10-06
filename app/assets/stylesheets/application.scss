@@ -82,6 +82,29 @@ img {
   height: 60px;
   width: 60px;
   float: right;
+  margin-left: 25px;
+}
+
+.logout {
+  float: right;
+  margin: 0 25px;
+  padding: 25px 0px;
+}
+
+.search {
+  display: block;
+  width: 20px;
+  height: 20px;
+  padding: 20px 0px;
+  float: right;
+  margin: 0px 25px;
+}
+
+.mag-glass {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-right: 50px;
 }
 
 .left
@@ -153,14 +176,8 @@ header button:hover {
   cursor: pointer;
 }
 
-.search {
-  display: block;
-  width: 25px;
-  height: 25px;
-}
-
-.mag-glass {
-
+.guest {
+  margin-right: 50px;
 }
 
 /*Error Page*/
