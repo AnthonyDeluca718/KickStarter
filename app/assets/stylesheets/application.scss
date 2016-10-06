@@ -98,11 +98,16 @@ img {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+}
+
+.logo {
   font-weight: bold;
   font-size: 24px;
   display: block;
   padding-top: 14px;
   padding-bottom: 25px;
+  width: 20%;
+  margin: 0;
 }
 
 .right{
@@ -124,7 +129,7 @@ img {
   position: relative;
 }
 
-.header-nav .hover-bar, .login-signup .hover-bar {
+header .hover-bar {
   opacity: 0;
   display: block;
   width: 100%;
@@ -135,7 +140,7 @@ img {
   background: #0c0;
 }
 
-.header-nav button:hover .hover-bar, .login-signup .Link:hover .hover-bar {
+header .Link:hover .hover-bar {
   opacity: 1;
 }
 
