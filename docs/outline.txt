@@ -57,7 +57,7 @@ Phase3: Project Search (1 days)
 -Create the project index view that displays in the search view.
 -Style the project-index.
 
-Phase4: Discover-part-1 (1 Day)
+Phase4: Discover (1 Day)
 -Create the discover view. ITs a grid of categories each with a picture.
 -Style the discover page.
 -Add more project test-seeds and check the search works.
