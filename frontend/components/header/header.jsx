@@ -45,10 +45,10 @@ class Header extends React.Component {
 
     return(
       <header>
-        <ul className="left group">
-          <li>Discover</li>
-          <li>Start a Project</li>
-          <li>About Us</li>
+        <ul className="header-nav left group">
+          <li><button>Discover<nav className="hover-bar"></nav></button></li>
+          <li><button>Start a Project<nav className="hover-bar"></nav></button></li>
+          <li><button>About Us<nav className="hover-bar"></nav></button></li>
         </ul>
         <div className="right">
           {rightCorner}
