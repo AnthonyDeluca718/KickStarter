@@ -44,8 +44,8 @@ ul {
 }
 
 body {
-  font-family: sans-serif;
-  background: #eee;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", sans-serif;
+  background: #F7F5F2;
 }
 
 img {
@@ -57,11 +57,6 @@ img {
   clear: both;
   display: block;
 }
-
-.content {
-  background: #eee;
-}
-
 /*Header Bar*/
 
 header {
@@ -205,3 +200,21 @@ header button:hover {
 }
 
 /*AuthForm*/
+
+.login-form-container {
+  background: #fff;
+  display: block;
+  width: 350px;
+  padding: 25px;
+  margin: 0 auto;
+  margin-top: 60px;
+}
+
+.login-input {
+  margin: 20px 0;
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #dad7d4;
+  width: 338px;
+}
