@@ -70,11 +70,13 @@ img {
 .profile-cloned {
   color: blue;
   font-family: RNS-B;
+  font-size: 32px;
 }
 
 .profile-starter {
   color: 	#3CB371;
   font-family: RNS-B;
+  font-size: 32px;
 }
 
 .profile-picture {
@@ -95,9 +97,11 @@ img {
 
 .mid
 {
+  display: block;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+  padding-top: 6px;
 }
 
 .logo {
@@ -142,6 +146,10 @@ header .hover-bar {
 
 header .Link:hover .hover-bar {
   opacity: 1;
+}
+
+.guest:hover {
+  cursor: pointer;
 }
 
 /*Error Page*/

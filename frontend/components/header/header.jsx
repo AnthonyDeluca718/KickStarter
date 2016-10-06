@@ -14,7 +14,7 @@ class Header extends React.Component {
       <nav className="login-signup rightCorner">
         <Link to="/login" activeClassName="current" className="Link">Login<nav className="hover-bar"></nav></Link>
         <Link to="/signup" activeClassName="current" className="Link">Sign up!<nav className="hover-bar"></nav></Link>
-        <button className="Link">Guest<nav className="hover-bar"></nav></button>
+        <button className="Link guest" >Guest<nav className="hover-bar"></nav></button>
       </nav>
     );
   }
@@ -51,8 +51,8 @@ class Header extends React.Component {
           {rightCorner}
         </div>
         <div className="mid">
-          <text className="profile-cloned">CLONED</text>
-          <text className="profile-starter">STARTER</text>
+          <Link to="/" className="profile-cloned">CLONED</Link>
+          <Link to="/" className="profile-starter">STARTER</Link>
         </div>
 
       </header>
