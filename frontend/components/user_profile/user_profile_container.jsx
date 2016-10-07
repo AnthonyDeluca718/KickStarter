@@ -2,12 +2,14 @@ import { connect } from 'react-redux';
 import UserProfile from './user_profile';
 import { edit } from '../../actions/session_actions';
 
-const mapStateToProps = ({ session }) => ({
-
-  bio: currentUser.bio,
-  photo_url: currentUser.photo_url,
-  id: currentUser.id
-});
+const mapStateToProps = (state) => {
+  return (
+    {
+      bio: state.profile.bio,
+      photo_url: state.profile.photo_url
+    }
+  )
+}
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
