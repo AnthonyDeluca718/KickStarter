@@ -1,14 +1,17 @@
 import React from 'react';
 import { Link, hashHistory } from 'react-router';
+import Modal from 'react-modal';
 
 class SessionForm extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			name: "",
-			password: ""
+			password: "",
+      modalOpen: false
 		};
 		this.handleSubmit = this.handleSubmit.bind(this);
+    this.onModalClose = this.onModalClose.bind(this);
 	}
 
 	componentDidUpdate() {
@@ -31,6 +34,9 @@ class SessionForm extends React.Component {
 		e.preventDefault();
 		const user = this.state;
 		this.props.processForm({user});
+    if(this.props.errors.length > 0) {
+      this.setState({modalOpen: true})
+    }
 	}
 
 	navLink() {
@@ -53,7 +59,12 @@ class SessionForm extends React.Component {
 		);
 	}
 
+  onModalClose() {
+    this.setState({modalOpen : false});
+  }
+
 	render() {
+
     let req;
     let type;
     if (this.props.formType === "login") {
@@ -63,12 +74,9 @@ class SessionForm extends React.Component {
       req = "Sign me up!";
       type = "Sign up";
     }
-
 		return (
 			<div className="login-form-container">
 				<form onSubmit={this.handleSubmit} className="login-form-box">
-					{ this.renderErrors() }
-
           <text className="form-type">{type}</text>
 
 					<input type="text"
@@ -84,7 +92,15 @@ class SessionForm extends React.Component {
             placeholder = "password"/>
 
           <input className="login-input login-button" type="submit" value={req} />
+
+            <Modal
+              isOpen={this.state.modalOpen}
+              onRequestClose={this.onModalClose}
+              >
+              {this.renderErrors()}
+            </Modal>
 				</form>
+
 			</div>
 		);
 	}
