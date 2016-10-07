@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import UserProfile from './user_profile';
-import { edit } from '../../actions/session_actions';
+import { edit } from '../../actions/profile_actions';
 import merge from 'lodash/merge';
 
 const mapStateToProps = (state) => {
