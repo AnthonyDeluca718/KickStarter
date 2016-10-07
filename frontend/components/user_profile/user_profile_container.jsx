@@ -1,14 +1,20 @@
 import { connect } from 'react-redux';
 import UserProfile from './user_profile';
 import { edit } from '../../actions/session_actions';
+import merge from 'lodash/merge';
 
 const mapStateToProps = (state) => {
-  return (
-    {
-      bio: state.profile.bio,
-      photo_url: state.profile.photo_url
-    }
-  )
+
+  let obj = {
+    bio: state.profile.bio,
+    photo_url: state.profile.photo_url
+  }
+
+  if (state.session.currentUser) {
+    merge(obj, {id: state.session.currentUser});
+  }
+
+  return (obj)
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
