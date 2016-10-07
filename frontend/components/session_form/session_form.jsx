@@ -81,6 +81,17 @@ class SessionForm extends React.Component {
       type = "Sign up";
     }
 
+    const style = {
+      content : {
+        margin: '0 auto',
+        width: '350px',
+        height: '150px',
+        border: '1px solid red',
+      }, overlay: {
+
+      }
+    };
+
 		return (
 			<div className="login-form-container">
 				<form onSubmit={this.handleSubmit} className="login-form-box">
@@ -103,7 +114,8 @@ class SessionForm extends React.Component {
             <Modal
               isOpen={this.state.modalOpen}
               onRequestClose={this.onModalClose}
-              >
+              style={style}
+            >
               {this.renderErrors()}
             </Modal>
 				</form>
