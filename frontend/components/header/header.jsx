@@ -14,7 +14,7 @@ class Header extends React.Component {
       <nav className="login-signup rightCorner">
         <Link to="/login" activeClassName="current" className="Link">Login<nav className="hover-bar"></nav></Link>
         <Link to="/signup" activeClassName="current" className="Link">Sign up<nav className="hover-bar"></nav></Link>
-        <button className="Link guest" >Guest<nav className="hover-bar"></nav></button>
+        <button className="Link guest" onClick = {this.props.guestLogin}>Guest<nav className="hover-bar"></nav></button>
         <button className="search"><img className="mag-glass" src="images/mag_glass.png"/></button>
       </nav>
     );

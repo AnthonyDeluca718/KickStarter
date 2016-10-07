@@ -16,6 +16,7 @@ Bonus-2) Tags: Users can tag posts. Users can search by posts.
 
 Required Views/Displays:
 -Error Page
+-error message when you enter bad credentials
 -Header
 -Project Creation
 -Profile Info
