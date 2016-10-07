@@ -4,14 +4,18 @@ import { edit } from '../../actions/session_actions';
 import merge from 'lodash/merge';
 
 const mapStateToProps = (state) => {
-
-  let obj = {
-    bio: state.profile.bio,
-    photo_url: state.profile.photo_url
-  }
-
   if (state.session.currentUser) {
-    merge(obj, {id: state.session.currentUser});
+    let user = state.session.currentUser;
+    return ({
+      id: user.id,
+      bio: user.bio,
+      photo_url: user.photo_url
+    })
+  } else {
+    return({
+      id: "",
+      bio: ""
+    })
   }
 
   return (obj)

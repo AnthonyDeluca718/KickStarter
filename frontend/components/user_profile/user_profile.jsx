@@ -10,10 +10,19 @@ class UserProfile extends React.Component {
       photo_url: props.photo_url,
       visible: false
     }
-    // this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    if(this.props.id) {
+      const user = {id: this.props.id, user: {photo_url: this.state.photo_url, bio: this.state.bio}}
+      this.props.processForm(user);
+    }
   }
 
   render() {
+    console.log(this.props.id === undefined);
     return (
 			<div className="profile-edit-container">
 				<form onSubmit={this.handleSubmit} className="profile-edit-box">
@@ -46,12 +55,6 @@ class UserProfile extends React.Component {
 			[field]: e.currentTarget.value
 		});
 	}
-
-  // handleSubmit(e) {
-  //   e.preventDefault();
-  //   const user = {id: this.props.id, user: {photo_url: this.state.photo_url, bio: this.state.bio}}
-  //   this.props.processForm(user);
-  // }
 
 
 }
