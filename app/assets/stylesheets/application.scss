@@ -145,9 +145,11 @@ header .left
 
 header .mid
 {
+  width: 20%;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+  display: inline-block;
   padding-top: 6px;
 }
 
