@@ -54,29 +54,36 @@ class SessionForm extends React.Component {
 	}
 
 	render() {
+    let req;
+    let type;
+    if (this.props.formType === "login") {
+      req = "Log me in!";
+      type = "Log in";
+    } else {
+      req = "Sign me up!";
+      type = "Sign up";
+    }
+
 		return (
 			<div className="login-form-container">
 				<form onSubmit={this.handleSubmit} className="login-form-box">
-					<br/>
-					Please {this.props.formType} or {this.navLink()}
 					{ this.renderErrors() }
-					<label> Name:
-						<input type="text"
-							value={this.state.name}
-							onChange={this.update("name")}
-							className="login-input"
-              placeholder="name" />
-					</label>
 
-					<label> Password:
-						<input type="password"
-							value={this.state.password}
-							onChange={this.update("password")}
-							className="login-input"
-              placeholder="password" />
-					</label>
+          <text className="form-type">{type}</text>
 
-					<input type="submit" value="Submit" />
+					<input type="text"
+						value={this.state.name}
+						onChange={this.update("name")}
+						className="login-input"
+            placeholder="name" />
+
+					<input type="password"
+						value={this.state.password}
+						onChange={this.update("password")}
+						className="login-input"
+            placeholder = "password"/>
+
+          <input className="login-input login-button" type="submit" value={req} />
 				</form>
 			</div>
 		);

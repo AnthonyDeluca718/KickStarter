@@ -218,3 +218,17 @@ header button:hover {
   border: 1px solid #dad7d4;
   width: 338px;
 }
+
+.login-button {
+  text-align: center;
+  background: #25CB68;
+}
+
+.login-button:hover {
+  cursor: pointer;
+  background: #05AF3C;
+}
+
+.form-type {
+  font-size: 30px;
+}
