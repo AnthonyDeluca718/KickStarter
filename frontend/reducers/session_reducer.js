@@ -19,8 +19,7 @@ const SessionReducer = (state = _nullUser, action) => {
     case RECEIVE_ERRORS:
       const errors = action.errors;
       let newState= merge({}, _nullUser, {
-        errors: action.errors,
-        modalOpen: true
+        errors: action.errors
       });
       return newState;
     default:
