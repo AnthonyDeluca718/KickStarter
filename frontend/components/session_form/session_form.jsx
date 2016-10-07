@@ -18,6 +18,12 @@ class SessionForm extends React.Component {
 		this.redirectIfLoggedIn();
 	}
 
+   componentWillReceiveProps(nextProps) {
+    if (nextProps.errors.length > 0) {
+      this.setState({modalOpen: true});
+    }
+  }
+
 	redirectIfLoggedIn(){
 		if (this.props.loggedIn) {
 			hashHistory.push("/");
@@ -74,6 +80,7 @@ class SessionForm extends React.Component {
       req = "Sign me up!";
       type = "Sign up";
     }
+
 		return (
 			<div className="login-form-container">
 				<form onSubmit={this.handleSubmit} className="login-form-box">
