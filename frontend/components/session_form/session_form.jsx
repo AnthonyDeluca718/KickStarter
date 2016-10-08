@@ -85,7 +85,7 @@ class SessionForm extends React.Component {
 
     const style = {
       content : {
-        margin: '250px auto 0 auto',
+        margin: '150px auto 0 auto',
         width: '350px',
         height: '115px',
         border: '1px solid red'

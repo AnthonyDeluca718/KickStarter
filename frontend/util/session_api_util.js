@@ -30,3 +30,13 @@ export const logout = success => {
 		}
 	});
 };
+
+export const editUser = (user, success, error) => {
+  $.ajax({
+    method: 'GET',
+    url: '/api/user/edit',
+    data: user,
+    success,
+    error
+  })
+}
