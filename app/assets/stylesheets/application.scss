@@ -46,6 +46,11 @@ ul {
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", sans-serif;
   background: #F7F5F2;
+  /* background: #F8F9FD; */
+}
+
+.content {
+  display: block;
 }
 
 img {
@@ -157,7 +162,7 @@ header .mid
   padding-top: 6px;
 }
 
-.logo {
+header .logo {
   font-weight: bold;
   font-size: 24px;
   display: block;
@@ -236,4 +241,57 @@ header button:hover {
 
 .form-type {
   font-size: 30px;
+}
+
+/* Error Page */
+
+.error .content {
+  display: block;
+  height: 270px;
+  width: 530px;
+  border-radius: 6px;
+  border: 1px solid black;
+  padding: 25px;
+  margin: 0 auto;
+  margin-top: 25px;
+  background: #F8F9FD;
+}
+
+.error h1 {
+  font-size: 52px;
+  color: #020621;
+  display: block;
+}
+
+.ohMy {
+  display: block;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.error .message {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.error .home-page-link {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.error-cloned {
+  color: blue;
+  font-family: RNS-B;
+  font-size: 24px;
+}
+
+.error-starter {
+  color: 	#3CB371;
+  font-family: RNS-B;
+  font-size: 24px;
+}
+
+.error {
+  width: 570px;
+  margin: 100px auto 0 auto;
 }
