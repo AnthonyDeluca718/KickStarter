@@ -16,7 +16,7 @@ const ProfileReducer = (state = nullProfile, action) => {
       });
     case RECEIVE_ERRORS:
       const errors = action.errors;
-      let newState= merge({}, _nullUser, {
+      let newState= merge({}, nullProfile, {
         errors: action.errors
       });
       return newState;

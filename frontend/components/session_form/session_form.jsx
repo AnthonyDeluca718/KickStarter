@@ -18,10 +18,14 @@ class SessionForm extends React.Component {
 		this.redirectIfLoggedIn();
 	}
 
-   componentWillReceiveProps(nextProps) {
-    if (nextProps.errors.length > 0) {
-      this.setState({modalOpen: true});
-    }
+  componentWillReceiveProps(nextProps) {
+    console.log(this.props.formType)
+    console.log(nextProps.formType)
+   	 if (this.props.formType != nextProps.formType) {
+   		this.setState({modalOpen: false});
+   	 } else if (nextProps.errors.length > 0) {
+    	this.setState({modalOpen: true});
+  	}
   }
 
 	redirectIfLoggedIn(){
@@ -83,10 +87,10 @@ class SessionForm extends React.Component {
 
     const style = {
       content : {
-        margin: '0 auto',
+        margin: '250px auto 0 auto',
         width: '350px',
-        height: '150px',
-        border: '1px solid red',
+        height: '115px',
+        border: '1px solid red'
       }, overlay: {
 
       }
