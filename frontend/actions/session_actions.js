@@ -33,4 +33,9 @@ export const receiveErrors = errors => ({
 export const receiveProfile = profile => ({
   type: RECEIVE_PROFILE,
   profile
+});
+
+export const editProfile = user => ({
+  type: EDIT_PROFILE,
+  user
 })

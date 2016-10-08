@@ -8,7 +8,8 @@ class UserProfile extends React.Component {
     this.state = {
       bio: props.bio,
       photo_url: props.photo_url,
-      visible: false
+      visible: false,
+      id: 0
     }
     this.handleSubmit = this.handleSubmit.bind(this);
   }
