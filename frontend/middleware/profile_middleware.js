@@ -11,6 +11,7 @@ export default ({getState, dispatch}) => next => action => {
   };
   switch(action.type){
     case EDIT:
+      debugger
       edit(action.user, successCallback, errorCallback);
       return next(action);
     default:

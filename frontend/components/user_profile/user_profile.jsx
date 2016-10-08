@@ -16,6 +16,7 @@ class UserProfile extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     if(this.props.id) {
+      debugger
       const user = {id: this.props.id, user: {photo_url: this.state.photo_url, bio: this.state.bio}}
       this.props.processForm(user);
     }

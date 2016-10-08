@@ -12,6 +12,7 @@ class Api::UsersController < ApplicationController
 	end
 
   def edit
+    debugger
     @user = User.find_by(id: params[:id])
 
     if @user.update(user_params)

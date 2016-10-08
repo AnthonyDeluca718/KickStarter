@@ -19,8 +19,6 @@ class SessionForm extends React.Component {
 	}
 
   componentWillReceiveProps(nextProps) {
-    console.log(this.props.formType)
-    console.log(nextProps.formType)
    	 if (this.props.formType != nextProps.formType) {
    		this.setState({modalOpen: false});
    	 } else if (nextProps.errors.length > 0) {

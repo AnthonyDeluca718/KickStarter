@@ -4,8 +4,7 @@ export const RECEIVE_ERRORS = "RECEIVE_ERRORS"
 
 export const edit = user => ({
   type: EDIT,
-  user,
-  currentUser
+  user
 });
 
 export const receiveErrors = errors => ({
