@@ -12,7 +12,6 @@ import { login, signup, logout, editUser } from '../util/session_api_util';
 
 export default ({getState, dispatch}) => next => action => {
   const userSuccessCallback = user => dispatch(receiveCurrentUser(user));
-  const profileSucessCallback = profile => dispatch(receiveProfile(profile))
   const errorCallback = xhr => {
     const errors = xhr.responseJSON;
     dispatch(receiveErrors(errors));
@@ -25,8 +24,8 @@ export default ({getState, dispatch}) => next => action => {
       logout(() => next(action));
       break;
     case EDIT_PROFILE:
-      editUser(action.user, profileSucessCallback, errorCallback);
-      break;
+      editUser(action.user, userSuccessCallback, errorCallback);
+      return next(action);
     case SIGNUP:
       signup(action.user, userSuccessCallback, errorCallback);
       return next(action);

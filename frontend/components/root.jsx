@@ -6,6 +6,7 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import App from './app';
 import SessionFormContainer from './session_form/session_form_container';
 import HeaderContainer from './header/header_container';
+import UserProfileContainer from './user_profile/user_profile_container'
 import Error from './error/error';
 
 const Root = ({ store }) => {
@@ -30,6 +31,7 @@ const Root = ({ store }) => {
         <Route path="/" component={App}>
           <Route path="/login" component={SessionFormContainer} onEnter={_redirectIfLoggedIn}/>/>
           <Route path="/signup" component={SessionFormContainer} onEnter={_redirectIfLoggedIn}/>/>
+          <Route path ="/profile" component={UserProfileContainer} onEnter={_ensureLoggedIn}/>
         </Route>
         <Route path="*" component={Error}/>
       </Router>

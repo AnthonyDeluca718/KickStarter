@@ -35,8 +35,8 @@ export const editUser = (user, success, error) => {
   $.ajax({
     method: 'GET',
     url: '/api/user/edit',
-    data: user,
+    data: {id: user.id, user: user},
     success,
     error
-  })
+  });
 }

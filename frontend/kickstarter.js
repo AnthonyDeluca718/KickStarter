@@ -11,7 +11,7 @@ import Modal from 'react-modal';
 document.addEventListener('DOMContentLoaded', () => {
   let store;
   if (window.currentUser) {
-    const initialState = {session: {currentUser: window.currentUser}};
+    const initialState = {session: {currentUser: window.currentUser, profile: window.profile}};
     store = configureStore(initialState);
   } else {
     store = configureStore();

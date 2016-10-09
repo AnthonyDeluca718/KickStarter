@@ -6,7 +6,6 @@ import UserProfileContainer from './user_profile/user_profile_container';
 const App = ({children}) => (
   <div>
     <HeaderContainer />
-    <UserProfileContainer />
     <section className="content">
       {children}
     </section>

@@ -1,19 +1,19 @@
 import { connect } from 'react-redux';
 import UserProfile from './user_profile';
-import { editUser } from '../../actions/profile_actions';
+import { editProfile } from '../../actions/session_actions';
 import merge from 'lodash/merge';
 
 const mapStateToProps = (state) => {
-  debugger
   return ({
-    bio: state.profile.bio,
-    photo_url: state.profile.photo_url
+    bio: state.session.currentUser.bio,
+    photo_url: state.session.currentUser.photo_url,
+    id: state.session.currentUser.id
   });
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    processForm: user => dispatch(editProfile(user))
+    processForm: (user) => dispatch(editProfile(user))
   };
 };
 

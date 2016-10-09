@@ -2,6 +2,7 @@
   <% if logged_in? %>
   	window.currentUser = <%= render("api/users/user.json.jbuilder",
   		user: current_user).html_safe %>
+    window.profile = {bio: window.currentUser.bio, photo_url: window.currentUser.photo_url};
   <% end %>
 </script>
 

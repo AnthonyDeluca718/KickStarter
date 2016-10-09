@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
 	validates :password, length: {minimum: 6, allow_nil: true}
 
 	after_initialize :ensure_session_token
-	before_validation :ensure_session_token_uniqueness
+	# before_validation :ensure_session_token_uniqueness
 
 	def password= password
 		self.password_digest = BCrypt::Password.create(password)

@@ -35,7 +35,7 @@ export const receiveProfile = profile => ({
   profile
 });
 
-export const editProfile = user => ({
+export const editProfile = (user) => ({
   type: EDIT_PROFILE,
   user
 })

@@ -8,18 +8,15 @@ class UserProfile extends React.Component {
     this.state = {
       bio: props.bio,
       photo_url: props.photo_url,
-      visible: false,
-      id: 0
+      id: props.id
     }
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    if(this.props.id) {
-      const user = {id: this.props.id, user: {photo_url: this.state.photo_url, bio: this.state.bio}}
-      this.props.processForm(user);
-    }
+    const user = {photo_url: this.state.photo_url, bio: this.state.bio, id: this.state.id};
+    this.props.processForm(user);
   }
 
   render() {
