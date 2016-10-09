@@ -65,7 +65,6 @@ class SessionForm extends React.Component {
 	}
 
   onModalClose() {
-    console.log("close");
     this.setState({modalOpen : false});
   }
 
