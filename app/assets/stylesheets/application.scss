@@ -295,3 +295,43 @@ header button:hover {
   width: 570px;
   margin: 100px auto 0 auto;
 }
+
+/* Profile Container */
+
+.profile-edit-container {
+  background: #fff;
+  display: block;
+  width: 600px;
+  padding: 25px;
+  margin: 0 auto;
+  margin-top: 60px;
+}
+
+.photo-url-input, .bio-input {
+  display: block;
+  margin: 10px 0;
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #dad7d4;
+  width: 580px;
+}
+
+.bio-input {
+  height: 300px;
+  vertical-align: top;
+}
+
+.profile-submit {
+  text-align: center;
+  background: #25CB68;
+  padding: 5px;
+  border: 1px solid #dad7d4;
+  border-radius: 4px;
+  font-size: 24px;
+}
+
+.profile-submit:hover {
+  cursor: pointer;
+  background: #05AF3C;
+}

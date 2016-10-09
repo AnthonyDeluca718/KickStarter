@@ -34,7 +34,7 @@ class UserProfile extends React.Component {
             />
 
           Bio:
-          <input type="bio"
+          <textarea
 						value={this.state.bio}
 						onChange={this.update("bio")}
 						className="bio-input"
