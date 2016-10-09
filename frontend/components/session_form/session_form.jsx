@@ -42,9 +42,6 @@ class SessionForm extends React.Component {
 		e.preventDefault();
 		const user = this.state;
 		this.props.processForm({user});
-    if(this.props.errors.length > 0) {
-      this.setState({modalOpen: true})
-    }
 	}
 
 	navLink() {
@@ -68,6 +65,7 @@ class SessionForm extends React.Component {
 	}
 
   onModalClose() {
+    console.log("close");
     this.setState({modalOpen : false});
   }
 
