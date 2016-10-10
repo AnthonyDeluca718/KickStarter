@@ -10,6 +10,8 @@
 #  description    :text             default("")
 #  end_date       :date
 #  head_photo_url :text             not null
+#  goal           :integer
+#  pledged        :integer          default(0)
 #
 
 class Project < ActiveRecord::Base
@@ -17,6 +19,13 @@ class Project < ActiveRecord::Base
   validates :title, :user_id, presence: true
 
   belongs_to :user
+
+  has_many :rewards
+
+  has_many :rewardBuys,
+    through: :rewards,
+    source: :rewardBuys
+
 
 
 end
