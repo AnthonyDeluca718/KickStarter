@@ -12,6 +12,8 @@
 
 class Reward < ActiveRecord::Base
 
+  validates :cost, :title, :body, :project_id, presence: true
+
   belongs_to :project
 
   has_many :rewardBuys,

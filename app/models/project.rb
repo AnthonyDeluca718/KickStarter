@@ -16,7 +16,7 @@
 
 class Project < ActiveRecord::Base
 
-  validates :title, :user_id, presence: true
+  validates :title, :user_id, :category_id, :target, :description, :end_date, :head_photo_url, :goal,  presence: true
 
   belongs_to :user
 
