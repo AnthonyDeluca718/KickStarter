@@ -9,6 +9,8 @@ import HeaderContainer from './header/header_container';
 import UserProfileContainer from './user_profile/user_profile_container'
 import Error from './error/error';
 
+import ProjectForm from './project/project_form'
+
 const Root = ({ store }) => {
 
   const _ensureLoggedIn = (nextState, replace) => {
@@ -31,7 +33,8 @@ const Root = ({ store }) => {
         <Route path="/" component={App}>
           <Route path="/login" component={SessionFormContainer} onEnter={_redirectIfLoggedIn}/>/>
           <Route path="/signup" component={SessionFormContainer} onEnter={_redirectIfLoggedIn}/>/>
-          <Route path ="/profile" component={UserProfileContainer} onEnter={_ensureLoggedIn}/>
+          <Route path="/profile" component={UserProfileContainer} onEnter={_ensureLoggedIn}/>
+          <Route path="/projects/new" component={ProjectForm} onEnter={_ensureLoggedIn} />
         </Route>
         <Route path="*" component={Error}/>
       </Router>

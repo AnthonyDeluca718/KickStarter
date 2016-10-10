@@ -8,8 +8,8 @@
 #  session_token   :string           not null
 #  created_at      :datetime
 #  updated_at      :datetime
-#  photo_url       :string
-#  bio             :text
+#  photo_url       :string           default("")
+#  bio             :text             default("")
 #
 
 class User < ActiveRecord::Base
@@ -22,6 +22,8 @@ class User < ActiveRecord::Base
 
 	after_initialize :ensure_session_token
 	# before_validation :ensure_session_token_uniqueness
+
+  has_many :projects
 
 	def password= password
 		self.password_digest = BCrypt::Password.create(password)

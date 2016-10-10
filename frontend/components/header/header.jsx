@@ -32,6 +32,7 @@ class Header extends React.Component {
       <ul className="rightCorner">
     		<li><Link to="/profile"><img className="profile-picture" src={source}/></Link></li>
         <li><Link to = "/" onClick={logout}><button className="logout Link">Log Out<nav className="hover-bar"></nav></button></Link></li>
+        <li><Link to = "/projects/new" ><button className="newProject Link">Start a Project<nav className="hover-bar"></nav></button></Link></li>
         <li><button className="search"><img className="mag-glass" src="images/mag_glass.png"/></button></li>
       </ul>
     );

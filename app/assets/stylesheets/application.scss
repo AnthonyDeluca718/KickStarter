@@ -335,3 +335,37 @@ header button:hover {
   cursor: pointer;
   background: #05AF3C;
 }
+
+/* ProjectForm */
+
+.project-form-container {
+  background: #fff;
+  display: block;
+  width: 350px;
+  padding: 25px;
+  margin: 0 auto;
+  margin-top: 60px;
+}
+
+.project-input {
+  margin: 20px 0;
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #dad7d4;
+  width: 338px;
+}
+
+.project-button {
+  text-align: center;
+  background: #25CB68;
+}
+
+.project-button:hover {
+  cursor: pointer;
+  background: #05AF3C;
+}
+
+.form-type {
+  font-size: 30px;
+}
