@@ -8,6 +8,15 @@ export const editProjectUtil = (project, success, error) => {
   })
 }
 
+export const getProjectUtil = (id, success, error) => {
+  $.ajax({
+    method: 'GET',
+    url: `/api/projects/${id}`,
+    success,
+    error
+  })
+}
+
 export const newProjectUtil = (project, success, error) => {
   $.ajax({
     method: 'POST',

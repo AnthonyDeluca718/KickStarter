@@ -14,6 +14,7 @@ class UserProfile extends React.Component {
   }
 
   handleSubmit(e) {
+    alert("I am working on what to put after you update. But you updated!")
     e.preventDefault();
     const user = {photo_url: this.state.photo_url, bio: this.state.bio, id: this.state.id};
     this.props.processForm(user);

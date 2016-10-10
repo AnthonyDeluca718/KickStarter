@@ -10,6 +10,7 @@ import UserProfileContainer from './user_profile/user_profile_container'
 import Error from './error/error';
 
 import ProjectFormContainer from './project/project_form_container'
+import ProjectShowContainer from './project/project_show_container'
 
 const Root = ({ store }) => {
 
@@ -34,7 +35,8 @@ const Root = ({ store }) => {
           <Route path="/login" component={SessionFormContainer} onEnter={_redirectIfLoggedIn}/>/>
           <Route path="/signup" component={SessionFormContainer} onEnter={_redirectIfLoggedIn}/>/>
           <Route path="/profile" component={UserProfileContainer} onEnter={_ensureLoggedIn}/>
-          <Route path="/projects/new" component={ProjectFormContainer} onEnter={_ensureLoggedIn} />
+          <Route path="/projects/new" onEnter={_ensureLoggedIn} component={ProjectFormContainer} />
+          <Route path="projects/:id" component={ProjectShowContainer} />
         </Route>
         <Route path="*" component={Error}/>
       </Router>
