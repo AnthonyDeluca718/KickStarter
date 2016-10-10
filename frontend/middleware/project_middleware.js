@@ -8,7 +8,7 @@ import {
 import { newProjectUtil, editProjectUtil } from '../util/project_api_util';
 
 export default ({getState, dispatch}) => next => action => {
-  const successCallback = () => dispatch();
+  const successCallback = () => dispatch({type: "Pass"});
   const errorCallback = xhr => {
     const errors = xhr.responseJSON;
     dispatch(receiveErrors(errors));

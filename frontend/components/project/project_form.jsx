@@ -36,6 +36,7 @@ class ProjectForm extends React.Component {
 	}
 
 	handleSubmit(e) {
+    alert("Your project is submitted. I am working on the project display now");
 		e.preventDefault();
 		const project = {
       title: this.state.title,
