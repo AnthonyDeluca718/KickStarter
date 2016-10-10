@@ -27,7 +27,11 @@ class User < ActiveRecord::Base
 
   has_many :rewardBuys,
     class_name: :RewardBuy,
-    foreign_key: :reward_id
+    foreign_key: :user_id
+
+  has_many :rewards,
+    through: :rewardBuys,
+    source: :reward
 
 	def password= password
 		self.password_digest = BCrypt::Password.create(password)
@@ -50,6 +54,15 @@ class User < ActiveRecord::Base
 		self.save
 		self.session_token
 	end
+
+  def total_spent
+    buys = self.rewards
+    if (buys)
+      return buys.inject(0) {|sum,buy| sum+=buy.cost}
+    else
+      return 0
+    end
+  end
 
 	private
 
