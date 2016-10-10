@@ -29,7 +29,7 @@ class ProjectShow extends React.Component {
         <div className="project-show-element project-show-goal">{this.props.project.goal}</div>
 
         <div
-          className="project-show-element project-show-decription"
+          className="project-show-element project-show-description"
         >{this.props.project.description}</div>
 
         <text

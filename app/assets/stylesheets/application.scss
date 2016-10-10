@@ -360,7 +360,6 @@ header button:hover {
   text-align: center;
   background: #25CB68;
   width: 300px;
-
 }
 
 .project-button:hover {
@@ -387,24 +386,31 @@ header button:hover {
 .project-show-container {
   background: #fff;
   display: block;
-  width: 850px;
-  padding: 25px 0;
+  width: 700px;
+  padding: 25px;
   margin: 0 auto;
   margin-top: 60px;
 }
 
 .project-show-element {
-  display: block;
-  margin: 20px;
-  border: 1px solid black;
+  margin: 20px 0;
   padding: 10px;
   border-radius: 6px;
   border: 1px solid #dad7d4;
-  width: 338px;
+  width: 678px;
 }
 
 .project-show-head-photo {
   width: 500px;
   height: 500px;
   margin: 40px auto 25px auto;
+}
+
+.pro-show-label {
+  display: block;
+  font-size: 24px;
+  margin: 20px 0;
+}
+
+.project-show-description {
 }
