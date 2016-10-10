@@ -48,17 +48,17 @@ class ProjectForm extends React.Component {
 		this.props.processForm(project);
 	}
 
-	// renderErrors() {
-	// 	return(
-	// 		<ul>
-	// 			{this.props.errors.map((error, i) => (
-	// 				<li key={`error-${i}`}>
-	// 					{error}
-	// 				</li>
-	// 			))}
-	// 		</ul>
-	// 	);
-	// }
+	renderErrors() {
+		return(
+			<ul>
+				{this.props.errors.map((error, i) => (
+					<li key={`error-${i}`}>
+						{error}
+					</li>
+				))}
+			</ul>
+		);
+	}
 
   onModalClose() {
     this.setState({modalOpen : false});
