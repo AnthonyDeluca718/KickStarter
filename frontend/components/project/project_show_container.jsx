@@ -7,9 +7,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  const path = ownProps.location.pathname;
-  const id = path[path.length-1];
-  debugger
+  const id = ownProps.params.id;
   return {
     getProject: (id) => dispatch(getProject(id)),
     id

@@ -6,40 +6,32 @@ class ProjectShow extends React.Component {
 
 	constructor(props) {
 		super(props);
-    let today = new Date();
-		this.state = {
-			title: this.props.project.title,
-			headPhotoUrl: this.props.project.headPhotoUrl,
-      goal: this.props.project.goal,
-      description: this.props.project.description,
-      endDate: this.props.project.endDate,
-      modalOpen: false,
-      user_id: 1
-		};
 	}
 
   componentDidMount() {
     this.props.getProject(this.props.id);
-    debugger
-    "blurb"
+  }
+
+  componentWillReceiveProps() {
+    this.props.getProject(this.props.id);
   }
 
   render() {
     return (
       <div className="project-show-container">
-        <text className="project-show-title">{this.state.title}</text>
+        <text className="project-show-title">{this.props.project.title}</text>
 
-        <a className="project-show-head-photo" href={this.state.headPhotoUrl}></a>
+        <a className="project-show-head-photo" href={this.props.project.headPhotoUrl}></a>
 
-        <div className="project-show-goal">{this.state.goal}</div>
+        <div className="project-show-goal">{this.props.project.goal}</div>
 
         <text
           className="project-show-decription"
-        >{this.state.description}</text>
+        >{this.props.project.description}</text>
 
         <text
           className="project-show-date"
-        >{this.state.endDate}</text>
+        >{this.props.project.endDate}</text>
       </div>
     )
   }
