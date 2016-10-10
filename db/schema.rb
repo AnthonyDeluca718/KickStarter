@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161010191842) do
+ActiveRecord::Schema.define(version: 20161010195829) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,10 +28,16 @@ ActiveRecord::Schema.define(version: 20161010191842) do
     t.integer "pledged",        default: 0
   end
 
+  add_index "projects", ["category_id"], name: "index_projects_on_category_id", using: :btree
+  add_index "projects", ["user_id"], name: "index_projects_on_user_id", using: :btree
+
   create_table "reward_buys", force: :cascade do |t|
     t.integer "user_id",   null: false
     t.integer "reward_id", null: false
   end
+
+  add_index "reward_buys", ["reward_id"], name: "index_reward_buys_on_reward_id", using: :btree
+  add_index "reward_buys", ["user_id"], name: "index_reward_buys_on_user_id", using: :btree
 
   create_table "rewards", force: :cascade do |t|
     t.integer "cost",       null: false
@@ -40,6 +46,8 @@ ActiveRecord::Schema.define(version: 20161010191842) do
     t.text    "body",       null: false
     t.integer "project_id", null: false
   end
+
+  add_index "rewards", ["project_id"], name: "index_rewards_on_project_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "name",                         null: false
