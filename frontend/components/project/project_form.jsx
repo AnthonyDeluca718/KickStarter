@@ -41,10 +41,10 @@ class ProjectForm extends React.Component {
 		const project = {
       title: this.state.title,
       user_id: this.state.user_id,
-      target: this.state.goal,
       description: this.state.description,
       end_date: this.state.endDate,
-      head_photo_url: this.state.headPhotoUrl
+      head_photo_url: this.state.headPhotoUrl,
+      goal: this.state.goal
     };
 		this.props.processForm(project);
 	}

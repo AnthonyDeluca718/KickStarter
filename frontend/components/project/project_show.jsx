@@ -12,25 +12,28 @@ class ProjectShow extends React.Component {
     this.props.getProject(this.props.id);
   }
 
-  componentWillReceiveProps() {
-    this.props.getProject(this.props.id);
+  componentWillReceiveProps(nextProps) {
+
+    if (this.props.id != nextProps.id) {
+      this.props.getProject(this.props.id);
+    }
   }
 
   render() {
     return (
       <div className="project-show-container">
-        <text className="project-show-title">{this.props.project.title}</text>
+        <text className="project-show-element project-show-title">{this.props.project.title}</text>
 
-        <a className="project-show-head-photo" href={this.props.project.headPhotoUrl}></a>
+        <img className="project-show-head-photo" src={this.props.project.headPhotoUrl}></img>
 
-        <div className="project-show-goal">{this.props.project.goal}</div>
+        <div className="project-show-element project-show-goal">{this.props.project.goal}</div>
 
         <text
-          className="project-show-decription"
+          className="project-show-element project-show-decription"
         >{this.props.project.description}</text>
 
         <text
-          className="project-show-date"
+          className="project-show-element project-show-date"
         >{this.props.project.endDate}</text>
       </div>
     )

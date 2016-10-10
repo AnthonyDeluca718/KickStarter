@@ -10,9 +10,18 @@ const _emptyProject = {
   modalOpen: false,
 }
 const ProjectReducer = (state = _emptyProject, action) => {
+  let newState;
+  let proj;
   switch(action.type) {
     case RECEIVE_CURRENT_PROJECT:
-      return merge({}, state, action.project);
+      newState = merge({}, state);
+      proj = action.project;
+      newState.title = proj.title;
+      newState.headPhotoUrl = proj.head_photo_url;
+      newState.goal = proj.goal;
+      newState.description = proj.description;
+      newState.endDate = proj.end_date;
+      return newState;
     default:
       return state;
   }

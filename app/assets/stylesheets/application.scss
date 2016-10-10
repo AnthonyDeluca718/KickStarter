@@ -369,3 +369,30 @@ header button:hover {
 .form-type {
   font-size: 30px;
 }
+
+/* ProjectShow */
+
+.project-show-container {
+  background: #fff;
+  display: block;
+  width: 850px;
+  padding: 25px 0;
+  margin: 0 auto;
+  margin-top: 60px;
+}
+
+.project-show-element {
+  display: block;
+  margin: 20px;
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #dad7d4;
+  width: 338px;
+}
+
+.project-show-head-photo {
+  width: 500px;
+  height: 500px;
+  margin: 40px auto 25px auto;
+}
