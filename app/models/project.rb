@@ -27,6 +27,13 @@ class Project < ActiveRecord::Base
     through: :rewards,
     source: :rewardBuys
 
-
+  def totalFuding
+    buys = self.rewardBuys
+    if (buys)
+      return buys.inject(0) {|sum,buy| sum+=buy.cost}
+    else
+      return 0
+    end
+  end
 
 end
