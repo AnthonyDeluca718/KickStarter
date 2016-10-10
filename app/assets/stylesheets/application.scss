@@ -341,7 +341,7 @@ header button:hover {
 .project-form-container {
   background: #fff;
   display: block;
-  width: 350px;
+  width: 700px;
   padding: 25px;
   margin: 0 auto;
   margin-top: 60px;
@@ -353,12 +353,14 @@ header button:hover {
   padding: 10px;
   border-radius: 6px;
   border: 1px solid #dad7d4;
-  width: 338px;
+  width: 678px;
 }
 
 .project-button {
   text-align: center;
   background: #25CB68;
+  width: 300px;
+
 }
 
 .project-button:hover {
@@ -368,6 +370,16 @@ header button:hover {
 
 .form-type {
   font-size: 30px;
+}
+
+.project-description {
+  height: 200px;
+}
+
+.pro-label {
+  display: block;
+  font-size: 24px;
+  margin: 20px 0;
 }
 
 /* ProjectShow */

@@ -94,17 +94,20 @@ class ProjectForm extends React.Component {
   					className="project-input project-head-photo-url"
             placeholder = "Head Photo Url"/>
 
+          <label for="pro-goal" className="project-label">Goal:</label>
+          
           <input type="number"
   					value={this.state.goal}
   					onChange={this.update("goal")}
   					className="project-input project-goal"
             placeholder = "Project Goal"/>
 
+          <label for="pro-date" className="project-label">End Date:</label>
 
-          <input type="text"
+          <textarea
             value={this.state.description}
             onChange={this.update("description")}
-            className="project-input project-descripton"
+            className="project-input project-description"
             placeholder="Description"
             />
 
