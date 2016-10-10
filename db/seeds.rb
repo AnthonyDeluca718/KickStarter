@@ -43,3 +43,14 @@ pokeSapphire = Project.create!({title: "Pokemon Sapphire", user_id: sapphire.id,
   head_photo_url: "http://techgeek.com.au/wp-content/uploads/2014/05/pokemon-alpha-sapphire-cover-crop_1280.0_cinema_1280.0.jpg",
   description: 'Pokémon Ruby Version and Sapphire Version are the third installments of the Pokémon series of role-playing video games, developed by Game Freak and published by Nintendo for the Game Boy Advance. The games were first released in Japan in late 2002 and internationally in 2003. Pokémon Emerald, a special edition version, was released two years later in each region. These three games (Pokémon Ruby, Sapphire, and Emerald) are part of the third generation of the Pokémon video game series, also known as the "advanced generation". Remakes of the two games, titled Omega Ruby and Alpha Sapphire, were released for the Nintendo 3DS onward worldwide on November 21, 2014, exactly twelve years to the date of the original Ruby and Sapphire release date, with the exception of Europe, where it was released on November 28, 2014.[2]'
   })
+
+blueReward1 = Reward.create({cost: 50, title: "Support Blue", body: "This would help Blue a ton. You get a personal message and a copy of the game.", project_id: pokeBlue.id})
+blueReward2 = Reward.create({cost: 200, title: "Become a Patron of Blue", body: "You get two copies of the game, a personalized message, and Blue-themed gameboy case. Also Blue's gratitude", project_id: pokeBlue.id})
+blueReward3 = Reward.create({cost: 500, title: "Become am amazing PAtron", body: "It would really be incredible if you gave this much. Don't give unless you are LOADED! You get everything in the previous tier times two. Plus a handwritten thnak you from BLUE.", project_id: pokeBlue.id})
+redReward1 = Reward.create({cost: 50, title: "Support Red", body: "This would help Red a ton. you get the game. Red will remember you when they become the world's greatest pokemon trainer.", project_id: pokeRed.id})
+
+silver500Blue = RewardBuy.create!({user_id: silver.id, reward_id: blueReward3.id})
+sapphire200Blue = RewardBuy.create!({user_id: sapphire.id, reward_id: blueReward2.id})
+blue50Red = RewardBuy.create!({user_id: blue.id, reward_id: redReward1.id})
+red50Blue = RewardBuy.create!({user_id: red.id, reward_id: blueReward1.id})
+silver50Blue = RewardBuy.create!({user_id: silver.id, reward_id: blueReward1.id})
