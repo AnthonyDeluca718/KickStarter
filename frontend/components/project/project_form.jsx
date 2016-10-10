@@ -6,13 +6,15 @@ class ProjectForm extends React.Component {
   const
 	constructor(props) {
 		super(props);
+    let today = new Date();
 		this.state = {
 			title: "",
-			hadPhoto: "",
+			headPhotoUrl: "",
       goal: 0,
       description: "",
-      endDate: new Date(), 
-      modalOpen: false
+      endDate: today.toISOString().split('T')[0],
+      modalOpen: false,
+      user_id: 1
 		};
 		this.handleSubmit = this.handleSubmit.bind(this);
     this.onModalClose = this.onModalClose.bind(this);
@@ -34,10 +36,16 @@ class ProjectForm extends React.Component {
 	}
 
 	handleSubmit(e) {
-    debugger
 		e.preventDefault();
-		// const user = this.state;
-		// this.props.processForm({user});
+		const project = {
+      title: this.state.title,
+      user_id: this.state.user_id,
+      target: this.state.goal,
+      description: this.state.description,
+      end_date: this.state.endDate,
+      head_photo_url: this.state.headPhotoUrl
+    };
+		this.props.processForm(project);
 	}
 
 	// renderErrors() {
@@ -80,21 +88,21 @@ class ProjectForm extends React.Component {
             placeholder="Title" />
 
           <input type="text"
-  					value={this.state.titlePic}
-  					onChange={this.update("titlePic")}
-  					className="project-input project-title-pic"
+  					value={this.state.headPhotoUrl}
+  					onChange={this.update("headPhotoUrl")}
+  					className="project-input project-head-photo-url"
             placeholder = "Head Photo Url"/>
 
           <input type="number"
-  					value={this.state.projectGoal}
-  					onChange={this.update("titlePic")}
+  					value={this.state.goal}
+  					onChange={this.update("goal")}
   					className="project-input project-goal"
             placeholder = "Project Goal"/>
 
 
           <input type="text"
             value={this.state.description}
-            onChange={this.update("titlePic")}
+            onChange={this.update("description")}
             className="project-input project-descripton"
             placeholder="Description"
             />

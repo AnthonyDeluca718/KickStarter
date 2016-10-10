@@ -1,7 +1,7 @@
 class Api::ProjectsController < ApplicationController
 
 	def create
-		@user = Project.new(project_params)
+		@project = Project.new(project_params)
 
 		if @project.save
 			render "api/projects/show"
@@ -23,7 +23,7 @@ class Api::ProjectsController < ApplicationController
 	private
 
 	def project_params
-		params.require(:project).permit(:title, :user_id, :photo_url, :bio, :description, :end_date, )
+		params.require(:project).permit(:title, :user_id, :head_photo_url, :bio, :description, :end_date, :head_photo_url )
 	end
 
 end
