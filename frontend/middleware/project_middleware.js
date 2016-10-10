@@ -3,11 +3,13 @@ import {
         EDIT_PROJECT,
         RECEIVE_ERRORS,
         RECEIVE_CURRENT_PROJECT,
+        GET_PROJECT,
+        getProject,
         receiveCurrentProject,
         receiveErrors
        } from '../actions/project_actions';
 
-import { newProjectUtil, editProjectUtil } from '../util/project_api_util';
+import { newProjectUtil, editProjectUtil, getProjectUtil } from '../util/project_api_util';
 
 export default ({getState, dispatch}) => next => action => {
   const successCallback = (project) => dispatch(receiveCurrentProject(project));
@@ -19,6 +21,8 @@ export default ({getState, dispatch}) => next => action => {
     case NEW_PROJECT:
       newProjectUtil(action.project, successCallback, errorCallback)
       return next(action);
+    case GET_PROJECT:
+      getProjectUtil(action.id, successCallback, errorCallback)
     default:
       return next(action);
   }

@@ -20,6 +20,15 @@ class Api::ProjectsController < ApplicationController
     end
   end
 
+  def show
+    @project = Project.find_by(id: params[:id])
+    if @project
+      render "api/projects/show"
+    else
+
+    end
+  end
+
 	private
 
 	def project_params

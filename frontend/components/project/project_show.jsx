@@ -8,28 +8,23 @@ class ProjectShow extends React.Component {
 		super(props);
     let today = new Date();
 		this.state = {
-			title: "",
-			headPhotoUrl: "",
-      goal: 0,
-      description: "",
-      endDate: today.toISOString().split('T')[0],
+			title: this.props.project.title,
+			headPhotoUrl: this.props.project.headPhotoUrl,
+      goal: this.props.project.goal,
+      description: this.props.project.description,
+      endDate: this.props.project.endDate,
       modalOpen: false,
       user_id: 1
 		};
 	}
 
+  componentDidMount() {
+    this.props.getProject(this.props.id);
+    debugger
+    "blurb"
+  }
+
   render() {
-    const style = {
-      content : {
-        margin: '150px auto 0 auto',
-        width: '350px',
-        height: '115px',
-        border: '1px solid red'
-      }, overlay: {
-
-      }
-    };
-
     return (
       <div className="project-show-container">
         <text className="project-show-title">{this.state.title}</text>
@@ -44,8 +39,10 @@ class ProjectShow extends React.Component {
 
         <text
           className="project-show-date"
-        >{this.state.projectDate}</text>
+        >{this.state.endDate}</text>
       </div>
     )
   }
 }
+
+export default ProjectShow;
