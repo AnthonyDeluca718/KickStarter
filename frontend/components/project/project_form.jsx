@@ -14,16 +14,17 @@ class ProjectForm extends React.Component {
       description: "",
       endDate: today.toISOString().split('T')[0],
       modalOpen: false,
-      category_id: 2
+      category_id: 2,
+      modalOpen: false
 		};
 		this.handleSubmit = this.handleSubmit.bind(this);
     this.onModalClose = this.onModalClose.bind(this);
 	}
 
-	componentDidUpdate() {
-	}
-
   componentWillReceiveProps(nextProps) {
+   	if (nextProps.errors.length > 0) {
+    	this.setState({modalOpen: true});
+  	}
   }
 
 	redirectIfLoggedIn(){
@@ -78,7 +79,6 @@ class ProjectForm extends React.Component {
       }
     };
 
-
   	return (
   		<div className="project-form-container">
   			<form onSubmit={this.handleSubmit} className="login-form-box">
@@ -120,6 +120,14 @@ class ProjectForm extends React.Component {
         <input className="project-input project-button" type="submit" value="Create Project" />
 
   			</form>
+
+        <Modal
+          isOpen={this.state.modalOpen}
+          onRequestClose={this.onModalClose}
+          style={style}
+        >
+          {this.renderErrors()}
+        </Modal>
 
   		</div>
     );

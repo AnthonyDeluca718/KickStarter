@@ -3,8 +3,12 @@ import ProjectForm from './project_form';
 import { newProject } from '../../actions/project_actions';
 
 
-const mapStateToProps = () => ({
-});
+const mapStateToProps = (state) => {
+  debugger
+  return ({
+    errors: state.session.errors
+  });
+};
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
