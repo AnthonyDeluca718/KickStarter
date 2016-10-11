@@ -27,7 +27,7 @@ class Project < ActiveRecord::Base
     through: :rewards,
     source: :rewardBuys
 
-  def totalFunding
+  def total_funding
     rewards = self.rewards.includes(:rewardBuys)
 
     if (rewards)
