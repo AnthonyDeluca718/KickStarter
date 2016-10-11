@@ -26,7 +26,7 @@ class Api::ProjectsController < ApplicationController
     if @project
       render "api/projects/show"
     else
-
+      render json: "Project not found", status: 404
     end
   end
 

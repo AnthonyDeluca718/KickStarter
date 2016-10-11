@@ -6,7 +6,6 @@
 #  title          :string           not null
 #  user_id        :integer          not null
 #  category_id    :integer
-#  target         :integer
 #  description    :text             default("")
 #  end_date       :date
 #  head_photo_url :text             not null

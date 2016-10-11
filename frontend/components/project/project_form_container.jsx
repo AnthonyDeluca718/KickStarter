@@ -4,7 +4,6 @@ import { newProject } from '../../actions/project_actions';
 
 
 const mapStateToProps = (state) => {
-  debugger
   return ({
     errors: state.session.errors
   });
