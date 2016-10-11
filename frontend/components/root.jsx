@@ -12,6 +12,7 @@ import ProjectFormContainer from './project/project_form_container'
 import ProjectShowContainer from './project/project_show_container'
 import SearchContainer from './search/search_container'
 import About from './about';
+import Discovery from './discovery/discovery';
 
 const Root = ({ store }) => {
 
@@ -40,6 +41,7 @@ const Root = ({ store }) => {
           <Route path="/projects/:id" component={ProjectShowContainer} />
           <Route path="/search" component = {SearchContainer} />
           <Route path="/about" component = {About} />
+          <Route path="/discovery" component = {Discovery} />
         </Route>
         <Route path="*" component={Error}/>
       </Router>

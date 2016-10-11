@@ -6,7 +6,6 @@ class Api::CategoriesController < ApplicationController
   end
 
   def show
-    
     render "api/search/index"
   end
 end

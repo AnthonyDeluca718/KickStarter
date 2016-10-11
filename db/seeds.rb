@@ -12,10 +12,10 @@ Reward.delete_all
 RewardBuy.delete_all
 Project.delete_all
 
-game = Category.create!({name: "Game", picture_url: 'assets/images/ArtCat.jpg' })
-doc = Category.create!({name: "Documentary", picture_url: 'assets/images/DocumentaryCat.png'})
-art = Category.create!({name: "Art", picture_url: 'assets/images/GamesCat.jpg'})
-music = Category.create!({name: "Music", picture_url: 'assets/images/MusicCat'})
+game = Category.create!({name: "Game", picture_url: 'images/ArtCat.jpg' })
+doc = Category.create!({name: "Documentary", picture_url: 'images/DocumentaryCat.png'})
+art = Category.create!({name: "Art", picture_url: 'images/GamesCat.jpg'})
+music = Category.create!({name: "Music", picture_url: 'images/MusicCat.jpg'})
 
 guest = User.create!({name: 'guest', password: 'password', photo_url: 'http://www.gaelholidayhomes.co.uk/wp-content/uploads/2015/06/guest_login.png', bio: 'I am a guest'})
 blue = User.create!({name: 'blue', password: 'password', photo_url: 'http://cdn.bulbagarden.net/upload/thumb/8/84/HeartGold_SoulSilver_Blue.png/165px-HeartGold_SoulSilver_Blue.png', bio: 'I am the trainer Blue'})
