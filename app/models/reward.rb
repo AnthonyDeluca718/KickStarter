@@ -20,4 +20,8 @@ class Reward < ActiveRecord::Base
     class_name: :RewardBuy,
     foreign_key: :reward_id
 
+  def purchased
+    rewardBuys.length
+  end
+
 end

@@ -8,9 +8,9 @@ import SessionFormContainer from './session_form/session_form_container';
 import HeaderContainer from './header/header_container';
 import UserProfileContainer from './user_profile/user_profile_container'
 import Error from './error/error';
-
 import ProjectFormContainer from './project/project_form_container'
 import ProjectShowContainer from './project/project_show_container'
+import SearchContainer from './search/search_container'
 
 const Root = ({ store }) => {
 
@@ -37,6 +37,7 @@ const Root = ({ store }) => {
           <Route path="/profile" component={UserProfileContainer} onEnter={_ensureLoggedIn}/>
           <Route path="/projects/new" onEnter={_ensureLoggedIn} component={ProjectFormContainer} />
           <Route path="/projects/:id" component={ProjectShowContainer} />
+          <Route path="/search" component = {SearchContainer} />
         </Route>
         <Route path="*" component={Error}/>
       </Router>
