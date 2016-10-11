@@ -1,5 +1,5 @@
 import {getSearch} from "../../actions/search_actions";
-import SearchIndex from './search';
+import Search from './search';
 import { connect } from 'react-redux';
 
 const mapStateToProps = state => ({
@@ -8,10 +8,10 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  requestSearch: (data) => dispatch(getSearch(data))
+  getSearch: (data) => dispatch(getSearch(data))
 });
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(SearchIndex);
+)(Search);

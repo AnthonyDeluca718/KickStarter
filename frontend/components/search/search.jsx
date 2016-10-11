@@ -1,42 +1,52 @@
 import React from 'react';
-import {hashHistory} from 'react-router';
+import {Link, hashHistory} from 'react-router';
 
-class SearchIndex extends React.Component{
+class Search extends React.Component{
   constructor(props){
+
     super(props);
-    this.showDetail = this.showDetail.bind(this);
+    this.state = {data: ""};
+    this.viewProject = this.viewProject.bind(this);
   }
+
   componentDidMount(){
   }
 
-  showDetail(id){
+  viewProject(id){
     hashHistory.push(`/projects/${id}`);
   }
 
+  getSearch() {
+    const that=this;
+		return e => {
+      that.setState({data: e.currentTarget.value});
+      that.props.getSearch(e.currentTarget.value);
+		};
+	}
+
   render (){
     const {search} = this.props;
-    let result;
-    if (search.length < 1){
-      result = <h1>No match found</h1>;
-     } else {
-      result = <h1>Search Result</h1>;
-     }
-    const panel = search.
-    map((project)=>{return(
-                    <div key={project.id} className="panel" onClick={this.showDetail.bind(this, project.id)}>
-                        <p>{project.title}</p>
-                    </div>
-
+    let results = search.map((project)=>{return(
+                    <p key={project.id}>
+                      <Link to={`/projects/${project.id}`} className="search-element">{project.title}</Link>
+                    </p>
                   );});
     return(
-      <div className="content">
-         {result}
-          <div className="category">
-            {panel}
-         </div>
-        </div>
+      <div className="search-bar">
+
+          <input className="search-bar-input"
+            type="text"
+            value={this.state.data}
+            onChange={this.getSearch(this.state.data)}
+            placeholder="Search"
+            ></input>
+
+          <div className="results">
+            {results}
+          </div>
+      </div>
     );
   }
 }
 
-export default SearchIndex;
+export default Search;

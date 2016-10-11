@@ -1,4 +1,4 @@
-export const getSearch = function(success, search){
+export const getSearchUtil = function(success, search){
   $.ajax({
     method: "GET",
     url: "api/search",
@@ -8,7 +8,7 @@ export const getSearch = function(success, search){
   });
 };
 
-export const getCategory = function(success, category){
+export const getCategoryUtil = function(success, category){
   $.ajax({
     method: "GET",
     url: `api/search/${category}`,

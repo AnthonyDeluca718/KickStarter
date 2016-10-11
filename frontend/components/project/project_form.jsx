@@ -94,7 +94,7 @@ class ProjectForm extends React.Component {
   					className="project-input project-head-photo-url"
             placeholder = "Head Photo Url"/>
 
-          <label for="pro-goal" className="project-label">Goal:</label>
+          <label htmlFor="pro-goal" className="project-label">Goal:</label>
 
           <input type="number"
   					value={this.state.goal}
@@ -109,7 +109,7 @@ class ProjectForm extends React.Component {
             placeholder="Description"
             />
 
-          <label for="pro-date" className="project-label">End Date:</label>
+          <label htmlFor="pro-date" className="project-label">End Date:</label>
 
           <input type="date"
             value={this.state.endDate}
