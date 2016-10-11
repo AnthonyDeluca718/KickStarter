@@ -36,7 +36,6 @@ class Search extends React.Component{
     } else {
       results = <div className="search-description">Search is by creator name and project title.</div>
     }
-    console.log(this.state.data);
 
     let renderRes;
 
