@@ -18,6 +18,7 @@ export const getProjectUtil = (id, success, error) => {
 }
 
 export const newProjectUtil = (project, success, error) => {
+  debugger
   $.ajax({
     method: 'POST',
     url: '/api/projects',

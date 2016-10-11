@@ -14,7 +14,7 @@ class ProjectForm extends React.Component {
       description: "",
       endDate: today.toISOString().split('T')[0],
       modalOpen: false,
-      user_id: 1
+      category_id: 2
 		};
 		this.handleSubmit = this.handleSubmit.bind(this);
     this.onModalClose = this.onModalClose.bind(this);
@@ -36,7 +36,6 @@ class ProjectForm extends React.Component {
 	}
 
 	handleSubmit(e) {
-    alert("Your project is submitted. I am working on the project display now");
 		e.preventDefault();
 		const project = {
       title: this.state.title,
@@ -44,7 +43,8 @@ class ProjectForm extends React.Component {
       description: this.state.description,
       end_date: this.state.endDate,
       head_photo_url: this.state.headPhotoUrl,
-      goal: this.state.goal
+      goal: this.state.goal,
+      category_id: this.state.category_id
     };
 		this.props.processForm(project);
 	}

@@ -13,7 +13,6 @@ class ProjectShow extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-
     if (this.props.id != nextProps.id) {
       this.props.getProject(this.props.id);
     }
