@@ -121,23 +121,23 @@ header:after {
   padding: 20px 0px;
 }
 
-.search {
+.search-icon {
   display: block;
   width: 18px;
   height: 18px;
   padding: 20px 0px;
   float: right;
-  margin: 0px 25px;
+  margin: 0px 50px 0 25px;
+  margin-right: 50px;
 }
 
 .mag-glass {
   display: block;
   width: 100%;
   height: auto;
-  margin-right: 50px;
 }
 
-.search:hover .mag-glass {
+.search-icon:hover .mag-glass {
   opacity: .4;
 }
 
@@ -178,7 +178,7 @@ header .right{
   display: inline-block;
 }
 
-header button {
+header .Link {
   float: left;
   margin: 0 25px;
   display: block;
@@ -415,7 +415,7 @@ header button:hover {
 .project-show-description {
 }
 
-/* SearchBar */
+/* SearchBar and Results */
 
 .search-bar-input {
   display: block;
@@ -424,4 +424,30 @@ header button:hover {
   margin: 60px;
   border: 1px solid #dad7d4;
   padding: 10px;
+}
+
+/* About Page */
+
+.about-page {
+  display: block;
+  height: 270px;
+  width: 530px;
+  border-radius: 6px;
+  border: 1px solid black;
+  padding: 40px;
+  margin: 0 auto;
+  margin-top: 60px;
+  background: #F8F9FD;
+}
+
+.about-title {
+  text-align: center;
+  color: 	#48D1CC;
+  font-size: 32px;
+}
+
+.about-paragraph {
+  display: block;
+  margin: 20px 0;
+  text-align: center;
 }

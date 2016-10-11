@@ -15,7 +15,6 @@ class Header extends React.Component {
         <Link to="/login" activeClassName="current" className="Link">Login<nav className="hover-bar"></nav></Link>
         <Link to="/signup" activeClassName="current" className="Link">Sign up<nav className="hover-bar"></nav></Link>
         <button className="Link guest" onClick = {this.props.guestLogin}>Guest<nav className="hover-bar"></nav></button>
-        <button className="search"><img className="mag-glass" src="images/mag_glass.png"/></button>
       </nav>
     );
   }
@@ -33,7 +32,6 @@ class Header extends React.Component {
     		<li><Link to="/profile"><img className="profile-picture" src={source}/></Link></li>
         <li><Link to = "/" onClick={logout}><button className="logout Link">Log Out<nav className="hover-bar"></nav></button></Link></li>
         <li><Link to = "/projects/new" ><button className="newProject Link">Start a Project<nav className="hover-bar"></nav></button></Link></li>
-        <li><button className="search"><img className="mag-glass" src="images/mag_glass.png"/></button></li>
       </ul>
     );
   }
@@ -49,9 +47,9 @@ class Header extends React.Component {
     return(
       <header>
         <ul className="header-nav left group">
-          <li><button className="Link">Discover<nav className="hover-bar"></nav></button></li>
-          <li><button className="Link">Start a Project<nav className="hover-bar"></nav></button></li>
-          <li><button className="Link">About Us<nav className="hover-bar"></nav></button></li>
+          <li><Link to="/" className="Link">Discover<nav className="hover-bar"></nav></Link></li>
+          <li><Link to="/about" className="Link">About Us<nav className="hover-bar"></nav></Link></li>
+          <li><Link to="/search" className="Link search-icon" ><img className="mag-glass" src="images/mag_glass.png"/></Link></li>
         </ul>
         <div className="right">
           {rightCorner}

@@ -11,6 +11,7 @@ import Error from './error/error';
 import ProjectFormContainer from './project/project_form_container'
 import ProjectShowContainer from './project/project_show_container'
 import SearchContainer from './search/search_container'
+import About from './about';
 
 const Root = ({ store }) => {
 
@@ -38,6 +39,7 @@ const Root = ({ store }) => {
           <Route path="/projects/new" onEnter={_ensureLoggedIn} component={ProjectFormContainer} />
           <Route path="/projects/:id" component={ProjectShowContainer} />
           <Route path="/search" component = {SearchContainer} />
+          <Route path="/about" component = {About} />
         </Route>
         <Route path="*" component={Error}/>
       </Router>
