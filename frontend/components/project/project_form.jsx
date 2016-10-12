@@ -178,11 +178,15 @@ class ProjectForm extends React.Component {
                   />
 
                 <textarea
-                    className="project-create-rewards-input"
+                    className="project-create-rewards-input project-create-rewards-textarea"
                     value={reward.body}
                     onChange={this.upDateReward('body', idk)}
                     placeholder="Description"
                   />
+
+                <text className=".project-create-rewards-label">
+                  Cost
+                </text>
 
                 <input type="number"
                     className="project-create-rewards-input"

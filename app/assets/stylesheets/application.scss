@@ -416,7 +416,6 @@ header button:hover {
 
 .project-create-reward {
   background: #F8F9FD;
-  padding: 20px;
   display: block;
   margin: 20px 0;
   border: 1px solid black;
@@ -424,7 +423,6 @@ header button:hover {
 
 .project-create-rewards-el {
   display: block;
-  width: 400px;
   margin: 0 auto;
   border-bottom: 1px solid black;
 }
@@ -433,17 +431,23 @@ header button:hover {
   display: block;
   padding: 10px;
   border: 1px solid #eee;
-  margin: 20px;
-  background: #ccc;
+  margin: 20px 0;
+  background: #eee;
+  width: 100%;
 }
 
-.project-create-rewards-input textarea {
+.project-create-rewards-textarea {
   height: 300px;
 }
 
-
 .project-create-rewards-list {
 
+}
+
+.project-create-rewards-label {
+  font-size: 24px;
+  display: block;
+  margin: 20px;
 }
 
 /* ProjectShow */
