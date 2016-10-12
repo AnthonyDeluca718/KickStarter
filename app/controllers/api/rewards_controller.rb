@@ -10,10 +10,14 @@ class Api::RewardsController < ApplicationController
 
   def create
     @reward = Reward.new(reward_params)
-    @reward.user_id = current_user.id
-
     unless @reward.save
       render json: @project.errors.full_messages, status: 422
     end
+
+    render json: @reward
+  end
+
+  def reward_params
+    params.require(:reward).permit(:title, :body, :cost, :project_id)
   end
 end

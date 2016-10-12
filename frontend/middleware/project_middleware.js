@@ -13,21 +13,27 @@ import { newProjectUtil, editProjectUtil, getProjectUtil } from '../util/project
 import { hashHistory } from 'react-router';
 
 export default ({getState, dispatch}) => next => action => {
-  const successCallback = (project) => {
+
+  const newSuccessCallback = (project) => {
     let rewards = project.rewards;
-    debugger
-    for(let i=0; i<rewards.length; i++) {
-      let reward = rewards[i];
-      reward.user_id = project.id;
+    Object.keys(rewards).forEach(
+      function(key) {
+      let reward = rewards[key];
+      reward.project_id = project.id;
       $.ajax({
       	method: "Post",
-      	url: "/api/rewards/",
-      	data: {reward: reward}
+      	url: "/api/rewards",
+      	data: {reward: reward},
+        success: ()=>(console.log("yolo"))
       })
-    }
+    })
     hashHistory.push(`/projects/${project.id}`)
     dispatch(receiveCurrentProject(project))
   };
+
+  const getSuccessCallback = (project) => {
+    dispatch(receiveCurrentProject(project))
+  }
 
   const errorCallback = xhr => {
     const errors = xhr.responseJSON;
@@ -40,10 +46,10 @@ export default ({getState, dispatch}) => next => action => {
 
   switch(action.type){
     case NEW_PROJECT:
-      newProjectUtil(action.project, successCallback, errorCallback)
+      newProjectUtil(action.project, newSuccessCallback, errorCallback)
       return next(action);
     case GET_PROJECT:
-      getProjectUtil(action.id, successCallback, getError)
+      getProjectUtil(action.id, getSuccessCallback, getError)
     default:
       return next(action);
   }
