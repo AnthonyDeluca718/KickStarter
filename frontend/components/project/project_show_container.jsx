@@ -3,7 +3,8 @@ import ProjectShow from './project_show';
 import { getProject } from '../../actions/project_actions';
 
 const mapStateToProps = (state) => ({
-  project: state.project
+  project: state.project,
+  loggedIn: Boolean(session.currentUser)
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => {
