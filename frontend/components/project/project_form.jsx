@@ -180,7 +180,7 @@ class ProjectForm extends React.Component {
 
             {this.state.rewards.map( (reward, idx)=>{
               return(
-                <div key="idx" className="project-create-rewards-el">
+                <div key={idx} className="project-create-rewards-el">
                   <input type="text"
                     className="project-create-rewards-input"
                     value={reward.title}
