@@ -21,7 +21,6 @@ class Discovery extends React.Component {
   }
 
   render() {
-    debugger
     const catShow = this.state.categories.map( (category) => {
         return(
           <div key={category.id} className="discovery-category">
@@ -31,13 +30,13 @@ class Discovery extends React.Component {
           </div>
         );
       }
-    )
+    );
 
     return(
       <div className="discovery-content">
         {catShow}
       </div>
-    )
+    );
   }
 }
 

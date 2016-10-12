@@ -23,12 +23,16 @@ export default ({getState, dispatch}) => next => action => {
     dispatch(receiveErrors(errors));
   };
 
+  const getError = () => {
+    hashHistory.push('/error');
+  }
+
   switch(action.type){
     case NEW_PROJECT:
       newProjectUtil(action.project, successCallback, errorCallback)
       return next(action);
     case GET_PROJECT:
-      getProjectUtil(action.id, successCallback, errorCallback)
+      getProjectUtil(action.id, successCallback, getError)
     default:
       return next(action);
   }

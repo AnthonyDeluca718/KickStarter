@@ -12,7 +12,7 @@ class Api::SearchController < ApplicationController
   end
 
   def show
-    @search = Project.where('category = ?', "#{params[:id]}")
+    @search = Project.where({category_id: params[:id].to_i})
     render "api/search/index"
   end
 end
