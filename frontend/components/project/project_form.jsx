@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link, hashHistory } from 'react-router';
 import Modal from 'react-modal';
+import merge from 'lodash/merge';
+// import RewardForm from '../rewards/reward_form';
 
 class ProjectForm extends React.Component {
   const
@@ -14,12 +16,14 @@ class ProjectForm extends React.Component {
       description: "",
       endDate: today.toISOString().split('T')[0],
       modalOpen: false,
-      modalOpen: false,
       categories: [],
-      category_id: null
+      category_id: null,
+      rewards: []
 		};
 		this.handleSubmit = this.handleSubmit.bind(this);
     this.onModalClose = this.onModalClose.bind(this);
+    this.addReward = this.addReward.bind(this);
+    this.upDateReward = this.upDateReward.bind(this);
 	}
 
   componentWillReceiveProps(nextProps) {
@@ -48,9 +52,15 @@ class ProjectForm extends React.Component {
 		});
 	}
 
+  upDateReward(field, idx) {
+    return e => {
+      this.state.rewards[idk][field] = e.currentTarget.value;
+      this.setState({rewards: this.state.rewards});
+		};
+  }
+
 	handleSubmit(e) {
 		e.preventDefault();
-    debugger
 		const project = {
       title: this.state.title,
       user_id: this.state.user_id,
@@ -58,10 +68,16 @@ class ProjectForm extends React.Component {
       end_date: this.state.endDate,
       head_photo_url: this.state.headPhotoUrl,
       goal: this.state.goal,
-      category_id: this.state.category_id
+      category_id: this.state.category_id,
+      rewards: this.state.rewards
     };
 		this.props.processForm(project);
 	}
+
+  addReward () {
+    this.state.rewards.push({title: "", body: "", cost: 1, });
+    this.setState({rewards: this.state.rewards});
+  }
 
 	renderErrors() {
 		return(
@@ -132,7 +148,7 @@ class ProjectForm extends React.Component {
             onChange={this.update("description")}
             className="project-input project-description"
             placeholder="Description"
-            />
+          />
 
           <label htmlFor="pro-date" className="project-label">End Date:</label>
 
@@ -142,9 +158,46 @@ class ProjectForm extends React.Component {
             className="project-input project-date"
           />
 
-        <input className="project-input project-button" type="submit" value="Create Project" />
+          <input className="project-input project-button" type="submit" value="Create Project" />
 
   			</form>
+
+        <div className="project-create-rewards-container">
+          <h1 className="project-create-rewards-header">Rewards!</h1>
+
+          <div className="project-create-rewards-list">
+
+            {this.state.rewards.map( (reward, idk)=>{
+              return(
+                <div className="project-create-rewards-el">
+                  <input type="text"
+                    className="project-create-rewards-input"
+                    value={reward.title}
+                    onChange={this.upDateReward('title', idk)}
+                    placeholder="Title"
+                  />
+
+                <textarea
+                    className="project-create-rewards-input"
+                    value={reward.body}
+                    onChange={this.upDateReward('body', idk)}
+                    placeholder="Description"
+                  />
+
+                <input type="number"
+                    className="project-create-rewards-input"
+                    value={reward.cost}
+                    onChange={this.upDateReward('cost', idk)}
+                    placeholder="Cost"
+                  />
+                </div>
+              );
+            })}
+          </div>
+
+          <button className="project-add-reward" onClick={ this.addReward }>Add Reward</button>
+        </div>
+
 
         <Modal
           isOpen={this.state.modalOpen}

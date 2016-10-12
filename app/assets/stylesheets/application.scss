@@ -381,6 +381,71 @@ header button:hover {
   margin: 20px 0;
 }
 
+.project-add-reward {
+  display: block;
+  margin: 0 auto;
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #dad7d4;
+  width: 100px;
+  background: green;
+  color: #fff;
+  text-align: center;
+}
+
+.project-add-reward:hover {
+  cursor: pointer;
+}
+
+.project-create-rewards-container {
+  margin: 0 auto;
+  width: 600px;
+  border-top: 2px solid black;
+  padding: 25px;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+.project-create-rewards-header {
+  font-size: 32px;
+  text-align: center;
+  margin: 20px 0;
+  display: block;
+}
+
+.project-create-reward {
+  background: #F8F9FD;
+  padding: 20px;
+  display: block;
+  margin: 20px 0;
+  border: 1px solid black;
+}
+
+.project-create-rewards-el {
+  display: block;
+  width: 400px;
+  margin: 0 auto;
+  border-bottom: 1px solid black;
+}
+
+.project-create-rewards-input {
+  display: block;
+  padding: 10px;
+  border: 1px solid #eee;
+  margin: 20px;
+  background: #ccc;
+}
+
+.project-create-rewards-input textarea {
+  height: 300px;
+}
+
+
+.project-create-rewards-list {
+
+}
+
 /* ProjectShow */
 
 .project-show-container {
@@ -416,7 +481,7 @@ header button:hover {
 }
 
 .project-show-rewards {
-  width: 500px;
+  width: 650px;
   padding: 25px;
   margin: 0 auto;
   margin-top: 60px;
