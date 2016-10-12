@@ -24,4 +24,6 @@ class Reward < ActiveRecord::Base
     rewardBuys.length
   end
 
+  reward_params = params.require(:reward).permit(:user_id, :project_id, :title, :body, :cost, :limit)
+
 end
