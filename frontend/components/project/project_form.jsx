@@ -16,12 +16,14 @@ class ProjectForm extends React.Component {
       description: "",
       endDate: today.toISOString().split('T')[0],
       modalOpen: false,
+      rewardModal: false,
       categories: [],
       category_id: null,
       rewards: []
 		};
 		this.handleSubmit = this.handleSubmit.bind(this);
     this.onModalClose = this.onModalClose.bind(this);
+    this.rewardModalClose = this.rewardModalClose.bind(this);
     this.addReward = this.addReward.bind(this);
     this.upDateReward = this.upDateReward.bind(this);
 	}
@@ -61,17 +63,22 @@ class ProjectForm extends React.Component {
 
 	handleSubmit(e) {
 		e.preventDefault();
-		const project = {
-      title: this.state.title,
-      user_id: this.state.user_id,
-      description: this.state.description,
-      end_date: this.state.endDate,
-      head_photo_url: this.state.headPhotoUrl,
-      goal: this.state.goal,
-      category_id: this.state.category_id,
-      rewards: this.state.rewards
-    };
-		this.props.processForm(project);
+
+    if (this.state.rewards.some(function(reward){ return(reward.title==="" || reward.body==="") })) {
+      this.setState({rewardModal: true});
+    } else {
+      const project = {
+        title: this.state.title,
+        user_id: this.state.user_id,
+        description: this.state.description,
+        end_date: this.state.endDate,
+        head_photo_url: this.state.headPhotoUrl,
+        goal: this.state.goal,
+        category_id: this.state.category_id,
+        rewards: this.state.rewards
+      };
+      this.props.processForm(project);
+    }
 	}
 
   addReward () {
@@ -92,7 +99,11 @@ class ProjectForm extends React.Component {
 	}
 
   onModalClose() {
-    this.setState({modalOpen : false});
+    this.setState({modalOpen: false});
+  }
+
+  rewardModalClose() {
+    this.setState({rewardModal: false})
   }
 
   render() {
@@ -209,6 +220,14 @@ class ProjectForm extends React.Component {
           style={style}
         >
           {this.renderErrors()}
+        </Modal>
+
+        <Modal
+          isOpen={this.state.rewardModal}
+          onRequestClose={this.rewardModalClose}
+          style={style}
+        >
+          "Reward Titles and bodies cannot be empty. Cost must be non-negative"
         </Modal>
 
   		</div>
