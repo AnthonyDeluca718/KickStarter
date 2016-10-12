@@ -9,7 +9,8 @@ class Api::RewardsController < ApplicationController
   end
 
   def create
-    @reward = Reward.create(reward_params)
+    @reward = Reward.new(reward_params)
+    @reward.user_id = current_user.id
 
     unless @reward.save
       render json: @project.errors.full_messages, status: 422

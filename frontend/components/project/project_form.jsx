@@ -56,7 +56,7 @@ class ProjectForm extends React.Component {
 
   upDateReward(field, idx) {
     return e => {
-      this.state.rewards[idk][field] = e.currentTarget.value;
+      this.state.rewards[idx][field] = e.currentTarget.value;
       this.setState({rewards: this.state.rewards});
 		};
   }
@@ -64,7 +64,7 @@ class ProjectForm extends React.Component {
 	handleSubmit(e) {
 		e.preventDefault();
 
-    if (this.state.rewards.some(function(reward){ return(reward.title==="" || reward.body==="") })) {
+    if (this.state.rewards.some(function(reward){ return(reward.title==="" || reward.body==="" || reward.cost < 0) })) {
       this.setState({rewardModal: true});
     } else {
       const project = {
@@ -178,20 +178,20 @@ class ProjectForm extends React.Component {
 
           <div className="project-create-rewards-list">
 
-            {this.state.rewards.map( (reward, idk)=>{
+            {this.state.rewards.map( (reward, idx)=>{
               return(
-                <div className="project-create-rewards-el">
+                <div key="idx" className="project-create-rewards-el">
                   <input type="text"
                     className="project-create-rewards-input"
                     value={reward.title}
-                    onChange={this.upDateReward('title', idk)}
+                    onChange={this.upDateReward('title', idx)}
                     placeholder="Title"
                   />
 
                 <textarea
                     className="project-create-rewards-input project-create-rewards-textarea"
                     value={reward.body}
-                    onChange={this.upDateReward('body', idk)}
+                    onChange={this.upDateReward('body', idx)}
                     placeholder="Description"
                   />
 
@@ -202,7 +202,7 @@ class ProjectForm extends React.Component {
                 <input type="number"
                     className="project-create-rewards-input"
                     value={reward.cost}
-                    onChange={this.upDateReward('cost', idk)}
+                    onChange={this.upDateReward('cost', idx)}
                     placeholder="Cost"
                   />
                 </div>

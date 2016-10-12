@@ -10,28 +10,9 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  return {
-    processForm: (project) => {
-      rewards = project.rewards;
-      if (rewards.length > 0) {
-        for(let i=0; i<rewards.length; i++) {
-          $.ajax({
-          	method: "Post",
-          	url: "/api/rewards/",
-          	data: {reward: reward},
-          	success: function() {
-              if (i=rewards.length) {
-                dispatch(newProject(project));
-              }
-              return;
-            }
-          })
-        }
-      } else {
-        dispatch(newProject(project));
-      }
-    }
-  }
+  return ({
+    processForm: project => dispatch(newProject(project))
+  })
 };
 
 export default connect(

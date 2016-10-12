@@ -14,6 +14,17 @@ import { hashHistory } from 'react-router';
 
 export default ({getState, dispatch}) => next => action => {
   const successCallback = (project) => {
+    let rewards = project.rewards;
+    debugger
+    for(let i=0; i<rewards.length; i++) {
+      let reward = rewards[i];
+      reward.user_id = project.id;
+      $.ajax({
+      	method: "Post",
+      	url: "/api/rewards/",
+      	data: {reward: reward}
+      })
+    }
     hashHistory.push(`/projects/${project.id}`)
     dispatch(receiveCurrentProject(project))
   };
