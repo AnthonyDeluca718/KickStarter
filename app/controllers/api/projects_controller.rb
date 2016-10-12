@@ -25,6 +25,7 @@ class Api::ProjectsController < ApplicationController
   def show
     @project = Project.find_by(id: params[:id])
     if @project
+      @rewards = @project.rewards
       render "api/projects/show"
     else
       render json: "Project not found", status: 404

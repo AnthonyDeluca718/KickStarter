@@ -20,6 +20,7 @@ class ProjectShow extends React.Component {
       method: 'GET',
       url: `api/projects/${that.props.id}`,
       success: function(response) {
+        debugger
         that.setState({project: response});
       }
     });

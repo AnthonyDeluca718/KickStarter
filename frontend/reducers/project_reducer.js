@@ -21,6 +21,7 @@ const ProjectReducer = (state = _emptyProject, action) => {
       newState.goal = proj.goal;
       newState.description = proj.description;
       newState.endDate = proj.end_date;
+      newState.rewards = proj.rewards;
       return newState;
     default:
       return state;
