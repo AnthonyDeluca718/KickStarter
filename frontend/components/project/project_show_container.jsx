@@ -4,7 +4,7 @@ import { getProject } from '../../actions/project_actions';
 
 const mapStateToProps = (state) => ({
   project: state.project,
-  loggedIn: Boolean(session.currentUser)
+  loggedIn: Boolean(state.session.currentUser)
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => {
