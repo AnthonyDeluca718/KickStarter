@@ -14,8 +14,9 @@ class ProjectForm extends React.Component {
       description: "",
       endDate: today.toISOString().split('T')[0],
       modalOpen: false,
-      category_id: 2,
-      modalOpen: false
+      modalOpen: false,
+      categories: [],
+      category_id: null
 		};
 		this.handleSubmit = this.handleSubmit.bind(this);
     this.onModalClose = this.onModalClose.bind(this);
@@ -25,6 +26,17 @@ class ProjectForm extends React.Component {
    	if (nextProps.errors.length > 0) {
     	this.setState({modalOpen: true});
   	}
+  }
+
+  componentDidMount() {
+    const that = this;
+    $.ajax({
+      method: 'GET',
+      url: 'api/categories',
+      success: function(response) {
+        that.setState({categories: response, category_id: response[0].id});
+      }
+    });
   }
 
 	redirectIfLoggedIn(){
@@ -38,6 +50,7 @@ class ProjectForm extends React.Component {
 
 	handleSubmit(e) {
 		e.preventDefault();
+    debugger
 		const project = {
       title: this.state.title,
       user_id: this.state.user_id,
@@ -79,9 +92,21 @@ class ProjectForm extends React.Component {
       }
     };
 
+
   	return (
   		<div className="project-form-container">
   			<form onSubmit={this.handleSubmit} className="login-form-box">
+
+          <select className="project-form-select" name="id" onChange={this.update("category_id")} placeholder="Category">
+            {this.state.categories.map(
+              function(cat) {
+                return(
+                  <option key={cat.id} value={cat.id}>{cat.name}</option>
+                );
+              }
+            )}
+          </select>
+
   				<input type="text"
   					value={this.state.title}
   					onChange={this.update("title")}

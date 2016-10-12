@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, hashHistory } from 'react-router';
 
 class Discover extends React.Component {
 
@@ -21,20 +22,19 @@ class Discover extends React.Component {
   }
 
   render() {
-    const catShow = this.state.categories.map( (category) => {
-        return(
-          <div key={category.id} className="discover-category">
-            {category.name}
-            <p></p>
-            <img className="category-picture" src={category.picture_url} />
-          </div>
-        );
-      }
-    );
-
     return(
       <div className="discover-content">
-        {catShow}
+
+        {this.state.categories.map(
+          function(category) {
+            return(
+            <div key={category.id} className="discover-category">
+               <Link className="category-link" to={`/discover/${category.id}`} ><img className="category-picture" src={category.picture_url} /></Link>
+             </div>
+            );
+          }
+        )}
+
       </div>
     );
   }
