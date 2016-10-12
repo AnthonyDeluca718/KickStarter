@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Discovery extends React.Component {
+class Discover extends React.Component {
 
   constructor(props) {
     super(props);
@@ -23,7 +23,7 @@ class Discovery extends React.Component {
   render() {
     const catShow = this.state.categories.map( (category) => {
         return(
-          <div key={category.id} className="discovery-category">
+          <div key={category.id} className="discover-category">
             {category.name}
             <p></p>
             <img className="category-picture" src={category.picture_url} />
@@ -33,11 +33,11 @@ class Discovery extends React.Component {
     );
 
     return(
-      <div className="discovery-content">
+      <div className="discover-content">
         {catShow}
       </div>
     );
   }
 }
 
-export default Discovery;
+export default Discover;

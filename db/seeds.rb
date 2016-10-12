@@ -14,7 +14,7 @@ Project.delete_all
 
 game = Category.create!({name: "Game", picture_url: 'images/GamesCat.jpg' })
 doc = Category.create!({name: "Documentary", picture_url: 'images/DocumentaryCat.png'})
-art = Category.create!({name: "Art", picture_url: 'images/ArtCat'})
+art = Category.create!({name: "Art", picture_url: 'images/ArtCat.jpg'})
 music = Category.create!({name: "Music", picture_url: 'images/MusicCat.jpg'})
 
 guest = User.create!({name: 'guest', password: 'password', photo_url: 'http://www.gaelholidayhomes.co.uk/wp-content/uploads/2015/06/guest_login.png', bio: 'I am a guest'})
