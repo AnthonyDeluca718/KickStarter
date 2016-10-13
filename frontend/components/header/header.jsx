@@ -22,8 +22,8 @@ class Header extends React.Component {
   personalGreeting(currentUser, logout) {
 
     let source;
-    if (currentUser.photo_url) {
-      source = currentUser.photo_url;
+    if (this.props.photo_url) {
+      source = this.props.photo_url;
     } else {
       source = 'images/default_profile.png';
     }

@@ -10,12 +10,12 @@ import Modal from 'react-modal';
 document.addEventListener('DOMContentLoaded', () => {
   let store;
   if (window.currentUser) {
-    const initialState = {session: {currentUser: window.currentUser, profile: window.profile, errors: [] }};
+    const initialState = {session: {currentUser: window.currentUser, profile: window.profile, errors: [], photo_url: window.currentUser.photo_url, spent: window.currentUser.spent }};
     store = configureStore(initialState);
   } else {
     store = configureStore();
   }
-
+  window.store = store
   const root = document.getElementById('root');
   Modal.setAppElement(document.body);
   ReactDOM.render(<Root store={store}/>, root);

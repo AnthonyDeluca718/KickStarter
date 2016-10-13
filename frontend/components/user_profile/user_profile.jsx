@@ -45,7 +45,6 @@ class UserProfile extends React.Component {
         avatar_url: fileReader.result,
         avatar: file
       });
-      console.log(that.state);
     }.bind(this)
 
     if (file) {

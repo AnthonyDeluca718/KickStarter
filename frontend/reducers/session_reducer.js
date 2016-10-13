@@ -4,13 +4,17 @@ import merge from 'lodash/merge';
 const _null = Object.freeze({
   currentUser: null,
   errors: [],
-  modalOpen: false
+  modalOpen: false,
+  photo_url: "",
+  spent: 0
 });
 
 const SessionReducer = (state = _null, action) => {
   switch(action.type) {
     case RECEIVE_CURRENT_USER:
       let obj = merge({}, _null, state);
+      obj.photo_url = action.currentUser.photo_url;
+      obj.spent = action.currentUser.spent;
       obj.currentUser = merge(state.currentUser, action.currentUser);
       return obj;
     case LOGOUT:
