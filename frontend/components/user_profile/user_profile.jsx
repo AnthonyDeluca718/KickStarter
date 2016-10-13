@@ -7,7 +7,7 @@ class UserProfile extends React.Component {
     super(props);
     this.state = {
       bio: props.bio,
-      photo_url: props.photo_url,
+      photo_url: props.avatar_url,
       id: props.id
     }
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -21,6 +21,7 @@ class UserProfile extends React.Component {
   }
 
   render() {
+    debugger
     return (
 			<div className="profile-edit-container">
 				<form onSubmit={this.handleSubmit} className="profile-edit-box">

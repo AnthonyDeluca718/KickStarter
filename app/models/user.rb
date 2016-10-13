@@ -2,14 +2,18 @@
 #
 # Table name: users
 #
-#  id              :integer          not null, primary key
-#  name            :string           not null
-#  password_digest :string           not null
-#  session_token   :string           not null
-#  created_at      :datetime
-#  updated_at      :datetime
-#  photo_url       :string           default("")
-#  bio             :text             default("")
+#  id                  :integer          not null, primary key
+#  name                :string           not null
+#  password_digest     :string           not null
+#  session_token       :string           not null
+#  created_at          :datetime
+#  updated_at          :datetime
+#  photo_url           :string           default("")
+#  bio                 :text             default("")
+#  avatar_file_name    :string
+#  avatar_content_type :string
+#  avatar_file_size    :integer
+#  avatar_updated_at   :datetime
 #
 
 class User < ActiveRecord::Base
@@ -21,7 +25,6 @@ class User < ActiveRecord::Base
 	validates :password, length: {minimum: 6, allow_nil: true}
 
 	after_initialize :ensure_session_token
-	# before_validation :ensure_session_token_uniqueness
 
   has_many :projects
 
@@ -32,6 +35,9 @@ class User < ActiveRecord::Base
   has_many :rewards,
     through: :rewardBuys,
     source: :reward
+
+  has_attached_file :avatar, default_url: "default_profile.png"
+  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
 	def password= password
 		self.password_digest = BCrypt::Password.create(password)
