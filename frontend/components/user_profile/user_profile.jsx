@@ -8,9 +8,13 @@ class UserProfile extends React.Component {
     this.state = {
       bio: props.bio,
       photo_url: props.avatar_url,
-      id: props.id
+      id: props.id,
+      newAvatarBody: null,
+      newAvatarUrl: "",
+      newAvatar: null
     }
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.updateAvatar = this.updateAvatar.bind(this);
   }
 
   handleSubmit(e) {
@@ -20,18 +24,39 @@ class UserProfile extends React.Component {
     this.props.processForm(user);
   }
 
+  updateAvatar(e) {
+
+    const that = this;
+
+    if (e) {
+      var file = e.currentTarget.files[0];
+    }
+
+    var fileReader = new FileReader();
+    fileReader.onloadend = function() {
+      that.setState({
+        newAvatarUrl: fileReader.result,
+        newAvatar: file
+      });
+      console.log(that.state);
+    }.bind(this)
+
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
+
+  }
+
   render() {
     return (
 			<div className="profile-edit-container">
 				<form onSubmit={this.handleSubmit} className="profile-edit-box">
 
-          PhotoURL:
+          NewAvatar:
 					<input
-            id="photo-url"
-            type="text"
-						value={this.state.photo_url}
-						onChange={this.update("photo_url")}
-						className="photo-url-input"
+            type="file"
+						onChange={this.updateAvatar}
+						className="new-avatar-input"
             />
 
           Bio:
@@ -40,6 +65,9 @@ class UserProfile extends React.Component {
 						onChange={this.update("bio")}
 						className="bio-input"
             />
+
+          Preview:
+          <img src={this.state.newAvatarUrl} className="profile-preview" />
 
           <input className="profile-submit" type="submit" value="Edit Profile" />
 				</form>
