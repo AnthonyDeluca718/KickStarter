@@ -1,5 +1,5 @@
 import { RECEIVE_CURRENT_USER, LOGOUT, RECEIVE_ERRORS } from '../actions/session_actions';
-import { NEW_REWARD_BUY } from '../actions/project_actions';
+import { NEW_REWARD_BUY, RECEIVE_SPENT } from '../actions/project_actions';
 import merge from 'lodash/merge';
 
 const _null = Object.freeze({
@@ -23,6 +23,10 @@ const SessionReducer = (state = _null, action) => {
     case RECEIVE_ERRORS:
       let newState = merge({}, _null, state);
       newState.errors = action.errors;
+      return newState;
+    case RECEIVE_SPENT:
+      newState = merge({}, _null, state);
+      newState.spent += action.spent;
       return newState;
     default:
       return state;

@@ -36,10 +36,6 @@ export default ({getState, dispatch}) => next => action => {
     dispatch(receiveCurrentProject(project))
   }
 
-  const newRewardBuyCallback = (funding) => ({
-    dispatch(receiveFunding(funding));
-  })
-
   const errorCallback = xhr => {
     const errors = xhr.responseJSON;
     dispatch(receiveErrors(errors));
@@ -51,7 +47,9 @@ export default ({getState, dispatch}) => next => action => {
 
   switch(action.type){
     case NEW_REWARD_BUY:
-      newRewardBuyUtil(action.rewardBuy, newSuccessCallback, errorCallback)
+      newRewardBuyUtil(action.rewardBuy, ()=>({}), errorCallback);
+      dispatch(receiveFunding(action.cost));
+      return next(action);
     case NEW_PROJECT:
       newProjectUtil(action.project, newSuccessCallback, errorCallback)
       return next(action);

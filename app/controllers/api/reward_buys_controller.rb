@@ -18,6 +18,8 @@ class Api::RewardBuysController < ApplicationController
 
   def create
     @reward_buy = RewardBuy.new(reward_buy_params)
+    @reward_buy.user_id = current_user.id
+
     unless @reward_buy.save
       render(
         json: ["Invalid request to Back Project"],
@@ -27,6 +29,6 @@ class Api::RewardBuysController < ApplicationController
   end
 
   def reward_buy_params
-    params.require(:reward_buy).permit(:user_id, :reward_id)
+    params.require(:reward_buy).permit(:reward_id)
   end
 end

@@ -30,6 +30,9 @@ export default ({getState, dispatch}) => next => action => {
     case SIGNUP:
       signup(action.user, userSuccessCallback, errorCallback);
       return next(action);
+    case NEW_REWARD_BUY:
+      dispatch(receiveSpent(action.spent));
+      return next(action);
     default:
       return next(action);
   }

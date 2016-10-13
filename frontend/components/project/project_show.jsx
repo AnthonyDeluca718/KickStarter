@@ -11,6 +11,7 @@ class ProjectShow extends React.Component {
         rewards: []
       }
     }
+    this.clickButton = this.clickButton.bind(this);
 	}
 
   componentDidMount() {
@@ -20,7 +21,6 @@ class ProjectShow extends React.Component {
       method: 'GET',
       url: `api/projects/${that.props.id}`,
       success: function(response) {
-        debugger
         that.setState({project: response});
       }
     });
@@ -32,11 +32,20 @@ class ProjectShow extends React.Component {
     }
   }
 
+  clickButton(e) {
+    if (e.currentTarget) {
+      this.props.newRewardBuy(reward.cost, reward.id)
+    }
+  }
+
   render() {
+    let that = this;
     if (this.props.loggedIn) {
-      var button = function() {
+      var button = function(reward) {
         return(
-          <div className="project-show-reward-el project-show-reward-button">backButton</div>
+          <button className="project-show-reward-el project-show-reward-button"
+            onClick={() => that.props.newRewardBuy(reward.cost, reward.id)}>backButton
+          </button>
         );
       }
     } else {
@@ -78,7 +87,7 @@ class ProjectShow extends React.Component {
               <div className="project-show-reward-el project-show-reward-body">{reward.body}</div>
               <div className="project-show-reward-el project-show-reward-cost">{`Cost: ${reward.cost}`}</div>
               <div className="project-show-reward-el project-show-reward-limit">{`Limit: ${limit}`}</div>
-              { button() }
+              { button(reward) }
             </div>
             );
           }

@@ -37,11 +37,11 @@ export const showProjectUtil = (project, sucecess, error) => {
   })
 }
 
-export const newRewardbuyUtil = (action.rewardBuy, success, error) => {
+export const newRewardBuyUtil = (rewardBuy, success, error) => {
   $.ajax({
     method: 'GET',
     url: '/api/projects/edit',
-    data: {project: project},
+    data: {reward_buy: rewardBuy},
     success,
     error
   })

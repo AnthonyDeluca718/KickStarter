@@ -46,8 +46,11 @@ export const receiveSpent = (spent) => ({
   spent
 })
 
-export const newRewardbuy = (user_id, reward_id, cost) => ({
-  type: NEW_REWARD_BUY,
-  rewardBuy: {user_id: user_id, reward_id: reward_id},
-  cost: cost
-})
+export const newRewardbuy = (reward_id, cost) => {
+  debugger
+  return ({
+    type: NEW_REWARD_BUY,
+    rewardBuy: {reward_id: reward_id},
+    cost: cost
+  })
+}
