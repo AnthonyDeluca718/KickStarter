@@ -9,19 +9,26 @@ class UserProfile extends React.Component {
       bio: props.bio,
       photo_url: props.avatar_url,
       id: props.id,
-      newAvatarBody: null,
-      newAvatarUrl: "",
-      newAvatar: null
+      avatar_url: "",
+      avatar: null
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateAvatar = this.updateAvatar.bind(this);
   }
 
   handleSubmit(e) {
-    alert("I am working on what to put after you update. But you updated!")
     e.preventDefault();
-    const user = {photo_url: this.state.photo_url, bio: this.state.bio, id: this.state.id};
-    this.props.processForm(user);
+    alert("updated");
+
+    var formData = new FormData();
+
+    if(this.state.avatar) {
+      formData.append("user[avatar]", this.state.avatar);
+      formData.append("user[avatar_url]", this.state.photo_url);
+    }
+
+    formData.append("user[bio]", this.state.bio);
+    this.props.processForm(formData);
   }
 
   updateAvatar(e) {
@@ -35,8 +42,8 @@ class UserProfile extends React.Component {
     var fileReader = new FileReader();
     fileReader.onloadend = function() {
       that.setState({
-        newAvatarUrl: fileReader.result,
-        newAvatar: file
+        avatar_url: fileReader.result,
+        avatar: file
       });
       console.log(that.state);
     }.bind(this)
@@ -67,7 +74,7 @@ class UserProfile extends React.Component {
             />
 
           Preview:
-          <img src={this.state.newAvatarUrl} className="profile-preview" />
+          <img src={this.state.avatar_url} className="profile-preview" />
 
           <input className="profile-submit" type="submit" value="Edit Profile" />
 				</form>

@@ -6,9 +6,8 @@ import merge from 'lodash/merge';
 const mapStateToProps = (state) => {
   return ({
     bio: state.session.currentUser.bio,
-    photo_url: state.session.currentUser.photo_url,
     id: state.session.currentUser.id,
-    avatar_url: state.session.currentUser.avatar_url
+    avatar: state.session.currentUser.avatar
   });
 }
 

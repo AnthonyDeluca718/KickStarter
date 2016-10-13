@@ -33,9 +33,11 @@ export const logout = success => {
 
 export const editUser = (user, success, error) => {
   $.ajax({
-    method: 'GET',
-    url: '/api/user/edit',
-    data: {id: user.id, user: user},
+    method: 'PATCH',
+    url: '/api/user',
+    data: user,
+    contentType: false,
+    processData: false,
     success,
     error
   });

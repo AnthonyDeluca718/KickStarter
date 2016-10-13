@@ -1,2 +1,2 @@
-json.extract! user, :id, :name, :photo_url, :bio
-json.set! :avatar_url, asset_path(user.avatar.url)
+json.extract! user, :id, :name, :bio
+json.set! :photo_url, user.avatar.url

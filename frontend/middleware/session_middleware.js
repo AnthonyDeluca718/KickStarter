@@ -24,7 +24,7 @@ export default ({getState, dispatch}) => next => action => {
       logout(() => next(action));
       break;
     case EDIT_PROFILE:
-      editUser(action.user, userSuccessCallback, errorCallback);
+      editUser(action.data, userSuccessCallback, errorCallback);
       return next(action);
     case SIGNUP:
       signup(action.user, userSuccessCallback, errorCallback);
