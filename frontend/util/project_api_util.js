@@ -39,8 +39,8 @@ export const showProjectUtil = (project, sucecess, error) => {
 
 export const newRewardBuyUtil = (rewardBuy, success, error) => {
   $.ajax({
-    method: 'GET',
-    url: '/api/projects/edit',
+    method: 'Post',
+    url: '/api/reward_buys',
     data: {reward_buy: rewardBuy},
     success,
     error

@@ -20,7 +20,9 @@ class Api::RewardBuysController < ApplicationController
     @reward_buy = RewardBuy.new(reward_buy_params)
     @reward_buy.user_id = current_user.id
 
-    unless @reward_buy.save
+    if @reward_buy.save
+      render( json: "success")
+    else
       render(
         json: ["Invalid request to Back Project"],
         status: 401

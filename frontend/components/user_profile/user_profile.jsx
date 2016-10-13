@@ -58,6 +58,9 @@ class UserProfile extends React.Component {
 			<div className="profile-edit-container">
 				<form onSubmit={this.handleSubmit} className="profile-edit-box">
 
+          Total Spent:
+          <div className="profile-spent">{this.props.spent}</div>
+
           NewAvatar:
 					<input
             type="file"

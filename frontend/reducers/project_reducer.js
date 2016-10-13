@@ -1,4 +1,4 @@
-import { RECEIVE_CURRENT_PROJECT } from '../actions/project_actions';
+import { RECEIVE_CURRENT_PROJECT, RECEIVE_FUNDING } from '../actions/project_actions';
 import merge from 'lodash/merge';
 
 const _emptyProject = {
@@ -22,6 +22,11 @@ const ProjectReducer = (state = _emptyProject, action) => {
       newState.description = proj.description;
       newState.endDate = proj.end_date;
       newState.rewards = proj.rewards;
+      newState.funding = proj.funding;
+      return newState;
+    case RECEIVE_FUNDING:
+      newState = merge({}, state);
+      newState.funding += action.funding;
       return newState;
     default:
       return state;

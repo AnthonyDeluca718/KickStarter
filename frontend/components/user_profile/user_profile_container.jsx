@@ -7,7 +7,8 @@ const mapStateToProps = (state) => {
   return ({
     bio: state.session.currentUser.bio,
     id: state.session.currentUser.id,
-    avatar_url: state.session.photo_url
+    avatar_url: state.session.photo_url,
+    spent: state.session.spent
   });
 }
 

@@ -11,7 +11,7 @@ import {
         NEW_REWARD_BUY
        } from '../actions/project_actions';
 
-import { newProjectUtil, editProjectUtil, getProjectUtil } from '../util/project_api_util';
+import { newProjectUtil, editProjectUtil, getProjectUtil, newRewardBuyUtil } from '../util/project_api_util';
 import { hashHistory } from 'react-router';
 
 export default ({getState, dispatch}) => next => action => {

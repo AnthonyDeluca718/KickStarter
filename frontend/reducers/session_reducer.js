@@ -25,6 +25,7 @@ const SessionReducer = (state = _null, action) => {
       newState.errors = action.errors;
       return newState;
     case RECEIVE_SPENT:
+      debugger
       newState = merge({}, _null, state);
       newState.spent += action.spent;
       return newState;

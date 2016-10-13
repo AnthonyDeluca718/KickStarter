@@ -44,7 +44,7 @@ class ProjectShow extends React.Component {
       var button = function(reward) {
         return(
           <button className="project-show-reward-el project-show-reward-button"
-            onClick={() => that.props.newRewardBuy(reward.cost, reward.id)}>backButton
+            onClick={() => that.props.newRewardBuy(reward.id, reward.cost)}>backButton
           </button>
         );
       }
@@ -58,6 +58,8 @@ class ProjectShow extends React.Component {
         <text className="project-show-element project-show-title">{this.props.project.title}</text>
 
         <img className="project-show-head-photo" src={this.props.project.headPhotoUrl}></img>
+
+        <div className="project-show-element project-show-funding">{this.props.project.funding}</div>
 
         <div className="project-show-element project-show-goal">{this.props.project.goal}</div>
 
