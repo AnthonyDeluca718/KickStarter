@@ -30,7 +30,7 @@ class Project < ActiveRecord::Base
     through: :rewards,
     source: :rewardBuys
 
-  has_attached_file :head_image, default_url: "default_title.jpg"
+  has_attached_file :head_image, default_url: "images/default_title.jpg"
   validates_attachment_content_type :head_image, content_type: /\Aimage\/.*\Z/
 
   def funding
