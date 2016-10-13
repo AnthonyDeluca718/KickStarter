@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161013205007) do
+ActiveRecord::Schema.define(version: 20161013211206) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,7 +29,6 @@ ActiveRecord::Schema.define(version: 20161013205007) do
     t.integer  "category_id"
     t.text     "description",             default: ""
     t.date     "end_date"
-    t.text     "head_photo_url",                       null: false
     t.integer  "goal"
     t.string   "head_image_file_name"
     t.string   "head_image_content_type"

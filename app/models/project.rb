@@ -18,7 +18,7 @@
 
 class Project < ActiveRecord::Base
 
-  validates :title, :user_id, :category_id, :description, :end_date, :head_photo_url, :goal,  presence: true
+  validates :title, :user_id, :category_id, :description, :end_date, :goal,  presence: true
 
   belongs_to :user
 
@@ -30,8 +30,8 @@ class Project < ActiveRecord::Base
     through: :rewards,
     source: :rewardBuys
 
-  has_attached_file :head_picture, default_url: "default_title.png"
-  validates_attachment_content_type :head_picture, content_type: /\Aimage\/.*\Z/
+  has_attached_file :head_image, default_url: "default_title.jpg"
+  validates_attachment_content_type :head_image, content_type: /\Aimage\/.*\Z/
 
   def funding
     rewards = self.rewards.includes(:rewardBuys)
