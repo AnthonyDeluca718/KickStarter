@@ -1,4 +1,5 @@
 import { RECEIVE_CURRENT_USER, LOGOUT, RECEIVE_ERRORS } from '../actions/session_actions';
+import { NEW_REWARD_BUY } from '../actions/project_actions';
 import merge from 'lodash/merge';
 
 const _null = Object.freeze({

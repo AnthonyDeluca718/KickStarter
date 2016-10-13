@@ -6,7 +6,9 @@ import {
         GET_PROJECT,
         getProject,
         receiveCurrentProject,
-        receiveErrors
+        receiveErrors,
+        receiveFunding,
+        NEW_REWARD_BUY
        } from '../actions/project_actions';
 
 import { newProjectUtil, editProjectUtil, getProjectUtil } from '../util/project_api_util';
@@ -23,8 +25,7 @@ export default ({getState, dispatch}) => next => action => {
       $.ajax({
       	method: "Post",
       	url: "/api/rewards",
-      	data: {reward: reward},
-        success: ()=>(console.log("yolo"))
+      	data: {reward: reward}
       })
     })
     hashHistory.push(`/projects/${project.id}`)
@@ -34,6 +35,10 @@ export default ({getState, dispatch}) => next => action => {
   const getSuccessCallback = (project) => {
     dispatch(receiveCurrentProject(project))
   }
+
+  const newRewardBuyCallback = (funding) => ({
+    dispatch(receiveFunding(funding));
+  })
 
   const errorCallback = xhr => {
     const errors = xhr.responseJSON;
@@ -45,6 +50,8 @@ export default ({getState, dispatch}) => next => action => {
   }
 
   switch(action.type){
+    case NEW_REWARD_BUY:
+      newRewardBuyUtil(action.rewardBuy, newSuccessCallback, errorCallback)
     case NEW_PROJECT:
       newProjectUtil(action.project, newSuccessCallback, errorCallback)
       return next(action);

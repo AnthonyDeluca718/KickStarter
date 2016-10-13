@@ -7,6 +7,7 @@ import { receiveCurrentUser,
          LOGOUT,
          SIGNUP
        } from '../actions/session_actions';
+import { NEW_REWARD_BUY, receiveSpent } from '../actions/project_actions';
 
 import { login, signup, logout, editUser } from '../util/session_api_util';
 

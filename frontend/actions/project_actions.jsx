@@ -3,6 +3,9 @@ export const EDIT_PROJECT = "EDIT_PROJECT";
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
 export const GET_PROJECT = "GET_PROJECT";
 export const RECEIVE_CURRENT_PROJECT = "RECEIVE_CURRENT_PROJECT";
+export const NEW_REWARD_BUY = "NEW_REWARD_BUY";
+export const RECEIVE_FUNDING = "RECEIVE_FUNIDNG";
+export const RECEIVE_SPENT = "RECEIVE_SPENT";
 
 export const newProject = (project) => {
   return({
@@ -32,3 +35,19 @@ export const receiveCurrentProject = (project) => ({
   type: RECEIVE_CURRENT_PROJECT,
   project
 });
+
+export const receiveFunding = (funding) => ({
+  type: RECEIVE_FUNDING,
+  funding
+})
+
+export const receiveSpent = (spent) => ({
+  type: RECEIVE_SPENT,
+  spent
+})
+
+export const newRewardbuy = (user_id, reward_id, cost) => ({
+  type: NEW_REWARD_BUY,
+  rewardBuy: {user_id: user_id, reward_id: reward_id},
+  cost: cost
+})

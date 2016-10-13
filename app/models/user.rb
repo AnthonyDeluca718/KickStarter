@@ -61,7 +61,7 @@ class User < ActiveRecord::Base
 		self.session_token
 	end
 
-  def total_spent
+  def spent
     buys = self.rewards
     if (buys)
       return buys.inject(0) {|sum,buy| sum+=buy.cost}
