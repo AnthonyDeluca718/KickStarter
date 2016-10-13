@@ -21,7 +21,6 @@ class UserProfile extends React.Component {
   }
 
   render() {
-    debugger
     return (
 			<div className="profile-edit-container">
 				<form onSubmit={this.handleSubmit} className="profile-edit-box">
