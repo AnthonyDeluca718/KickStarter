@@ -29,27 +29,33 @@ class Search extends React.Component{
     let results;
     if (this.state.data.length > 0) {
       results = search.map((project)=>{return(
-        <p key={project.id}>
-          <Link to={`/projects/${project.id}`} className="search-element">{project.title}</Link>
-        </p>
+        <li key={project.id} className="search-element">
+          <Link to={`/projects/${project.id}`}>
+            <img className="search-project-picture" src={project.head_photo_url} />
+          </Link>
+        </li>
       );});
     } else {
-      results = <div className="search-description">Search is by creator name and project title.</div>
+      results = <li className="search-description">Search is by creator name and project title.</li>
     }
 
     let renderRes;
 
     return(
-      <div className="search-bar">
-        <input className="search-bar-input"
-          type="text"
-          value={this.state.data}
-          onChange={this.getSearch(this.state.data)}
-          placeholder="Search"
-          ></input>
+      <div>
+        <div className="search-bar-wrapper">
+          <input className="search-bar-input"
+            type="text"
+            value={this.state.data}
+            onChange={this.getSearch(this.state.data)}
+            placeholder="Search"
+            ></input>
+        </div>
 
-        <div className="results">
-          {results}
+        <div className="search-contents">
+          <ul className="search-projects-list group">
+            {results}
+          </ul>
         </div>
       </div>
     );

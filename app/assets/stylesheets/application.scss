@@ -531,17 +531,6 @@ header button:hover {
 
 }
 
-/* SearchBar and Results */
-
-.search-bar-input {
-  display: block;
-  width: 500px;
-  border-radius: 6px;
-  margin: 60px;
-  border: 1px solid #dad7d4;
-  padding: 10px;
-}
-
 /* About Page */
 
 .about-page {
@@ -594,7 +583,7 @@ header button:hover {
 
 
 
-/* Search Page */
+/* Category Page */
 
 .category-content {
   display: block;
@@ -619,4 +608,52 @@ header button:hover {
   float: left;
   margin: 25px;
   display: block;
+}
+
+/* Search */
+
+.search-bar-wrapper {
+  width: 500px;
+  margin: 0 auto;
+}
+
+.search-bar-input {
+  display: block;
+  width: 100%;
+  border-radius: 6px;
+  margin: 60px auto;
+  border: 1px solid #dad7d4;
+  padding: 10px;
+}
+
+.search-contents {
+  display: block;
+  width: 900px;
+  margin: 0 auto;
+  background:	#20B2AA;
+}
+
+.search-projects-list {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.search-project-picture {
+  display: block;
+  width: 250px;
+  height: 250px;
+}
+
+.search-projects-list .search-element {
+  float: left;
+  margin: 25px;
+  display: block;
+}
+
+.search-description {
+  display: block;
+  margin: 0 auto;
+  padding: 25px 0;
+  text-align: center;
 }
