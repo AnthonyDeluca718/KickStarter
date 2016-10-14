@@ -9,7 +9,7 @@ class UserProfile extends React.Component {
       bio: props.bio,
       photo_url: props.avatar_url,
       id: props.id,
-      avatar_url: "",
+      avatar_url: props.avatar_url,
       avatar: null
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -58,25 +58,23 @@ class UserProfile extends React.Component {
 			<div className="profile-edit-container">
 				<form onSubmit={this.handleSubmit} className="profile-edit-box">
 
-          Total Spent:
-          <div className="profile-spent">{this.props.spent}</div>
+          <div className="profile-spent">Total Spent: {this.props.spent}</div>
 
-          NewAvatar:
+          <div className="profile-label">New Avatar: Preview</div>
+          <img src={this.state.avatar_url} className="profile-avatar-preview" />
+
 					<input
             type="file"
 						onChange={this.updateAvatar}
 						className="new-avatar-input"
             />
 
-          Bio:
+          <div className="profile-label">Bio: </div>
           <textarea
 						value={this.state.bio}
 						onChange={this.update("bio")}
-						className="bio-input"
+						className="bio-input profile-element"
             />
-
-          Preview:
-          <img src={this.state.avatar_url} className="profile-preview" />
 
           <input className="profile-submit" type="submit" value="Edit Profile" />
 				</form>

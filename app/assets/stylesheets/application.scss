@@ -312,20 +312,23 @@ header button:hover {
 .profile-edit-container {
   background: #fff;
   display: block;
-  width: 600px;
-  padding: 25px;
+  width: 800px;
+  padding: 40px;
   margin: 0 auto;
   margin-top: 60px;
+  border: 1px solid #0c0;
+}
+.profile-element {
+  display: block;
+  margin: 20px 0;
 }
 
 .photo-url-input, .bio-input {
-  display: block;
-  margin: 10px 0;
   border: 1px solid black;
-  padding: 10px;
+  padding: 20px;
   border-radius: 6px;
   border: 1px solid #dad7d4;
-  width: 580px;
+  width: 760px;
 }
 
 .bio-input {
@@ -345,6 +348,24 @@ header button:hover {
 .profile-submit:hover {
   cursor: pointer;
   background: #05AF3C;
+}
+
+.profile-spent {
+  font-size: 32px;
+  color: 	#FF4500;
+}
+
+.profile-avatar-preview {
+  display: block;
+  width: 300px;
+  height: 300px;
+  margin-bottom: 25px;
+}
+
+.profile-label {
+  font-size: 24px;
+  display: block;
+  margin: 25px 0;
 }
 
 /* ProjectForm */
