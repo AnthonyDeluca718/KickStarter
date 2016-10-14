@@ -68,14 +68,14 @@ class ProjectShow extends React.Component {
       <div className="project-show-right">
 
         <div className="project-show-title">{this.props.project.title}</div>
-        
-        <div className="project-show-element project-show-funding">{this.props.project.funding}</div>
 
-        <div className="project-show-element project-show-goal">{this.props.project.goal}</div>
+        <div className="project-show-element project-show-goal">Goal: {this.props.project.goal}</div>
+
+        <div className="project-show-element project-show-funding">Toal Funding: {this.props.project.funding}</div>
 
         <text
           className="project-show-element project-show-date"
-        >{this.props.project.endDate}</text>
+        >End Date: {this.props.project.endDate}</text>
       </div>
 
 
