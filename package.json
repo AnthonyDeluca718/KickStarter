@@ -4,10 +4,11 @@
   "description": "== README",
   "main": "index.js",
   "directories": {
+    "doc": "docs",
     "test": "test"
   },
   "scripts": {
-    "postinstall": "./node_modules/.bin/webpack"
+    "postinstall": "webpack"
   },
   "keywords": [],
   "author": "",
@@ -28,5 +29,14 @@
   "engines": {
     "node": "6.3.0",
     "npm": "3.3.12"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnthonyDeluca718/KickStarter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AnthonyDeluca718/KickStarter/issues"
+  },
+  "homepage": "https://github.com/AnthonyDeluca718/KickStarter#readme"
 }

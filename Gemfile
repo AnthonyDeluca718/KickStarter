@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 gem 'aws-sdk', '>= 2.0'
 gem 'figaro'
