@@ -43,18 +43,20 @@ class Category extends React.Component {
   render() {
     let projShow = this.state.projects.map( (project) => {
         return(
-          <div key={project.id} className="category-project">
+          <li key={project.id} className="category-project">
             <Link to={`/projects/${project.id}`} className="category-project-link" >
               <img className="category-project-picture" src={project.head_photo_url} />
             </Link>
-          </div>
+          </li>
         );
       }
     );
 
     return(
-      <div className="category-content">
-        {projShow}
+      <div className="category-content group">
+        <ul className="category-project-list group">
+          {projShow}
+        </ul>
       </div>
     );
   }

@@ -23,17 +23,21 @@ class Discover extends React.Component {
 
   render() {
     return(
-      <div className="discover-content">
+      <div className="discover-content group">
 
-        {this.state.categories.map(
-          function(category) {
-            return(
-            <div key={category.id} className="discover-category">
-               <Link className="category-link" to={`/discover/${category.id}`} ><img className="category-picture" src={category.picture_url} /></Link>
-             </div>
-            );
-          }
-        )}
+        <ul className="discover-category-list group">
+          {this.state.categories.map(
+            function(category) {
+              return(
+                <li key={category.id} className="discover-category">
+                  <Link className="category-link" to={`/discover/${category.id}`} >
+                    <img className="category-picture" src={category.picture_url} />
+                  </Link>
+                </li>
+              );
+            }
+          )}
+        </ul>
 
       </div>
     );

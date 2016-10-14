@@ -57,7 +57,7 @@ img {
   display: block;
 }
 
-.group {
+.group::after {
   content: "";
   clear: both;
   display: block;
@@ -569,3 +569,54 @@ header button:hover {
 }
 
 /* Discover Page */
+
+.discover-content {
+  display: block;
+  width: 800px;
+  margin: 0 auto;
+  padding: 100px;
+  background: #F8F9FD;
+}
+
+.discover-category-list {
+  display: block;
+  margin: 0 auto;
+}
+
+.discover-category-list li {
+  float: left;
+}
+
+.category-picture {
+  width: 400px;
+  height: 400px;
+}
+
+
+
+/* Search Page */
+
+.category-content {
+  display: block;
+  width: 900px;
+  margin: 0 auto;
+  padding: 75px;
+  background: #F8F9FD;
+}
+
+.category-project-list {
+  display: block;
+  margin: 0 auto;
+}
+
+.category-project-picture {
+  display: block;
+  width: 250px;
+  height: 250px;
+}
+
+.category-project-list li {
+  float: left;
+  margin: 25px;
+  display: block;
+}
