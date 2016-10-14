@@ -494,10 +494,33 @@ header button:hover {
 .project-show-container {
   background: #fff;
   display: block;
-  width: 700px;
+  width: 1800px;
   padding: 25px;
   margin: 0 auto;
   margin-top: 60px;
+}
+
+.project-show-left {
+  float: left;
+  width: 1000px;
+  padding: 25px;
+}
+
+.project-show-right {
+  float: left;
+  width: 700px;
+}
+
+.project-show-title {
+  display: block;
+  font-size: 32;
+  margin: 20px;
+}
+
+.project-show-descripion {
+  display: block;
+  float: left;
+  width: 748px;
 }
 
 .project-show-element {
@@ -509,9 +532,12 @@ header button:hover {
 }
 
 .project-show-head-photo {
-  width: 500px;
-  height: 500px;
-  margin: 40px auto 25px auto;
+  width: 800px;
+  height: 800px;
+}
+
+.project-show-reward-title {
+
 }
 
 .pro-show-label {
@@ -529,6 +555,7 @@ header button:hover {
   margin: 0 auto;
   margin-top: 60px;
   background: #F8F9FD;
+  float: left;
 }
 
 .project-show-reward {
@@ -543,9 +570,6 @@ header button:hover {
 
 }
 
-.project-show-reward-title {
-
-}
 .project-show-reward-body {
 
 }

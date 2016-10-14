@@ -54,22 +54,28 @@ class ProjectShow extends React.Component {
       }
     }
     return (
-      <div className="project-show-container">
-        <text className="project-show-element project-show-title">{this.props.project.title}</text>
+    <div className="project-show-container group">
 
+      <div className="project-show-left">
+        <div className="project_show_title">{this.props.project.title}</div>
         <img className="project-show-head-photo" src={this.props.project.headPhotoUrl}></img>
-
-        <div className="project-show-element project-show-funding">{this.props.project.funding}</div>
-
-        <div className="project-show-element project-show-goal">{this.props.project.goal}</div>
 
         <div
           className="project-show-element project-show-description"
         >{this.props.project.description}</div>
 
+      </div>
+
+      <div className="project-show-right">
+        <div className="project-show-element project-show-funding">{this.props.project.funding}</div>
+
+        <div className="project-show-element project-show-goal">{this.props.project.goal}</div>
+
         <text
           className="project-show-element project-show-date"
         >{this.props.project.endDate}</text>
+      </div>
+
 
       <div className="project-show-rewards" >
 
@@ -95,6 +101,7 @@ class ProjectShow extends React.Component {
           }
         )}
       </div>
+
     </div>
     )
   }
