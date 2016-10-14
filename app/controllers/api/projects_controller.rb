@@ -1,7 +1,6 @@
 class Api::ProjectsController < ApplicationController
 
 	def create
-    debugger
     @rewards = params[:project][:rewards]
 		@project = Project.new(project_params)
     @project.user_id = current_user.id

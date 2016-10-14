@@ -77,7 +77,6 @@ class ProjectForm extends React.Component {
       formData.append("project[goal]", this.state.goal);
       formData.append("project[category_id]", this.state.category_id);
       formData.append("project[rewards]", JSON.stringify(this.state.rewards));
-      debugger
       this.props.processForm(formData);
     }
 	}
