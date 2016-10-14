@@ -551,7 +551,6 @@ header button:hover {
 }
 
 .project-show-reward-title {
-
 }
 
 .pro-show-label {
@@ -577,8 +576,15 @@ header button:hover {
   border: 1px solid black;
 }
 
-.project-show-reward-el {
+.show-rewards-section-title {
+  font-size: 44px;
+  text-align: center;
+  color: #20B2AA;
+}
 
+.project-show-reward-el {
+  display: block;
+  margin: 20px 0;
 }
 
 .project-show-reward-body {
@@ -591,7 +597,15 @@ header button:hover {
 
 }
 .project-show-reward-button {
+  display: block;
+  padding: 10px;
+  background: #0c0;
+  border: 1px solid black;
+  border-radius: 3px;
+}
 
+.project-show-reward-button:hover {
+  cursor: pointer;
 }
 
 /* About Page */

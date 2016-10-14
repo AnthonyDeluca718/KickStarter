@@ -33,6 +33,7 @@ class ProjectShow extends React.Component {
   }
 
   clickButton(e) {
+    alert("You backed the project!")
     if (e.currentTarget) {
       this.props.newRewardBuy(reward.cost, reward.id)
     }
@@ -44,7 +45,7 @@ class ProjectShow extends React.Component {
       var button = function(reward) {
         return(
           <button className="project-show-reward-el project-show-reward-button"
-            onClick={() => that.props.newRewardBuy(reward.id, reward.cost)}>backButton
+            onClick={() => that.props.newRewardBuy(reward.id, reward.cost)}>Back Project
           </button>
         );
       }
@@ -82,6 +83,7 @@ class ProjectShow extends React.Component {
       <div className="project-show-rewards" >
 
         <h1 className="show-rewards-section-title">Rewards</h1>
+
         {this.state.project.rewards.map(
           function(reward) {
             let limit;
@@ -96,7 +98,6 @@ class ProjectShow extends React.Component {
               <div className="project-show-reward-el project-show-reward-title">{reward.title}</div>
               <div className="project-show-reward-el project-show-reward-body">{reward.body}</div>
               <div className="project-show-reward-el project-show-reward-cost">{`Cost: ${reward.cost}`}</div>
-              <div className="project-show-reward-el project-show-reward-limit">{`Limit: ${limit}`}</div>
               { button(reward) }
             </div>
             );
