@@ -10,7 +10,7 @@ class ProjectForm extends React.Component {
     let today = new Date();
 		this.state = {
 			title: "",
-			head_image_url: 'images/imagehere.jpg',
+			head_image_url: 'images/Imagehere.jpg',
       head_image: null,
       goal: 0,
       description: "",
