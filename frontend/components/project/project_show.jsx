@@ -57,7 +57,6 @@ class ProjectShow extends React.Component {
     <div className="project-show-container group">
 
       <div className="project-show-left">
-        <div className="project_show_title">{this.props.project.title}</div>
         <img className="project-show-head-photo" src={this.props.project.headPhotoUrl}></img>
 
         <div
@@ -67,6 +66,9 @@ class ProjectShow extends React.Component {
       </div>
 
       <div className="project-show-right">
+
+        <div className="project-show-title">{this.props.project.title}</div>
+        
         <div className="project-show-element project-show-funding">{this.props.project.funding}</div>
 
         <div className="project-show-element project-show-goal">{this.props.project.goal}</div>

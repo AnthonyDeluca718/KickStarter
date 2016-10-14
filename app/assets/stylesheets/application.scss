@@ -495,15 +495,14 @@ header button:hover {
   background: #fff;
   display: block;
   width: 1800px;
-  padding: 25px;
+  padding: 50px 50px;
   margin: 0 auto;
   margin-top: 60px;
 }
 
 .project-show-left {
   float: left;
-  width: 1000px;
-  padding: 25px;
+  width: 950px;
 }
 
 .project-show-right {
@@ -513,8 +512,14 @@ header button:hover {
 
 .project-show-title {
   display: block;
-  font-size: 32;
-  margin: 20px;
+  font-size: 44px;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.project-show-head-photo {
+  width: 900px;
+  height: 900px;
 }
 
 .project-show-descripion {
@@ -529,11 +534,6 @@ header button:hover {
   border-radius: 6px;
   border: 1px solid #dad7d4;
   width: 678px;
-}
-
-.project-show-head-photo {
-  width: 800px;
-  height: 800px;
 }
 
 .project-show-reward-title {
