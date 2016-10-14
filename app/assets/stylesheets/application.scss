@@ -380,11 +380,11 @@ header button:hover {
 }
 
 .project-input {
-  margin: 20px 0;
   border: 1px solid black;
   padding: 10px;
   border-radius: 6px;
   border: 1px solid #dad7d4;
+  margin: 20px 0;
   width: 678px;
 }
 
@@ -407,7 +407,7 @@ header button:hover {
   height: 200px;
 }
 
-.pro-label {
+.project-label {
   display: block;
   font-size: 24px;
   margin: 20px 0;
@@ -480,6 +480,13 @@ header button:hover {
   font-size: 24px;
   display: block;
   margin: 20px;
+}
+
+.project-head-image-preview {
+  width: 600px;
+  height: 400px;
+  margin: 20px auto;
+  border: 1px solid #0c0;
 }
 
 /* ProjectShow */

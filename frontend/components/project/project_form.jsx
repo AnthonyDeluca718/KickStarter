@@ -10,7 +10,7 @@ class ProjectForm extends React.Component {
     let today = new Date();
 		this.state = {
 			title: "",
-			head_image_url: "",
+			head_image_url: '/images/imagehere.jpg',
       head_image: null,
       goal: 0,
       description: "",
@@ -146,11 +146,13 @@ class ProjectForm extends React.Component {
   		<div className="project-form-container">
   			<form onSubmit={this.handleSubmit} className="project-input-box">
 
-  				<input type="text"
+          <input type="text"
   					value={this.state.title}
   					onChange={this.update("title")}
   					className="project-input project-title"
             placeholder="Title" />
+
+          <img src={this.state.head_image_url} className="project-head-image-preview" />
 
           <input
             type="file"
@@ -158,7 +160,7 @@ class ProjectForm extends React.Component {
 						className="new-head-image-input"
             />
 
-          <img src={this.state.head_image_url} className="project-head-image-preview" />
+          <div className="project-label">Category:</div>
 
           <select className="project-form-select" name="id" onChange={this.update("category_id")} placeholder="Category">
             {this.state.categories.map(

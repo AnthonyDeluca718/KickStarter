@@ -18,7 +18,7 @@ class UserProfile extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    alert("updated");
+    alert("Update Submitted");
 
     var formData = new FormData();
 
