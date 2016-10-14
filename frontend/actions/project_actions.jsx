@@ -7,19 +7,19 @@ export const NEW_REWARD_BUY = "NEW_REWARD_BUY";
 export const RECEIVE_FUNDING = "RECEIVE_FUNIDNG";
 export const RECEIVE_SPENT = "RECEIVE_SPENT";
 
-export const newProject = (project) => {
+export const newProject = (data) => {
   return({
     type: NEW_PROJECT,
-    project
-  })
+    data: data
+  });
 };
 
 export const editProject = (project) => {
   return ({
     type: EDIT_PROJECT,
     project
-  })
-}
+  });
+};
 
 export const receiveErrors = errors => ({
   type: RECEIVE_ERRORS,

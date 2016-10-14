@@ -12,7 +12,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   return ({
     processForm: project => dispatch(newProject(project))
-  })
+  });
 };
 
 export default connect(

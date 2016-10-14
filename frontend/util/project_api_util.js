@@ -5,8 +5,8 @@ export const editProjectUtil = (project, success, error) => {
     data: user,
     success,
     error
-  })
-}
+  });
+};
 
 export const getProjectUtil = (id, success, error) => {
   $.ajax({
@@ -14,18 +14,20 @@ export const getProjectUtil = (id, success, error) => {
     url: `/api/projects/${id}`,
     success,
     error
-  })
-}
+  });
+};
 
-export const newProjectUtil = (project, success, error) => {
+export const newProjectUtil = (data, success, error) => {
   $.ajax({
     method: 'POST',
     url: '/api/projects',
-    data: {project: project},
+    data: data,
+    contentType: false,
+    processData: false,
     success,
     error
-  })
-}
+  });
+};
 
 export const showProjectUtil = (project, sucecess, error) => {
   $.ajax({
@@ -34,8 +36,8 @@ export const showProjectUtil = (project, sucecess, error) => {
     data: {project: project},
     success,
     error
-  })
-}
+  });
+};
 
 export const newRewardBuyUtil = (rewardBuy, success, error) => {
   $.ajax({
@@ -44,5 +46,5 @@ export const newRewardBuyUtil = (rewardBuy, success, error) => {
     data: {reward_buy: rewardBuy},
     success,
     error
-  })
-}
+  });
+};

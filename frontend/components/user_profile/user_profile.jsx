@@ -11,7 +11,7 @@ class UserProfile extends React.Component {
       id: props.id,
       avatar_url: "",
       avatar: null
-    }
+    };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateAvatar = this.updateAvatar.bind(this);
   }
@@ -45,7 +45,7 @@ class UserProfile extends React.Component {
         avatar_url: fileReader.result,
         avatar: file
       });
-    }.bind(this)
+    }.bind(this);
 
     if (file) {
       fileReader.readAsDataURL(file);

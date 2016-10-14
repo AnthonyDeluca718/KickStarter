@@ -17,7 +17,7 @@ import { hashHistory } from 'react-router';
 export default ({getState, dispatch}) => next => action => {
 
   const newSuccessCallback = (project) => {
-    let rewards = project.rewards;
+    let rewards = JSON.parse(project.rewards);
     Object.keys(rewards).forEach(
       function(key) {
       let reward = rewards[key];
@@ -51,7 +51,7 @@ export default ({getState, dispatch}) => next => action => {
       dispatch(receiveFunding(action.cost));
       return next(action);
     case NEW_PROJECT:
-      newProjectUtil(action.project, newSuccessCallback, errorCallback)
+      newProjectUtil(action.data, newSuccessCallback, errorCallback)
       return next(action);
     case GET_PROJECT:
       getProjectUtil(action.id, getSuccessCallback, getError)

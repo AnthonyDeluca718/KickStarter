@@ -2,7 +2,6 @@ import React from 'react';
 import { Link, hashHistory } from 'react-router';
 import Modal from 'react-modal';
 import merge from 'lodash/merge';
-// import RewardForm from '../rewards/reward_form';
 
 class ProjectForm extends React.Component {
   const
@@ -11,10 +10,11 @@ class ProjectForm extends React.Component {
     let today = new Date();
 		this.state = {
 			title: "",
-			headPhotoUrl: "",
+			head_image_url: "",
+      head_image: null,
       goal: 0,
       description: "",
-      endDate: today.toISOString().split('T')[0],
+      end_date: today.toISOString().split('T')[0],
       modalOpen: false,
       rewardModal: false,
       categories: [],
@@ -26,6 +26,7 @@ class ProjectForm extends React.Component {
     this.rewardModalClose = this.rewardModalClose.bind(this);
     this.addReward = this.addReward.bind(this);
     this.upDateReward = this.upDateReward.bind(this);
+    this.updateHeadImage = this.updateHeadImage.bind(this);
 	}
 
   componentWillReceiveProps(nextProps) {
@@ -64,20 +65,20 @@ class ProjectForm extends React.Component {
 	handleSubmit(e) {
 		e.preventDefault();
 
+    var formData = new FormData();
+
     if (this.state.rewards.some(function(reward){ return(reward.title==="" || reward.body==="" || reward.cost < 0) })) {
       this.setState({rewardModal: true});
     } else {
-      const project = {
-        title: this.state.title,
-        user_id: this.state.user_id,
-        description: this.state.description,
-        end_date: this.state.endDate,
-        head_photo_url: this.state.headPhotoUrl,
-        goal: this.state.goal,
-        category_id: this.state.category_id,
-        rewards: this.state.rewards
-      };
-      this.props.processForm(project);
+      formData.append("project[title]", this.state.title);
+      formData.append("project[description]", this.state.description);
+      formData.append("project[end_date]", this.state.end_date);
+      formData.append("project[head_image]", this.state.head_image);
+      formData.append("project[goal]", this.state.goal);
+      formData.append("project[category_id]", this.state.category_id);
+      formData.append("project[rewards]", JSON.stringify(this.state.rewards));
+      debugger
+      this.props.processForm(formData);
     }
 	}
 
@@ -106,6 +107,28 @@ class ProjectForm extends React.Component {
     this.setState({rewardModal: false})
   }
 
+  updateHeadImage(e) {
+
+    const that = this;
+
+    if (e) {
+      var file = e.currentTarget.files[0];
+    }
+
+    var fileReader = new FileReader();
+    fileReader.onloadend = function() {
+      that.setState({
+        head_image_url: fileReader.result,
+        head_image: file
+      });
+    }.bind(this)
+
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
+
+  }
+
   render() {
 
     const style = {
@@ -122,7 +145,21 @@ class ProjectForm extends React.Component {
 
   	return (
   		<div className="project-form-container">
-  			<form onSubmit={this.handleSubmit} className="login-form-box">
+  			<form onSubmit={this.handleSubmit} className="project-input-box">
+
+  				<input type="text"
+  					value={this.state.title}
+  					onChange={this.update("title")}
+  					className="project-input project-title"
+            placeholder="Title" />
+
+          <input
+            type="file"
+						onChange={this.updateHeadImage}
+						className="new-head-image-input"
+            />
+
+          <img src={this.state.head_image_url} className="project-head-image-preview" />
 
           <select className="project-form-select" name="id" onChange={this.update("category_id")} placeholder="Category">
             {this.state.categories.map(
@@ -133,18 +170,6 @@ class ProjectForm extends React.Component {
               }
             )}
           </select>
-
-  				<input type="text"
-  					value={this.state.title}
-  					onChange={this.update("title")}
-  					className="project-input project-title"
-            placeholder="Title" />
-
-          <input type="text"
-  					value={this.state.headPhotoUrl}
-  					onChange={this.update("headPhotoUrl")}
-  					className="project-input project-head-photo-url"
-            placeholder = "Head Photo Url"/>
 
           <label htmlFor="pro-goal" className="project-label">Goal:</label>
 
@@ -164,8 +189,8 @@ class ProjectForm extends React.Component {
           <label htmlFor="pro-date" className="project-label">End Date:</label>
 
           <input type="date"
-            value={this.state.endDate}
-            onChange={this.update("endDate")}
+            value={this.state.end_date}
+            onChange={this.update("end_date")}
             className="project-input project-date"
           />
 

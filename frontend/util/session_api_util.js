@@ -41,4 +41,4 @@ export const editUser = (user, success, error) => {
     success,
     error
   });
-}
+};
