@@ -11,7 +11,6 @@ class ProjectShow extends React.Component {
         rewards: []
       }
     }
-    this.clickButton = this.clickButton.bind(this);
 	}
 
   componentDidMount() {
@@ -32,20 +31,18 @@ class ProjectShow extends React.Component {
     }
   }
 
-  clickButton(e) {
-    alert("You backed the project!")
-    if (e.currentTarget) {
-      this.props.newRewardBuy(reward.cost, reward.id)
-    }
-  }
-
   render() {
     let that = this;
     if (this.props.loggedIn) {
       var button = function(reward) {
         return(
           <button className="project-show-reward-el project-show-reward-button"
-            onClick={() => that.props.newRewardBuy(reward.id, reward.cost)}>Back Project
+            onClick={() => {
+              alert("You backed the project");
+              that.props.newRewardBuy(reward.id, reward.cost);
+              }
+            }
+            >Back Project
           </button>
         );
       }
