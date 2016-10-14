@@ -47,7 +47,7 @@ export default ({getState, dispatch}) => next => action => {
 
   switch(action.type){
     case NEW_REWARD_BUY:
-      newRewardBuyUtil(action.rewardBuy, ()=>({}), errorCallback);
+      newRewardBuyUtil(action.rewardBuy);
       dispatch(receiveFunding(action.cost));
       return next(action);
     case NEW_PROJECT:

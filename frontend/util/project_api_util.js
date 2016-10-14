@@ -39,12 +39,10 @@ export const showProjectUtil = (project, sucecess, error) => {
   });
 };
 
-export const newRewardBuyUtil = (rewardBuy, success, error) => {
+export const newRewardBuyUtil = (rewardBuy) => {
   $.ajax({
     method: 'Post',
     url: '/api/reward_buys',
-    data: {reward_buy: rewardBuy},
-    success,
-    error
+    data: {reward_buy: rewardBuy}
   });
 };

@@ -11,23 +11,26 @@ const _null = Object.freeze({
 });
 
 const SessionReducer = (state = _null, action) => {
+
   switch(action.type) {
     case RECEIVE_CURRENT_USER:
       let obj = merge({}, _null, state);
       obj.photo_url = action.currentUser.photo_url;
       obj.spent = action.currentUser.spent;
       obj.currentUser = merge(state.currentUser, action.currentUser);
+      debugger
       return obj;
     case LOGOUT:
       return merge({}, _null);
     case RECEIVE_ERRORS:
       let newState = merge({}, _null, state);
       newState.errors = action.errors;
+      debugger
       return newState;
     case RECEIVE_SPENT:
-      debugger
       newState = merge({}, _null, state);
       newState.spent += action.spent;
+      debugger
       return newState;
     default:
       return state;
