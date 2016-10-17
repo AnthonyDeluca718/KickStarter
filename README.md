@@ -20,7 +20,8 @@ ClonedStarter is a clone of KickStarter. The backend database is written in Rail
 
 - [ ] Routes
 
-```<Router history={hashHistory}>
+```JavaScript
+<Router history={hashHistory}>
   <Route path="/" component={App}>
     <IndexRoute component={Home} />
     <Route path="/login" component={SessionFormContainer} onEnter={_redirectIfLoggedIn}/>/>
