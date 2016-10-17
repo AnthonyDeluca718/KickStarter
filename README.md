@@ -1,35 +1,42 @@
-# Game Pod
+# ClonedStarter
 
 [Live site][Live-Site]
 
 [Live-Site]: https://adeluca-kickstarter.herokuapp.com
 
-Game Pod is a online crowd-funding platform inspired by KickStarter, implemented using Ruby on Rails and React/Redux.
-This site will be functional with the following features, bug-free navigation, and great css styling.
+ClonedStarter is a clone of KickStarter. The backend database is written in Rails. The frontend uses React/Redux.
 
 
 # Features
 - [ ] Hosting on Heroku
-- [ ] Browsing the project on the sites
-- [ ] User sign up/ log in (for starting a project and backing projects)
-![login]
-- [ ] User backing a project
-![backing]
-- [ ] Search projects
-- [ ] Categories / Discover
-![search]
-- [ ] featured projects
-![feature]
-- [ ] user info page
-![info]
-
-[login]: ./docs/screenshots/login.png
-[backing]:./docs/screenshots/backing.png
-[search]:./docs/screenshots/search.png
-[feature]:./docs/screenshots/feature.png
-[info]:./docs/screenshots/info.png
+- [ ] Search for Projects on the site
+- [ ] Secure User log in and sign up
+- [ ] Project Creation including rewards
+- [ ] Users can back projects
+- [ ] User profile page can be edited
+- [ ] Frontend securely communicates with backend
 
 # Technical features
+
+- [ ] Routes
+
+```<Router history={hashHistory}>
+  <Route path="/" component={App}>
+    <IndexRoute component={Home} />
+    <Route path="/login" component={SessionFormContainer} onEnter={_redirectIfLoggedIn}/>/>
+    <Route path="/signup" component={SessionFormContainer} onEnter={_redirectIfLoggedIn}/>/>
+    <Route path="/profile" component={UserProfileContainer} onEnter={_ensureLoggedIn}/>
+    <Route path="/projects/new" component={ProjectFormContainer} onEnter={_ensureLoggedIn} />
+    <Route path="/projects/:id" component={ProjectShowContainer} />
+    <Route path="/search" component = {SearchContainer} />
+    <Route path="/about" component = {About} />
+    <Route path="/discover" component = {Discover} />
+    <Route path="/discover/:id" component = {CategoryContainer} />
+  </Route>
+  <Route path="*" component={Error}/>
+</Router>
+```
+
 - [ ] User-Login Error Feedback
 ```JaveScript
 const mapStateToProps = state => ({
