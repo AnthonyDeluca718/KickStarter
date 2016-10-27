@@ -14,7 +14,6 @@ import { login, signup, logout, editUser } from '../util/session_api_util';
 export default ({getState, dispatch}) => next => action => {
   const userSuccessCallback = user => dispatch(receiveCurrentUser(user));
   const errorCallback = response => {
-    debugger
     const errors = response;
     dispatch(receiveErrors(errors));
   };

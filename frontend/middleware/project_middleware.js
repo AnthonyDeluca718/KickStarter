@@ -36,8 +36,8 @@ export default ({getState, dispatch}) => next => action => {
     dispatch(receiveCurrentProject(project))
   }
 
-  const errorCallback = xhr => {
-    const errors = xhr.responseJSON;
+  const errorCallback = response => {
+    const errors = response;
     dispatch(receiveErrors(errors));
   };
 
