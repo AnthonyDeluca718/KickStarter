@@ -6,6 +6,7 @@ import Root from './components/root';
 //Actions
 import configureStore from './store/store';
 import Modal from 'react-modal';
+require('./miniJQuery/miniJQuery.js');
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;

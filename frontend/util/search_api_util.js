@@ -1,5 +1,5 @@
 export const getSearchUtil = function(success, search){
-  $.ajax({
+  $l.ajax({
     method: "GET",
     url: "api/search",
     success,
@@ -9,7 +9,7 @@ export const getSearchUtil = function(success, search){
 };
 
 export const getCategoryUtil = function(success, category){
-  $.ajax({
+  $l.ajax({
     method: "GET",
     url: `api/search/${category}`,
     success,

@@ -1,5 +1,5 @@
 export const edit = (user, success, error) => {
-  $.ajax({
+  $l.ajax({
     method: 'GET',
     url: '/api/user/edit',
     data: user,

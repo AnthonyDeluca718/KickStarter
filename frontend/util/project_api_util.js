@@ -1,5 +1,5 @@
 export const editProjectUtil = (project, success, error) => {
-  $.ajax({
+  $l.ajax({
     method: 'GET',
     url: '/api/projects/edit',
     data: user,
@@ -9,7 +9,7 @@ export const editProjectUtil = (project, success, error) => {
 };
 
 export const getProjectUtil = (id, success, error) => {
-  $.ajax({
+  $l.ajax({
     method: 'GET',
     url: `/api/projects/${id}`,
     success,
@@ -18,7 +18,7 @@ export const getProjectUtil = (id, success, error) => {
 };
 
 export const newProjectUtil = (data, success, error) => {
-  $.ajax({
+  $l.ajax({
     method: 'POST',
     url: '/api/projects',
     data: data,
@@ -30,7 +30,7 @@ export const newProjectUtil = (data, success, error) => {
 };
 
 export const showProjectUtil = (project, sucecess, error) => {
-  $.ajax({
+  $l.ajax({
     method: 'GET',
     url: '/api/projects/edit',
     data: {project: project},
@@ -40,7 +40,7 @@ export const showProjectUtil = (project, sucecess, error) => {
 };
 
 export const newRewardBuyUtil = (rewardBuy) => {
-  $.ajax({
+  $l.ajax({
     method: 'Post',
     url: '/api/reward_buys',
     data: {reward_buy: rewardBuy}
