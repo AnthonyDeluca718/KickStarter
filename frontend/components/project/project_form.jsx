@@ -16,14 +16,15 @@ class ProjectForm extends React.Component {
       description: "",
       end_date: today.toISOString().split('T')[0],
       modalOpen: false,
-      rewardModal: false,
+      errorModal: false,
+      frontendError: "",
       categories: [],
       category_id: null,
       rewards: []
 		};
 		this.handleSubmit = this.handleSubmit.bind(this);
     this.onModalClose = this.onModalClose.bind(this);
-    this.rewardModalClose = this.rewardModalClose.bind(this);
+    this.errorModalClose = this.errorModalClose.bind(this);
     this.addReward = this.addReward.bind(this);
     this.upDateReward = this.upDateReward.bind(this);
     this.updateHeadImage = this.updateHeadImage.bind(this);
@@ -68,7 +69,16 @@ class ProjectForm extends React.Component {
     var formData = new FormData();
 
     if (this.state.rewards.some(function(reward){ return(reward.title==="" || reward.body==="" || reward.cost < 0) })) {
-      this.setState({rewardModal: true});
+      this.setState({
+        errorModal: true,
+        frontendError: "Reward Titles and bodies cannot be empty. Cost must be non-negative"
+
+      });
+    } else if (!this.head_image){
+      this.setState({
+        errorModal: true,
+        frontendError: "You must submit an image for your project"
+      });
     } else {
       formData.append("project[title]", this.state.title);
       formData.append("project[description]", this.state.description);
@@ -102,8 +112,11 @@ class ProjectForm extends React.Component {
     this.setState({modalOpen: false});
   }
 
-  rewardModalClose() {
-    this.setState({rewardModal: false})
+  errorModalClose() {
+    this.setState({
+      errorModal: false,
+      frontendErrors: ""
+    })
   }
 
   updateHeadImage(e) {
@@ -249,11 +262,11 @@ class ProjectForm extends React.Component {
         </Modal>
 
         <Modal
-          isOpen={this.state.rewardModal}
-          onRequestClose={this.rewardModalClose}
+          isOpen={this.state.errorModal}
+          onRequestClose={this.errorModalClose}
           style={style}
         >
-          "Reward Titles and bodies cannot be empty. Cost must be non-negative"
+          {this.state.frontendError}
         </Modal>
 
   		</div>

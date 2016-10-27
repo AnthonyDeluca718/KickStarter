@@ -9,6 +9,8 @@
 
 class RewardBuy < ActiveRecord::Base
 
+  validates :user_id, :reward_id, presence: true
+
   belongs_to :reward
 
   belongs_to :user
