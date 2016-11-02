@@ -23,8 +23,6 @@ module KickStarter
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
 
-    OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
-
     config.paperclip_defaults = {
       :storage => :s3,
       :s3_credentials => {
