@@ -2,7 +2,7 @@
 
 [Live site][Live-Site]
 
-[Live-Site]: https://adeluca-kickstarter.herokuapp.com
+[Live-Site]: http://clonedstarter.tech
 
 ClonedStarter is a clone of KickStarter. The backend database is written in Rails. The frontend uses React/Redux.
 
