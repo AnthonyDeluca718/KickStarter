@@ -63,10 +63,9 @@ blueReward1 = Reward.create({cost: 50, title: "Support Blue", body: "This would 
 blueReward2 = Reward.create({cost: 200, title: "Become a patron of Blue", body: "You get two copies of the game, a personalized message, and Blue-themed gameboy case. Also Blue's gratitude", project_id: pokeBlue.id})
 blueReward3 = Reward.create({cost: 500, title: "Become am amazing super patron", body: "It would really be incredible if you gave this much. Don't give unless you are LOADED! You get everything in the previous tier times two. Plus a handwritten thnak you from BLUE.", project_id: pokeBlue.id})
 redReward1 = Reward.create({cost: 50, title: "Support Red", body: "This would help Red a ton. you get the game. Red will remember you when they become the world's greatest pokemon trainer.", project_id: pokeRed.id})
-
-silverReward1 = Reward.create({cost: 30, title: "Support Silver", body: "", project_id: pokeSilver.id})
-sapphireReward1 = Reward.create({cost: 40, title: "Support Sapphire", body: "", project_id: pokeSapphire.id})
-silverReward2 = Reward.create({cost: 130, title: "Support Sapphire Alot", body: "", project_id: pokeSapphire.id})
+silverReward1 = Reward.create({cost: 30, title: "Support Silver", body: "This would help Silver a ton. You get a personal message and a copy of the game.", project_id: pokeSilver.id})
+sapphireReward1 = Reward.create({cost: 40, title: "Support Sapphire", body: "This would help Sapphire a ton. You get a personal message and a copy of the game.", project_id: pokeSapphire.id})
+sapphireReward2 = Reward.create({cost: 130, title: "Support Sapphire Alot", body: "You get a limited edition copy of the game! And a special letter from Sapphire", project_id: pokeSapphire.id})
 
 silver500Blue = RewardBuy.create!({user_id: silver.id, reward_id: blueReward3.id})
 sapphire200Blue = RewardBuy.create!({user_id: sapphire.id, reward_id: blueReward2.id})
@@ -98,14 +97,14 @@ elGreco = Project.create!({title: "El Greco", user_id: sapphire.id, category_id:
   elGreco.head_image = File.open('app/assets/images/project_seeds/El_Greco_View_Toledo.jpg')
   elGreco.save!
 
-vanGoghReward1 = Reward.create({cost: 50, title: "Support Van Gogh", body: "", project_id: vanGogh.id})
-vanGoghReward2 = Reward.create({cost: 200, title: "Support Van Gogh Alot", body: "", project_id: vanGogh.id})
-vanGoghReward3 = Reward.create({cost: 500, title: "Support Van Gogh A Huge Amount", body: "", project_id: vanGogh.id})
-deChiricoReward1 = Reward.create({cost: 50, title: "Support Giorgio de Chirico", body: "", project_id: deChirico.id})
-mondrianReward1 = Reward.create({cost: 50, title: "Support Mondrian", body: "", project_id: mondrian.id})
-elGrecoReward1 = Reward.create({cost: 50, title: "Support El Greco", body: "", project_id: elGreco.id})
-elGrecoReward2 = Reward.create({cost: 200, title: "Support El Greco Alot", body: "", project_id: elGreco.id})
-elGrecoReward3 = Reward.create({cost: 500, title: "Support El Greco A Huge Amount", body: "", project_id: elGreco.id})
+vanGoghReward1 = Reward.create({cost: 50, title: "Support Van Gogh", body: "One painting", project_id: vanGogh.id})
+vanGoghReward2 = Reward.create({cost: 200, title: "Support Van Gogh Alot", body: "One limited edition print", project_id: vanGogh.id})
+vanGoghReward3 = Reward.create({cost: 500, title: "Support Van Gogh A Huge Amount", body: "3 Limited Edition Prints", project_id: vanGogh.id})
+deChiricoReward1 = Reward.create({cost: 50, title: "Support Giorgio de Chirico", body: "One painting", project_id: deChirico.id})
+mondrianReward1 = Reward.create({cost: 50, title: "Support Mondrian", body: "One painting", project_id: mondrian.id})
+elGrecoReward1 = Reward.create({cost: 50, title: "Support El Greco", body: "One painting", project_id: elGreco.id})
+elGrecoReward2 = Reward.create({cost: 200, title: "Support El Greco Alot", body: "One limited edition print", project_id: elGreco.id})
+elGrecoReward3 = Reward.create({cost: 500, title: "Support El Greco A Huge Amount", body: "3 Limited Edition Prints", project_id: elGreco.id})
 
 
 
@@ -122,14 +121,13 @@ encountersEnd = Project.create!({title: "Encounters at the End of the World", us
   encountersEnd.head_image = File.open('app/assets/images/project_seeds/Encounters_End.jpg')
   encountersEnd.save!
 
-jiroDreamsReward1 = Reward.create({cost: 50, title: "Support Jiro Dreams of Sushi", body: "", project_id: jiroDreams.id})
-jiroDreamsReward2 = Reward.create({cost: 150, title: "Support Jiro Dreams of Sushi Alot", body: "", project_id: jiroDreams.id})
-encountersEndReward1 = Reward.create({cost: 40, title: "Support Encounters at the End of the World", body: "", project_id: encountersEnd.id})
-encountersEndReward2 = Reward.create({cost: 199, title: "Support Encounters at the End of the World Alot", body: "", project_id: encountersEnd.id})
+jiroDreamsReward1 = Reward.create({cost: 50, title: "Support Jiro Dreams of Sushi", body: "Copy of the documentary.", project_id: jiroDreams.id})
+jiroDreamsReward2 = Reward.create({cost: 150, title: "Support Jiro Dreams of Sushi Alot", body: "Reservation with Jiro plus a copy of the documentary.", project_id: jiroDreams.id})
+encountersEndReward1 = Reward.create({cost: 40, title: "Support Encounters at the End of the World", body: "Copy of the DVD.", project_id: encountersEnd.id})
+encountersEndReward2 = Reward.create({cost: 199, title: "Support Encounters at the End of the World Alot", body: "Signed copy of the DVD and a poster.", project_id: encountersEnd.id})
 
 
 # Music
-
 beatles = Project.create!({title: "Jiro Dreams of Sushi", user_id: blue.id, category_id: music.id, goal: 3500, end_date: "2017-2-2" ,
   description: File.open("app/assets/descriptions/beatles_description.txt", "rb").read
   })
@@ -152,11 +150,11 @@ brianEno = Project.create!({title: "Encounters at the End of the World", user_id
   brianEno.save!
 
 
-beatlesReward1 = Reward.create({cost: 30, title: "Support The Beatles", body: "", project_id: beatles.id})
-beatlesReward2 = Reward.create({cost: 300, title: "Support The Beatles Alot", body: "", project_id: beatles.id})
-beatlesReward3 = Reward.create({cost: 1000, title: "Support The Beatles A Tremendous Amount", body: "", project_id: beatles.id})
-beckReward1 = Reward.create({cost: 100, title: "Support Beck", body: "", project_id: beck.id})
-fleetwoodMacReward1 = Reward.create({cost: 200, title: "Support Fleetwood Mac Alot", body: "", project_id: fleetwoodMac.id})
-brianEnoReward1 = Reward.create({cost: 40, title: "Support Brian Eno", body: "", project_id: brianEno.id})
-brianEnoReward2 = Reward.create({cost: 200, title: "Support Brian Eno", body: "", project_id: brianEno.id})
-brianEnoReward3 = Reward.create({cost: 400, title: "Support Brian Eno", body: "", project_id: brianEno.id})
+beatlesReward1 = Reward.create({cost: 30, title: "Support The Beatles", body: "Copy of the next album", project_id: beatles.id})
+beatlesReward2 = Reward.create({cost: 300, title: "Support The Beatles Alot", body: "Limited edition copy of the next album and a poster.", project_id: beatles.id})
+beatlesReward3 = Reward.create({cost: 1000, title: "Support The Beatles A Tremendous Amount", body: "Limited edition copy of the next album and a poster. Skype with the creator!", project_id: beatles.id})
+beckReward1 = Reward.create({cost: 10, title: "Support Beck", body: "Copy of the next album", project_id: beck.id})
+fleetwoodMacReward1 = Reward.create({cost: 20, title: "Support Fleetwood Mac Alot", body: "Copy of the next album", project_id: fleetwoodMac.id})
+brianEnoReward1 = Reward.create({cost: 40, title: "Support Brian Eno", body: "Copy of the next album", project_id: brianEno.id})
+brianEnoReward2 = Reward.create({cost: 200, title: "Support Brian Eno", body: "Limited edition copy of the next album and a poster.", project_id: brianEno.id})
+brianEnoReward3 = Reward.create({cost: 400, title: "Support Brian Eno", body: "Limited edition copy of the next album and a poster. Skype with the creator!", project_id: brianEno.id})
