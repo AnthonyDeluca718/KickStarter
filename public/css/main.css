@@ -1,0 +1,446 @@
+@font-face {
+  font-family: "blackjack";
+  src: asset-url('blackjack.otf') format('opentype');
+}
+
+.fa {
+  height: 10px;
+  width: auto;
+}
+/* Reset */
+
+html, body, header, nav, h1, a, ul, li,
+strong, main, section, img, div, h2, p,
+form, fieldset, label, input, textarea,
+button, article, footer, small {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  box-sizing: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  vertical-align: inherit;
+  color: inherit;
+  background: transparent;
+}
+
+ul {
+  list-style: none;
+}
+
+.group::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+
+body {
+  font-family: sans-serif;
+}
+
+html, body {
+  height: 100%;
+}
+/* Header */
+
+.header-content {
+  background: #F7F5F2;
+  /*background: #F8F9FD; */
+  border: 1px solid red;
+  border-radius: 6px;
+  width: 90%;
+  margin: 30px auto 40px auto;
+  vertical-align: middle;
+  justify-content: center; /* align horizontal */
+  align-items: center;
+}
+
+.profile-name {
+  font-size: 44px;
+  font-weight: bold;
+  float: left;
+  font-family: 'Tangerine', cursive;
+  padding-top: 9px;
+  margin-left: 30px;
+  /*color: #20B2AA;*/
+  /*color: #1E90FF;*/
+  /*color: 	#8A2BE2;*/
+  /*color: #FF1493;*/
+  /*color: 	#FF69B4;*/
+}
+
+.profile-anthony {
+  /*color: #6495ED;*/
+}
+
+.profile-deluca {
+  /*color: #6495ED;*/
+}
+
+.header-navigation-links {
+  display: block;
+  float: right;
+  margin-right: 30px;
+}
+
+.header-nav-link {
+  float: right;
+  position: relative;
+  padding: 20px 0;
+  margin-left: 30px;
+}
+
+header .hover-bar {
+  opacity: 0;
+  display: block;
+  width: 100%;
+  height: 5px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #0c0;
+}
+
+header .header-nav-link:hover .hover-bar {
+  opacity: 1;
+}
+
+
+/* Skills */
+
+.skills-content {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.skills-header {
+  width: 100%;
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 44px;
+}
+
+.skill-icon {
+  margin: 8px;
+}
+
+.skills-list {
+  margin-bottom: 30px;
+}
+
+.skills-sub-list {
+  width: 33%;
+  float: left;
+  text-align: center;
+}
+
+.skills-explantion {
+
+}
+
+.skills-explanation p {
+  text-align: center;
+}
+
+.skills-explanation-title {
+  font-size: 44px;
+  display: block;
+  margin: 0 auto 30px auto;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Resume */
+
+.resume-object {
+  width: 90%;
+  height: 1150px;
+  margin: 0 auto;
+  display: block;
+}
+
+/* About */
+
+.about-content {
+  width: 95%;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+
+/* Footer */
+
+.footer-content {
+  background: #F7F5F2;
+  padding: 10px 0;
+  border: 1px solid red;
+  border-radius: 6px;
+  width: 90%;
+  margin: 30px auto 40px auto;
+  font-size: 12px;
+  text-align: center;
+}
+
+.footer-left {
+  float: left;
+  display: inline-block;
+  width: 40%;
+  text-align: left;
+  margin-left: 30px;
+}
+
+.footer-mid {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 10%;
+}
+
+.footer-right {
+  display: inline-block;
+  float: right;
+  width: 40%;
+  text-align: right;
+  margin-right: 30px;
+}
+
+/* Error */
+
+
+.error-content {
+  display: block;
+  height: 180px;
+  width: 550px;
+  border-radius: 6px;
+  border: 1px solid red;
+  padding: 25px;
+  margin: 0 auto;
+  margin-top: 25px;
+  background: #ccc;
+}
+
+.error h1 {
+  font-size: 52px;
+  color: #020621;
+  display: block;
+}
+
+.ohMy {
+  display: block;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.error .message {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.error {
+  width: 90%;
+  margin: 30px auto 0 auto;
+}
+
+/* Projects */
+
+.projects-content {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.projects-content .left {
+  text-align: left;
+}
+
+.project-spotlight {
+  margin-bottom: 30px;
+}
+
+.project-image {
+  display: block;
+  width: 40%;
+  height: auto;
+}
+
+.projects-content img {
+  width: 100%;
+}
+
+.project-show {
+  display: block;
+  width: 50%;
+}
+
+.projects-content .left {
+  float: left;
+}
+
+.projects-content .right {
+  float: right;
+}
+
+.projects-content h2 {
+  font-size: 36px;
+  text-decoration: underline;
+  color: blue;
+}
+
+.project-sentence {
+  font-size: 24px;
+  display: block;
+  margin: 20px 0;
+}
+
+.projects-content a {
+  color: blue;
+}
+
+/* Home */
+
+.home-content {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.home-left {
+  display: block;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 35%;
+  float: left;
+}
+
+.profile-pic {
+  width: 100%;
+  height: auto;
+}
+
+.home-right {
+  font-size: 20px;
+  display: block;
+  width: 55%;
+  float: right;
+  border: 1px solid red;
+  height: auto;
+  border-radius: 6px;
+  background: #F7F5F2;
+  padding: 30px;
+  font-family: 'Rubik', 'sans-serif';
+}
+
+.profile-contacts-section {
+  float: left;
+}
+
+.home-icons {
+  display: block;
+  text-align: center;
+}
+
+.home-email {
+  padding-top: 18px;
+  float: left;
+  color: red;
+  font-size: 28px;
+  margin-right: 35px;
+}
+
+.home-sites {
+  padding-top: 15px;
+  float: left;
+  color: red;
+  font-size: 28px;
+  margin-right: 30px;
+}
+
+.home-icons a {
+  margin-right: 30px;
+  font-size: 60px;
+  display: inline-block;
+  float: left;
+}
+
+
+.home-des {
+  margin-bottom: 20px;
+}
+
+.home-des1 {
+
+}
+
+.home-des2 {
+
+}
+
+.home-des3 {
+
+}
+
+.home-des4 {
+
+}
+
+.home-des5 {
+
+}
+
+
+
+
+
+
+/*.home-content {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.home-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.home-des {
+  text-decoration: underline;
+  font-size: 32px;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  font-family: 'Rubik', 'sans-serif';
+}
+
+.home-des1 {
+  position: absolute;
+  top: 50px;
+  left: 0;
+}
+
+.home-des2 {
+  position: absolute;
+  top: 100px;
+  left: 0;
+}
+
+.home-des3 {
+  position: absolute;
+  top: 150px;
+  left: 0;
+}
+
+.home-des4 {
+  position: absolute;
+  top: 200px;
+  left: 0;
+}
+
+.home-des5 {
+  position: absolute;
+  top: 250px;
+  left: 0;
+}*/
