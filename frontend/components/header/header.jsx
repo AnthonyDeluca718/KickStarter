@@ -47,7 +47,7 @@ class Header extends React.Component {
     return(
       <header>
         <ul className="header-nav left group">
-          <li><Link to="/discover" className="Link">Discover<nav className="hover-bar"></nav></Link></li>
+          <li><Link to="/discover" className="Link">Categories<nav className="hover-bar"></nav></Link></li>
           <li><Link to="/about" className="Link">About Us<nav className="hover-bar"></nav></Link></li>
           <li><Link to="/search" className="Link search-icon" ><img className="mag-glass" src="images/mag_glass.png"/></Link></li>
         </ul>
