@@ -74,7 +74,7 @@ class ProjectForm extends React.Component {
         frontendError: "Reward Titles and bodies cannot be empty. Cost must be non-negative"
 
       });
-    } else if (!this.head_image){
+    } else if (!this.state.head_image){
       this.setState({
         errorModal: true,
         frontendError: "You must submit an image for your project"
