@@ -17,8 +17,6 @@ doc = Category.create!({name: "Documentary", picture_url: 'images/DocumentaryCat
 art = Category.create!({name: "Art", picture_url: 'images/ArtCat.jpg'})
 music = Category.create!({name: "Music", picture_url: 'images/MusicCat.jpg'})
 
-
-
 guest = User.create({name: 'guest', password: 'password', bio: 'I am a guest'})
 guest.avatar = File.open('app/assets/images/user_seeds/guest_login.png')
 guest.save!
@@ -72,6 +70,9 @@ sapphire200Blue = RewardBuy.create!({user_id: sapphire.id, reward_id: blueReward
 blue50Red = RewardBuy.create!({user_id: blue.id, reward_id: redReward1.id})
 red50Blue = RewardBuy.create!({user_id: red.id, reward_id: blueReward1.id})
 silver50Blue = RewardBuy.create!({user_id: silver.id, reward_id: blueReward1.id})
+blueSilver1 = RewardBuy.create!({user_id: blue.id, reward_id: silverReward1.id})
+blueSapphire1 = RewardBuy.create!({user_id: blue.id, reward_id: sapphireReward1.id})
+blueSapphire2 = RewardBuy.create!({user_id: blue.id, reward_id: sapphireReward2.id})
 
 
 # Art
@@ -106,7 +107,15 @@ elGrecoReward1 = Reward.create({cost: 50, title: "Support El Greco", body: "One 
 elGrecoReward2 = Reward.create({cost: 200, title: "Support El Greco Alot", body: "One limited edition print", project_id: elGreco.id})
 elGrecoReward3 = Reward.create({cost: 500, title: "Support El Greco A Huge Amount", body: "3 Limited Edition Prints", project_id: elGreco.id})
 
-
+blueVanGogh1 = RewardBuy.create!({user_id: blue.id, reward_id: vanGoghReward1.id})
+blueVanGogh2 = RewardBuy.create!({user_id: blue.id, reward_id: vanGoghReward2.id})
+blueVanGogh3 = RewardBuy.create!({user_id: blue.id, reward_id: vanGoghReward3.id})
+blueDeChirico1 = RewardBuy.create!({user_id: blue.id, reward_id: deChiricoReward1.id})
+blueDeChirico2 = RewardBuy.create!({user_id: blue.id, reward_id: deChiricoReward1.id})
+blueMondrian1 = RewardBuy.create!({user_id: blue.id, reward_id: mondrianReward1.id})
+blueElGreco1 = RewardBuy.create!({user_id: blue.id, reward_id: elGrecoReward1.id})
+blueElGreco2 = RewardBuy.create!({user_id: blue.id, reward_id: elGrecoReward2.id})
+blueElGreco3 = RewardBuy.create!({user_id: blue.id, reward_id: elGrecoReward3.id})
 
 # doc
 
@@ -126,6 +135,10 @@ jiroDreamsReward2 = Reward.create({cost: 150, title: "Support Jiro Dreams of Sus
 encountersEndReward1 = Reward.create({cost: 40, title: "Support Encounters at the End of the World", body: "Copy of the DVD.", project_id: encountersEnd.id})
 encountersEndReward2 = Reward.create({cost: 199, title: "Support Encounters at the End of the World Alot", body: "Signed copy of the DVD and a poster.", project_id: encountersEnd.id})
 
+blueJiro1 = RewardBuy.create!({user_id: blue.id, reward_id: jiroDreamsReward1.id})
+blueJiro2 = RewardBuy.create!({user_id: blue.id, reward_id: jiroDreamsReward2.id})
+blueEncounters1 = RewardBuy.create!({user_id: blue.id, reward_id: encountersEndReward1.id})
+blueEncounters2 = RewardBuy.create!({user_id: blue.id, reward_id: encountersEndReward2.id})
 
 # Music
 beatles = Project.create!({title: "Jiro Dreams of Sushi", user_id: blue.id, category_id: music.id, goal: 3500, end_date: "2017-2-2" ,
@@ -158,3 +171,12 @@ fleetwoodMacReward1 = Reward.create({cost: 20, title: "Support Fleetwood Mac Alo
 brianEnoReward1 = Reward.create({cost: 40, title: "Support Brian Eno", body: "Copy of the next album", project_id: brianEno.id})
 brianEnoReward2 = Reward.create({cost: 200, title: "Support Brian Eno", body: "Limited edition copy of the next album and a poster.", project_id: brianEno.id})
 brianEnoReward3 = Reward.create({cost: 400, title: "Support Brian Eno", body: "Limited edition copy of the next album and a poster. Skype with the creator!", project_id: brianEno.id})
+
+blueBeatles1 = RewardBuy.create!({user_id: blue.id, reward_id: beatlesReward1.id})
+blueBeatles2 = RewardBuy.create!({user_id: blue.id, reward_id: beatlesReward2.id})
+blueBeatles3 = RewardBuy.create!({user_id: blue.id, reward_id: beatlesReward3.id})
+blueBeck1 = RewardBuy.create!({user_id: blue.id, reward_id: beckReward1.id})
+blueFleetwood1 = RewardBuy.create!({user_id: blue.id, reward_id: fleetwoodMacReward1.id})
+blueEno1 = RewardBuy.create!({user_id: blue.id, reward_id: brianEnoReward1.id})
+blueEno2 = RewardBuy.create!({user_id: blue.id, reward_id: brianEnoReward2.id})
+blueEno3 = RewardBuy.create!({user_id: blue.id, reward_id: brianEnoReward3.id})
