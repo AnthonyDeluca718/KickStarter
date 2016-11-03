@@ -141,22 +141,22 @@ blueEncounters1 = RewardBuy.create!({user_id: blue.id, reward_id: encountersEndR
 blueEncounters2 = RewardBuy.create!({user_id: blue.id, reward_id: encountersEndReward2.id})
 
 # Music
-beatles = Project.create!({title: "Jiro Dreams of Sushi", user_id: blue.id, category_id: music.id, goal: 3500, end_date: "2017-2-2" ,
+beatles = Project.create!({title: "Beatles", user_id: blue.id, category_id: music.id, goal: 3500, end_date: "2017-2-2" ,
   description: File.open("app/assets/descriptions/beatles_description.txt", "rb").read
   })
   beatles.head_image = File.open('app/assets/images/project_seeds/Abbey_Road.jpeg')
   beatles.save!
-beck = Project.create!({title: "Encounters at the End of the World", user_id: red.id, category_id: music.id, goal: 1600, end_date: "2017-1-23" ,
+beck = Project.create!({title: "Beck", user_id: red.id, category_id: music.id, goal: 1600, end_date: "2017-1-23" ,
   description: File.open("app/assets/descriptions/beck_description.txt", "rb").read
   })
   beck.head_image = File.open('app/assets/images/project_seeds/Sea_Changes.png')
   beck.save!
-fleetwoodMac = Project.create!({title: "Jiro Dreams of Sushi", user_id: blue.id, category_id: music.id, goal: 1800, end_date: "2017-6-12" ,
+fleetwoodMac = Project.create!({title: "Fleetwood Mac", user_id: blue.id, category_id: music.id, goal: 1800, end_date: "2017-6-12" ,
   description: File.open("app/assets/descriptions/fleetwood_mac_description.txt", "rb").read
   })
   fleetwoodMac.head_image = File.open('app/assets/images/project_seeds/Rumors.jpg')
   fleetwoodMac.save!
-brianEno = Project.create!({title: "Encounters at the End of the World", user_id: red.id, category_id: music.id, goal: 400, end_date: "2017-2-1" ,
+brianEno = Project.create!({title: "Brian Eno", user_id: red.id, category_id: music.id, goal: 400, end_date: "2017-2-1" ,
   description: File.open("app/assets/descriptions/brain_eno_description.txt", "rb").read
   })
   brianEno.head_image = File.open('app/assets/images/project_seeds/Another_Green_World.jpg')
