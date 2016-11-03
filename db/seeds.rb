@@ -64,6 +64,10 @@ blueReward2 = Reward.create({cost: 200, title: "Become a patron of Blue", body: 
 blueReward3 = Reward.create({cost: 500, title: "Become am amazing super patron", body: "It would really be incredible if you gave this much. Don't give unless you are LOADED! You get everything in the previous tier times two. Plus a handwritten thnak you from BLUE.", project_id: pokeBlue.id})
 redReward1 = Reward.create({cost: 50, title: "Support Red", body: "This would help Red a ton. you get the game. Red will remember you when they become the world's greatest pokemon trainer.", project_id: pokeRed.id})
 
+silverReward1 = Reward.create({cost: 30, title: "Support Silver", body: "", project_id: pokeSilver.id})
+sapphireReward1 = Reward.create({cost: 40, title: "Support Sapphire", body: "", project_id: pokeSapphire.id})
+silverReward2 = Reward.create({cost: 130, title: "Support Sapphire Alot", body: "", project_id: pokeSapphire.id})
+
 silver500Blue = RewardBuy.create!({user_id: silver.id, reward_id: blueReward3.id})
 sapphire200Blue = RewardBuy.create!({user_id: sapphire.id, reward_id: blueReward2.id})
 blue50Red = RewardBuy.create!({user_id: blue.id, reward_id: redReward1.id})
@@ -94,6 +98,16 @@ elGreco = Project.create!({title: "El Greco", user_id: sapphire.id, category_id:
   elGreco.head_image = File.open('app/assets/images/project_seeds/El_Greco_View_Toledo.jpg')
   elGreco.save!
 
+vanGoghReward1 = Reward.create({cost: 50, title: "Support Van Gogh", body: "", project_id: vanGogh.id})
+vanGoghReward2 = Reward.create({cost: 200, title: "Support Van Gogh Alot", body: "", project_id: vanGogh.id})
+vanGoghReward3 = Reward.create({cost: 500, title: "Support Van Gogh A Huge Amount", body: "", project_id: vanGogh.id})
+deChiricoReward1 = Reward.create({cost: 50, title: "Support Giorgio de Chirico", body: "", project_id: deChirico.id})
+mondrianReward1 = Reward.create({cost: 50, title: "Support Mondrian", body: "", project_id: mondrian.id})
+elGrecoReward1 = Reward.create({cost: 50, title: "Support El Greco", body: "", project_id: elGreco.id})
+elGrecoReward2 = Reward.create({cost: 200, title: "Support El Greco Alot", body: "", project_id: elGreco.id})
+elGrecoReward3 = Reward.create({cost: 500, title: "Support El Greco A Huge Amount", body: "", project_id: elGreco.id})
+
+
 
 # doc
 
@@ -108,7 +122,10 @@ encountersEnd = Project.create!({title: "Encounters at the End of the World", us
   encountersEnd.head_image = File.open('app/assets/images/project_seeds/Encounters_End.jpg')
   encountersEnd.save!
 
-
+jiroDreamsReward1 = Reward.create({cost: 50, title: "Support Jiro Dreams of Sushi", body: "", project_id: jiroDreams.id})
+jiroDreamsReward2 = Reward.create({cost: 150, title: "Support Jiro Dreams of Sushi Alot", body: "", project_id: jiroDreams.id})
+encountersEndReward1 = Reward.create({cost: 40, title: "Support Encounters at the End of the World", body: "", project_id: encountersEnd.id})
+encountersEndReward2 = Reward.create({cost: 199, title: "Support Encounters at the End of the World Alot", body: "", project_id: encountersEnd.id})
 
 
 # Music
@@ -133,3 +150,13 @@ brianEno = Project.create!({title: "Encounters at the End of the World", user_id
   })
   brianEno.head_image = File.open('app/assets/images/project_seeds/Another_Green_World.jpg')
   brianEno.save!
+
+
+beatlesReward1 = Reward.create({cost: 30, title: "Support The Beatles", body: "", project_id: beatles.id})
+beatlesReward2 = Reward.create({cost: 300, title: "Support The Beatles Alot", body: "", project_id: beatles.id})
+beatlesReward3 = Reward.create({cost: 1000, title: "Support The Beatles A Tremendous Amount", body: "", project_id: beatles.id})
+beckReward1 = Reward.create({cost: 100, title: "Support Beck", body: "", project_id: beck.id})
+fleetwoodMacReward1 = Reward.create({cost: 200, title: "Support Fleetwood Mac Alot", body: "", project_id: fleetwoodMac.id})
+brianEnoReward1 = Reward.create({cost: 40, title: "Support Brian Eno", body: "", project_id: brianEno.id})
+brianEnoReward2 = Reward.create({cost: 200, title: "Support Brian Eno", body: "", project_id: brianEno.id})
+brianEnoReward3 = Reward.create({cost: 400, title: "Support Brian Eno", body: "", project_id: brianEno.id})
