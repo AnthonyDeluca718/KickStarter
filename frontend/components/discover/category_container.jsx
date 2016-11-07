@@ -2,8 +2,10 @@ import React from 'react';
 import {connect} from 'react-redux';
 import Category from './category';
 
-const mapStateToProps = () => {
-  return({});
+const mapStateToProps = (state) => {
+  return({
+    loading: state.loading
+  });
 };
 
 

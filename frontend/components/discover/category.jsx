@@ -1,12 +1,14 @@
 import React from 'react';
 import { hashHistory } from 'react-router';
 import { Link } from 'react-router';
+import Modal from 'react-modal';
 
 class Category extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      projects: []
+      projects: [],
+      loading: true
     };
   }
 
@@ -16,7 +18,10 @@ class Category extends React.Component {
       method: 'GET',
       url: `api/search/${that.props.id}`,
       success: function(response) {
-        that.setState({projects: response});
+        that.setState({
+          projects: response,
+          loading: false
+        });
       },
       error: function() {
         hashHistory.push('/error');
@@ -41,6 +46,18 @@ class Category extends React.Component {
   }
 
   render() {
+
+    const style = {
+      content : {
+        margin: '150px auto 0 auto',
+        width: '350px',
+        height: '115px',
+        border: '1px solid red'
+      }, overlay: {
+
+      }
+    };
+
     let projShow = this.state.projects.map( (project) => {
         return(
           <li key={project.id} className="category-project">
@@ -57,6 +74,14 @@ class Category extends React.Component {
         <ul className="category-project-list group">
           {projShow}
         </ul>
+
+        <Modal
+          isOpen={this.props.loading}
+          onRequestClose={this.errorModalClose}
+          style={style}
+        >
+          Yolo
+        </Modal>
       </div>
     );
   }
