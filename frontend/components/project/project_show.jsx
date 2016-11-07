@@ -51,6 +51,18 @@ class ProjectShow extends React.Component {
         return "";
       }
     }
+
+		const style = {
+      content : {
+        margin: '150px auto 0 auto',
+        width: '350px',
+        height: '115px',
+        border: '1px solid red'
+      }, overlay: {
+
+      }
+    };
+		
     return (
     <div className="project-show-container group">
 
@@ -101,6 +113,14 @@ class ProjectShow extends React.Component {
           }
         )}
       </div>
+
+			<Modal
+				isOpen={this.props.loading}
+				onRequestClose={this.errorModalClose}
+				style={style}
+			>
+				Yolo
+			</Modal>
 
     </div>
     )

@@ -4,7 +4,8 @@ import { getProject, newRewardBuy } from '../../actions/project_actions';
 
 const mapStateToProps = (state) => ({
   project: state.project,
-  loggedIn: Boolean(state.session.currentUser)
+  loggedIn: Boolean(state.session.currentUser),
+  loading: state.loading
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => {
