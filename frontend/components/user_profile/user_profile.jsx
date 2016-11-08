@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, hashHistory } from 'react-router';
+import Modal from 'react-modal';
 
 class UserProfile extends React.Component {
 
@@ -53,6 +54,18 @@ class UserProfile extends React.Component {
   }
 
   render() {
+
+    const style = {
+      content : {
+        margin: '150px auto 0 auto',
+        width: '350px',
+        height: '115px',
+        border: '1px solid red'
+      }, overlay: {
+
+      }
+    };
+
     return (
 			<div className="profile-edit-container">
 				<form onSubmit={this.handleSubmit} className="profile-edit-box">
@@ -77,6 +90,14 @@ class UserProfile extends React.Component {
 
           <input className="profile-submit" type="submit" value="Edit Profile" />
 				</form>
+
+        <Modal
+          isOpen={this.props.loading}
+          onRequestClose={this.errorModalClose}
+          style={style}
+        >
+          Yolo
+        </Modal>
 
 			</div>
 		);

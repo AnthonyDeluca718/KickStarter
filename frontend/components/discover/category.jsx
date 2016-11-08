@@ -76,7 +76,7 @@ class Category extends React.Component {
         </ul>
 
         <Modal
-          isOpen={this.props.loading}
+          isOpen={this.state.loading}
           onRequestClose={this.errorModalClose}
           style={style}
         >

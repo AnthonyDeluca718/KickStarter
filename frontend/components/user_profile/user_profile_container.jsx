@@ -8,7 +8,8 @@ const mapStateToProps = (state) => {
     bio: state.session.currentUser.bio,
     id: state.session.currentUser.id,
     avatar_url: state.session.photo_url,
-    spent: state.session.spent
+    spent: state.session.spent,
+    loading: state.loading
   });
 }
 
