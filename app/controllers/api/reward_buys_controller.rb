@@ -21,7 +21,10 @@ class Api::RewardBuysController < ApplicationController
     @reward_buy.user_id = current_user.id
 
     if @reward_buy.save
-      render( json: "success")
+      render(
+        json: ["You backed the project"],
+        status: 200
+      )
     else
       render(
         json: ["Invalid request to Back Project"],

@@ -41,10 +41,13 @@ export const receiveFunding = (funding) => ({
   funding
 })
 
-export const receiveSpent = (spent) => ({
-  type: RECEIVE_SPENT,
-  spent
-})
+export const receiveSpent = (spent, success) => {
+  return({
+    type: RECEIVE_SPENT,
+    spent,
+    success
+  })
+}
 
 export const newRewardBuy = (reward_id, cost) => {
   return ({

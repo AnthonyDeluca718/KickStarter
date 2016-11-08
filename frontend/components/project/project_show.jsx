@@ -62,7 +62,7 @@ class ProjectShow extends React.Component {
 
       }
     };
-		
+
     return (
     <div className="project-show-container group">
 

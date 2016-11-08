@@ -1,10 +1,17 @@
 import { RECEIVE_SEARCH } from '../actions/search_actions';
+import {RECEIVE_SPENT} from '../actions/project_actions';
 
 const LoadingReducer = (state = false, action) => {
   switch(action.type){
     case "GET_PROJECT":
+    case "EDIT_PROFILE":
+    case "NEW_REWARD_BUY":
+      console.log("loading");
       return true;
     case "RECEIVE_CURRENT_PROJECT":
+    case "RECEIVE_CURRENT_USER":
+    case "RECEIVE_SPENT":
+      console.log("done loading");
       return false;
     default:
       return state;

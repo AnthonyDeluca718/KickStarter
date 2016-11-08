@@ -8,6 +8,7 @@ import {
         receiveCurrentProject,
         receiveErrors,
         receiveFunding,
+        receiveSpent,
         NEW_REWARD_BUY
        } from '../actions/project_actions';
 
@@ -36,6 +37,14 @@ export default ({getState, dispatch}) => next => action => {
     dispatch(receiveCurrentProject(project))
   }
 
+  const getSpentCallback = (spent) => {
+    return(
+      function() {
+        dispatch(receiveSpent(spent));
+      }
+    )
+  }
+
   const errorCallback = response => {
     const errors = response;
     dispatch(receiveErrors(errors));
@@ -47,8 +56,7 @@ export default ({getState, dispatch}) => next => action => {
 
   switch(action.type){
     case NEW_REWARD_BUY:
-      newRewardBuyUtil(action.rewardBuy);
-      dispatch(receiveFunding(action.cost));
+      newRewardBuyUtil(action.rewardBuy, getSpentCallback(action.spent));
       return next(action);
     case NEW_PROJECT:
       newProjectUtil(action.data, newSuccessCallback, errorCallback)
