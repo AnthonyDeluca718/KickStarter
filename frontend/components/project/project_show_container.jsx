@@ -12,7 +12,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   const id = ownProps.params.id;
   return {
     getProject: (id) => dispatch(getProject(id)),
-    newRewardBuy: (reward_id, cost) => dispatch(newRewardBuy(reward_id, cost)),
+    newRewardBuy: (reward_id, spent) => dispatch(newRewardBuy(reward_id, spent)),
     id
   }
 };

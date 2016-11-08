@@ -31,7 +31,7 @@ export default ({getState, dispatch}) => next => action => {
       signup(action.user, userSuccessCallback, errorCallback);
       return next(action);
     case NEW_REWARD_BUY:
-      dispatch(receiveSpent(action.cost));
+      dispatch(receiveSpent(action.spent));
       return next(action);
     default:
       return next(action);

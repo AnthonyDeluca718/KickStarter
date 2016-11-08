@@ -37,10 +37,10 @@ export default ({getState, dispatch}) => next => action => {
     dispatch(receiveCurrentProject(project))
   }
 
-  const getSpentCallback = (spent) => {
+  const getFundingCallback = (spent) => {
     return(
       function() {
-        dispatch(receiveSpent(spent));
+        dispatch(receiveFunding(spent));
       }
     )
   }
@@ -56,7 +56,7 @@ export default ({getState, dispatch}) => next => action => {
 
   switch(action.type){
     case NEW_REWARD_BUY:
-      newRewardBuyUtil(action.rewardBuy, getSpentCallback(action.spent));
+      newRewardBuyUtil(action.rewardBuy, getFundingCallback(action.spent));
       return next(action);
     case NEW_PROJECT:
       newProjectUtil(action.data, newSuccessCallback, errorCallback)

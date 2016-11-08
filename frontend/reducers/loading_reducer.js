@@ -11,6 +11,7 @@ const LoadingReducer = (state = false, action) => {
     case "RECEIVE_CURRENT_PROJECT":
     case "RECEIVE_CURRENT_USER":
     case "RECEIVE_SPENT":
+    case "RECEIVE_FUNDING":
       console.log("done loading");
       return false;
     default:
