@@ -413,20 +413,27 @@ header button:hover {
   margin: 20px 0;
 }
 
-.project-add-reward {
+.project-form-reward-buttons {
   display: block;
   margin: 0 auto;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.project-add-reward-button {
+  display: inline-block;
+  margin-left: 5px;
   border: 1px solid black;
   padding: 10px;
   border-radius: 6px;
   border: 1px solid #dad7d4;
-  width: 100px;
+  width: 120px;
   background: green;
   color: #fff;
   text-align: center;
 }
 
-.project-add-reward:hover {
+.project-add-reward-button:hover {
   cursor: pointer;
 }
 
@@ -457,6 +464,7 @@ header button:hover {
   display: block;
   margin: 0 auto;
   border-bottom: 1px solid black;
+  text-align: center;
 }
 
 .project-create-rewards-input {
@@ -469,7 +477,7 @@ header button:hover {
 }
 
 .project-create-rewards-textarea {
-  height: 300px;
+  height: 210px;
 }
 
 .project-create-rewards-list {

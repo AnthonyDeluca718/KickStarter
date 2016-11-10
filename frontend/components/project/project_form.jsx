@@ -26,6 +26,7 @@ class ProjectForm extends React.Component {
     this.onModalClose = this.onModalClose.bind(this);
     this.errorModalClose = this.errorModalClose.bind(this);
     this.addReward = this.addReward.bind(this);
+    this.deleteReward = this.deleteReward.bind(this);
     this.upDateReward = this.upDateReward.bind(this);
     this.updateHeadImage = this.updateHeadImage.bind(this);
 	}
@@ -94,6 +95,14 @@ class ProjectForm extends React.Component {
   addReward () {
     this.state.rewards.push({title: "", body: "", cost: 1, });
     this.setState({rewards: this.state.rewards});
+  }
+
+  deleteReward() {
+    if(this.state.rewards.length > 0) {
+      console.log("in")
+      this.state.rewards.pop();
+      this.setState({rewards: this.state.rewards});
+    }
   }
 
 	renderErrors() {
@@ -249,7 +258,11 @@ class ProjectForm extends React.Component {
             })}
           </div>
 
-          <button className="project-add-reward" onClick={ this.addReward }>Add Reward</button>
+          <div className="project-form-reward-buttons">
+            <div className="project-add-reward-button" onClick={ this.addReward }>Add Reward</div>
+            <div className="project-add-reward-button" onClick={ this.deleteReward }>Delete Reward</div>
+          </div>
+
         </div>
 
 
