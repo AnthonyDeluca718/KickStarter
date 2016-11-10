@@ -13,6 +13,11 @@ export const receiveSearch = (search) => ({
   search
 });
 
+export const receiveCategory = (search) => ({
+  type: "RECEIVE_CATEGORY",
+  search
+});
+
 export const getCategory = (category) => ({
   type: GET_CATEGORY,
   category

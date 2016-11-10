@@ -4,7 +4,8 @@ import Category from './category';
 
 const mapStateToProps = (state) => {
   return({
-    loading: state.loading
+    loading: state.loading,
+    projects: state.category
   });
 };
 
@@ -12,6 +13,12 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = function(dispatch, ownProps) {
   return ({
     id: ownProps.params.id,
+    getCategory: (id) => {
+      dispatch({
+        type: "GET_CATEGORY",
+        category: id
+      })
+    },
     nowLoading: () => {
       dispatch({
         type: "NOW_LOADING"

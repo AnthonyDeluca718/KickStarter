@@ -13,55 +13,42 @@ class Category extends React.Component {
   }
 
   componentDidMount() {
-    this.props.nowLoading();
-    const that = this;
-    $.ajax({
-      method: 'GET',
-      url: `api/search/${that.props.id}`,
-      success: function(response) {
-        that.setState({
-          projects: response,
-        });
-        that.props.endLoading();
-      },
-      error: function() {
-        hashHistory.push('/error');
-      }
-    });
+    this.props.getCategory(this.props.id);
+    // const that = this;
+    // $.ajax({
+    //   method: 'GET',
+    //   url: `api/search/${that.props.id}`,
+    //   success: function(response) {
+    //     that.setState({
+    //       projects: response,
+    //     });
+    //   },
+    //   error: function() {
+    //     hashHistory.push('/error');
+    //   }
+    // });
   }
 
   componentWillReceiveProps(nextProps) {
-    this.props.nowLoading();
     if (nextProps.id != this.props.id) {
-      const that = this;
-      $.ajax({
-        method: 'GET',
-        url: `api/search/${nextProps.id}`,
-        success: function(response) {
-          that.setState({projects: response});
-          that.props.endLoading();
-        },
-        error: function() {
-          hashHistory.push('/error');
-        }
-      });
+      this.props.getCategory(nextProps.id);
+      // const that = this;
+      // $.ajax({
+      //   method: 'GET',
+      //   url: `api/search/${nextProps.id}`,
+      //   success: function(response) {
+      //     that.setState({projects: response});
+      //   },
+      //   error: function() {
+      //     hashHistory.push('/error');
+      //   }
+      // });
     }
   }
 
   render() {
 
-    const style = {
-      content : {
-        margin: '150px auto 0 auto',
-        width: '350px',
-        height: '115px',
-        border: '1px solid red'
-      }, overlay: {
-
-      }
-    };
-
-    let projShow = this.state.projects.map( (project) => {
+    let projShow = this.props.projects.map( (project) => {
         return(
           <li key={project.id} className="category-project">
             <Link to={`/projects/${project.id}`} className="category-project-link" >
@@ -73,21 +60,35 @@ class Category extends React.Component {
     );
 
     return(
-      <div className="category-content group">
-        <ul className="category-project-list group">
-          {projShow}
-        </ul>
-
-        <Modal
-          isOpen={false}
-          onRequestClose={this.errorModalClose}
-          style={style}
-        >
-          Yolo
-        </Modal>
-      </div>
+      <Loader loaded={!this.props.loading}>
+        <div className="category-content group">
+          <ul className="category-project-list group">
+            {projShow}
+          </ul>
+        </div>
+      </Loader>
     );
   }
 }
 
 export default Category;
+
+
+// const style = {
+//   content : {
+//     margin: '150px auto 0 auto',
+//     width: '350px',
+//     height: '115px',
+//     border: '1px solid red'
+//   }, overlay: {
+//
+//   }
+// };
+//
+// <Modal
+//   isOpen={this.props.loading}
+//   onRequestClose={this.errorModalClose}
+//   style={style}
+// >
+//   Yolo
+// </Modal>

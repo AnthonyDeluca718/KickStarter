@@ -8,12 +8,16 @@ const LoadingReducer = (state = false, action) => {
     case "NEW_REWARD_BUY":
     case "NEW_PROJECT":
     case "NOW_LOADING":
+    case "GET_SEARCH":
+    case "GET_CATEGORY":
       console.log(action.type);
       return true;
     case "RECEIVE_CURRENT_PROJECT":
     case "RECEIVE_CURRENT_USER":
     case "END_LOADING":
     case "RECEIVE_FUNDING":
+    case "RECEIVE_SEARCH":
+    case "RECEIVE_CATEGORY":
       console.log(action.type);
       return false;
     default:

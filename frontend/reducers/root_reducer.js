@@ -4,10 +4,12 @@ import SessionReducer from './session_reducer';
 import ProjectReducer from './project_reducer';
 import SearchReducer from './search_reducer';
 import LoadingReducer from './loading_reducer';
+import CategoryReducer from './category_reducer';
 
 export default combineReducers({
   session: SessionReducer,
   project: ProjectReducer,
   search: SearchReducer,
-  loading: LoadingReducer
+  loading: LoadingReducer,
+  category: CategoryReducer
 });
