@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, hashHistory } from 'react-router';
 import Modal from 'react-modal';
+import Loader from 'react-loader';
 
 class UserProfile extends React.Component {
 
@@ -65,41 +66,35 @@ class UserProfile extends React.Component {
 
       }
     };
-
+    const that=this;
     return (
-			<div className="profile-edit-container">
-				<form onSubmit={this.handleSubmit} className="profile-edit-box">
+			<Loader loaded={!that.props.loading} >
+        <div className="profile-edit-container">
+  				<form onSubmit={this.handleSubmit} className="profile-edit-box">
 
-          <div className="profile-spent">Total Spent: {this.props.spent}</div>
+            <div className="profile-spent">Total Spent: {this.props.spent}</div>
 
-          <div className="profile-label">New Avatar: Preview</div>
-          <img src={this.state.avatar_url} className="profile-avatar-preview" />
+            <div className="profile-label">New Avatar: Preview</div>
+            <img src={this.state.avatar_url} className="profile-avatar-preview" />
 
-					<input
-            type="file"
-						onChange={this.updateAvatar}
-						className="new-avatar-input"
-            />
+  					<input
+              type="file"
+  						onChange={this.updateAvatar}
+  						className="new-avatar-input"
+              />
 
-          <div className="profile-label">Bio: </div>
-          <textarea
-						value={this.state.bio}
-						onChange={this.update("bio")}
-						className="bio-input profile-element"
-            />
+            <div className="profile-label">Bio: </div>
+            <textarea
+  						value={this.state.bio}
+  						onChange={this.update("bio")}
+  						className="bio-input profile-element"
+              />
 
-          <input className="profile-submit" type="submit" value="Edit Profile" />
-				</form>
+            <input className="profile-submit" type="submit" value="Edit Profile" />
+  				</form>
 
-        <Modal
-          isOpen={this.props.loading}
-          onRequestClose={this.errorModalClose}
-          style={style}
-        >
-          Yolo
-        </Modal>
-
-			</div>
+  			</div>
+			</Loader>
 		);
   }
 
@@ -113,3 +108,11 @@ class UserProfile extends React.Component {
 }
 
 export default UserProfile;
+
+// <Modal
+//   isOpen={this.props.loading}
+//   onRequestClose={this.errorModalClose}
+//   style={style}
+// >
+//   Yolo
+// </Modal>

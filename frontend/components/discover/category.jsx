@@ -2,17 +2,18 @@ import React from 'react';
 import { hashHistory } from 'react-router';
 import { Link } from 'react-router';
 import Modal from 'react-modal';
+import Loader from 'react-loader';
 
 class Category extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      projects: [],
-      loading: true
+      projects: []
     };
   }
 
   componentDidMount() {
+    this.props.nowLoading();
     const that = this;
     $.ajax({
       method: 'GET',
@@ -20,8 +21,8 @@ class Category extends React.Component {
       success: function(response) {
         that.setState({
           projects: response,
-          loading: false
         });
+        that.props.endLoading();
       },
       error: function() {
         hashHistory.push('/error');
@@ -30,6 +31,7 @@ class Category extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    this.props.nowLoading();
     if (nextProps.id != this.props.id) {
       const that = this;
       $.ajax({
@@ -37,6 +39,7 @@ class Category extends React.Component {
         url: `api/search/${nextProps.id}`,
         success: function(response) {
           that.setState({projects: response});
+          that.props.endLoading();
         },
         error: function() {
           hashHistory.push('/error');
@@ -76,7 +79,7 @@ class Category extends React.Component {
         </ul>
 
         <Modal
-          isOpen={this.state.loading}
+          isOpen={false}
           onRequestClose={this.errorModalClose}
           style={style}
         >

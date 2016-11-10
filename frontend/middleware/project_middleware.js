@@ -30,10 +30,12 @@ export default ({getState, dispatch}) => next => action => {
       })
     })
     hashHistory.push(`/projects/${project.id}`)
+    console.log("adding rewards")
     dispatch(receiveCurrentProject(project))
   };
 
   const getSuccessCallback = (project) => {
+    console.log("get");
     dispatch(receiveCurrentProject(project))
   }
 

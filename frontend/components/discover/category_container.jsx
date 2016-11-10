@@ -11,7 +11,17 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = function(dispatch, ownProps) {
   return ({
-    id: ownProps.params.id
+    id: ownProps.params.id,
+    nowLoading: () => {
+      dispatch({
+        type: "NOW_LOADING"
+      });
+    },
+    endLoading: () => {
+      dispatch({
+        type: "END_LOADING"
+      });
+    },
   });
 };
 

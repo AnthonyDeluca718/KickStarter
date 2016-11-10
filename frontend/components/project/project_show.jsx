@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, hashHistory } from 'react-router';
 import Modal from 'react-modal';
+import Loader from 'react-loader';
 
 class ProjectShow extends React.Component {
 
@@ -38,7 +39,6 @@ class ProjectShow extends React.Component {
         return(
           <button className="project-show-reward-el project-show-reward-button"
             onClick={() => {
-              alert("You backed the project");
               that.props.newRewardBuy(reward.id, reward.cost);
               }
             }
@@ -64,65 +64,67 @@ class ProjectShow extends React.Component {
     };
 
     return (
-    <div className="project-show-container group">
+			<Loader loaded={!this.props.loading}>
+				<div className="project-show-container group">
 
-      <div className="project-show-left">
-        <img className="project-show-head-photo" src={this.props.project.headPhotoUrl}></img>
+					<div className="project-show-left">
+						<img className="project-show-head-photo" src={this.props.project.headPhotoUrl}></img>
 
-        <div
-          className="project-show-element project-show-description"
-        >{this.props.project.description}</div>
+						<div
+							className="project-show-element project-show-description"
+						>{this.props.project.description}</div>
 
-      </div>
+					</div>
 
-      <div className="project-show-right">
+					<div className="project-show-right">
 
-        <div className="project-show-title">{this.props.project.title}</div>
+						<div className="project-show-title">{this.props.project.title}</div>
 
-        <div className="project-show-element project-show-goal">Goal: {this.props.project.goal}</div>
+						<div className="project-show-element project-show-goal">Goal: {this.props.project.goal}</div>
 
-        <div className="project-show-element project-show-funding">Toal Funding: {this.props.project.funding}</div>
+						<div className="project-show-element project-show-funding">Toal Funding: {this.props.project.funding}</div>
 
-        <text
-          className="project-show-element project-show-date"
-        >End Date: {this.props.project.endDate}</text>
-      </div>
+						<text
+							className="project-show-element project-show-date"
+						>End Date: {this.props.project.endDate}</text>
+					</div>
 
 
-      <div className="project-show-rewards" >
+					<div className="project-show-rewards" >
 
-        <h1 className="show-rewards-section-title">Rewards</h1>
+						<h1 className="show-rewards-section-title">Rewards</h1>
 
-        {this.state.project.rewards.map(
-          function(reward) {
-            let limit;
-            if (reward.limit) {
-              limit = reward.limit;
-            } else {
-              limit = "unlimited";
-            }
+						{this.state.project.rewards.map(
+							function(reward) {
+								let limit;
+								if (reward.limit) {
+									limit = reward.limit;
+								} else {
+									limit = "unlimited";
+								}
 
-            return(
-            <div key={reward.id} className="project-show-reward">
-              <div className="project-show-reward-el project-show-reward-title">{reward.title}</div>
-              <div className="project-show-reward-el project-show-reward-body">{reward.body}</div>
-              <div className="project-show-reward-el project-show-reward-cost">{`Cost: ${reward.cost}`}</div>
-              { button(reward) }
-            </div>
-            );
-          }
-        )}
-      </div>
+								return(
+								<div key={reward.id} className="project-show-reward">
+									<div className="project-show-reward-el project-show-reward-title">{reward.title}</div>
+									<div className="project-show-reward-el project-show-reward-body">{reward.body}</div>
+									<div className="project-show-reward-el project-show-reward-cost">{`Cost: ${reward.cost}`}</div>
+									{ button(reward) }
+								</div>
+								);
+							}
+						)}
+					</div>
 
-			<Modal
-				isOpen={this.props.loading}
-				onRequestClose={this.errorModalClose}
-				style={style}
-			>
-				Yolo
-			</Modal>
+					<Modal
+						isOpen={this.props.loading}
+						onRequestClose={this.errorModalClose}
+						style={style}
+					>
+						Yolo
+					</Modal>
 
-    </div>
+				</div>
+			</Loader>
     )
   }
 }
